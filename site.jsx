@@ -160,6 +160,12 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
           <Well>
 	    Special thanks to Sparik Hayrapetyan, Aram Gevorgyan and Robert Adamian
 	    for helping with Armenian, Russian translations.
+	    <br/>
+	    <br/>
+	    Built with server-side ReactJS, node; you can send pull requests
+	    <a
+	      href={'https://github.com/iteratehackerspace/iteratehackerspace.github.io'}>
+	       here</a>
 	  </Well>
 	</body>
       </html>
