@@ -1,3 +1,4 @@
+'use strict';
 const React = require('react'),
       fs = require('fs'),
       ReactDOMServer = require('react-dom/server'),
@@ -162,10 +163,10 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    for helping with Armenian, Russian translations.
 	    <br/>
 	    <br/>
-	    Built with server-side ReactJS, node; you can send pull requests
+	    Built with server-side ReactJS, node; you can send pull requests:
 	    <a
 	      href={'https://github.com/iteratehackerspace/iteratehackerspace.github.io'}>
-	       here</a>
+	     here</a>
 	  </Well>
 	</body>
       </html>
