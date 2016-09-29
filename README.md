@@ -5,8 +5,10 @@ Make sure you have `node` installed.
 
 To build the site do:
 
-1. `npm install`
-2. `npm run build_site`
+0. `git clone https://github.com/iteratehackerspace/iteratehackerspace.github.io`
+1. `cd iteratehackerspace.github.io` 
+2. `npm install`
+3. `npm run build_site`
 
 Then you can just view `index.html` in any browser.
 
