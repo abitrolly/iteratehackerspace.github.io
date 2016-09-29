@@ -134,7 +134,9 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	  </Well>
 	  <Well>
 	    Subject to change, we have these free workshops starting at 18:30.
-	    They usually last until around 20:40.
+	    They usually last until around 20:40. There is no formal registration
+	    process, although nice if you signup on the specific Meetup
+	    <a href={meetup_link}> here</a>, just come and start coding.
 	    <br/>
 	    <br/>
 	    <EventsTable schedule={this.props.schedule_data}/>
