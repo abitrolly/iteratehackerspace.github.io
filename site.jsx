@@ -83,10 +83,10 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	  <link rel={"stylesheet"} href={bstrap}/>
 	</head>
 	<body>
-	  <PageHeader>
+	  <PageHeader style={{paddingLeft: '1rem'}}>
 	    iterate hackerspace <small> in Yerevan, Armenia</small>
 	  </PageHeader>
-	  <Well>
+	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    The hackerspace is a safe place where you can come and
 	    use our Debian Linux computers, experiment with open-source code,
 	    learn new technologies and make new friends!
@@ -102,7 +102,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    машины поэкспериментировать с открытым исходным кодом,
 	    изучить новейшие технологии а также завести новых друзей
 	  </Well>
-	  <Well>
+	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    The hackerspace is open from 9am-9pm Monday-Saturday and is
 	    located in ISTC (IBM Innovative Solutions and Technologies Center), on
 	    the sixth floor of the Linguistics Building at
@@ -132,7 +132,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    Спасибо <a href={istc_link}> ISTC </a> и <a href={eif_link}>EIF </a>
 	    за предоставление места, поддержку и всех необходимых ресурсов
 	  </Well>
-	  <Well>
+	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    Subject to change, we have these free workshops starting at 18:30.
 	    They usually last until around 20:40. There is no formal registration
 	    process, although nice if you signup on the specific Meetup
@@ -141,7 +141,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    <br/>
 	    <EventsTable schedule={this.props.schedule_data}/>
 	  </Well>
-	  <Well>
+	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    Code of Conduct: (adapted from Gothenburg Hackerspace)
 	    <br/>
 	    <br/>
@@ -160,7 +160,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	      </li>
 	    </ul>
 	  </Well>
-          <Well>
+	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    Special thanks to Sparik Hayrapetyan, Aram Gevorgyan and Robert Adamian
 	    for helping with Armenian, Russian translations.
 	    <br/>
