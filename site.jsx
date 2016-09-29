@@ -38,30 +38,30 @@ class EventsTable extends React.Component {
 
 const coc_notes = [
   `iterate hackerspace is an inclusive society where everyone is
- welcome regardless of age, ethnicity, gender, sexuality or religion
- to discuss and learn more about technology in an environment
- of mutual respect, tolerance and encouragement. We want all
+ welcome to discuss and learn more about technology regardless of age,
+  ethnicity, gender, sexuality or religion. We want all
  participants to have an enjoyable and fulfilling experience.
- Therefore, all participants are expected to be nice
- and respectful towards each other.`,
+ Hence, all participants are expected to behave with mutual respect, tolerance, 
+ encouragement in mind.`,
   `To clarify what is expected of members, everyone in iterate
    Hackerspace is obliged to follow this code of conduct. It applies to
-   all of the association's physical meetings, events and the like, 
-   as well as all communication channels and other virtual activities.`,
+   all of the association's physical gatherings and events, 
+   as well as to communication channels and other virtual activities.`,
   `Harassment includes offensive or unwanted comments 
-   about (for example) gender, sexual orientation, disability, 
-   physical appearance, body size, ethnicity or 
-   religion, pornographic pictures in public places (including slides and 
-   profile/avatar pictures), deliberate intimidation, stalking, unwanted 
-   photographs or recording, sustained disruption of talks, inappropriate 
-   physical contact and unwelcome sexual attention.`,
-  `Any or all of the following countermeasures are to be 
-   expected: the alleged offender may be requested to change their behavior. 
-   If the behavior continues, the alleged offender is to immediately leave 
-   the site and/or be prohibitied from participating in future events and the 
-   incident may be reported to the appropiate authorities (depending on severity)
-   this is however the very last resort, considering our interest in keeping 
-   things friendly and social for the benefit of everyone involved.`
+   concerning, but not limited to, gender, sexual orientation, disabilities, 
+   physical appearance, ethnicity or 
+   religion. The following actions and behaviors are cause for countermeasures to 
+   be taken: Sustained disruption of talks, deliberate intimidation, stalking, unwanted 
+   photographs or recording, inappropriate physical contact, unwelcome sexual attention, 
+   and pornographic pictures in public places (including slides and 
+   profile/avatar pictures).`,
+  `The following countermeasures are to be 
+   expected: 1) The alleged offender may be confronted and asked to change their behavior. 
+   2) The alleged offender may be asked to leave the area until further notice. 3) If the behavior 
+   continues, the alleged offender may be prohibited from 
+   participating in all future events, and the incident will be reported to the 
+   appropriate authorities. Our main interest is to sustain a friendly and welcoming
+   atmosphere for all those involved. Prohibition is a last resort.`,
 ];
 
 class HomePage extends React.Component {
@@ -103,11 +103,11 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    изучить новейшие технологии а также завести новых друзей
 	  </Well>
 	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
-	    The hackerspace is open from 9am-9pm Monday-Saturday and is
+	    The hackerspace is open from 9am-9pm, Monday through Saturday, and is
 	    located in ISTC (IBM Innovative Solutions and Technologies Center), on
 	    the sixth floor of the Linguistics Building at
-	    Yerevan State University: <a href={google_link}>Location</a>. We also post
-	    meetups <a href={meetup_link}>here</a> and this is our
+	    Yerevan State University: <a href={google_link}>Location</a>.
+	    Meetups are posted <a href={meetup_link}>here</a> and this is our
 	    <a href={fb_link}> Facebook group</a>. Thank you to
 	    <a href={istc_link}> ISTC </a> and <a href={eif_link}>EIF</a> for
 	    providing us this space and supporting us with the necessary resources.
@@ -133,10 +133,10 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    за предоставление места, поддержку и всех необходимых ресурсов
 	  </Well>
 	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
-	    Subject to change, we have these free workshops starting at 18:30.
+	    Subject to change, we have free workshops starting at 18:30.
 	    They usually last until around 20:40. There is no formal registration
-	    process, although nice if you signup on the specific Meetup
-	    <a href={meetup_link}> here</a>, just come and start coding.
+	    process, although signup on the specific Meetup date
+	    <a href={meetup_link}> here</a> is much appreciated. 
 	    <br/>
 	    <br/>
 	    <EventsTable schedule={this.props.schedule_data}/>
@@ -162,13 +162,13 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	  </Well>
 	  <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
 	    Special thanks to Sparik Hayrapetyan, Aram Gevorgyan and Robert Adamian
-	    for helping with Armenian, Russian translations.
+	    for helping with Armenian & Russian translations.
 	    <br/>
 	    <br/>
-	    Built with server-side ReactJS, node; you can send pull requests:
+	    Built with server-side ReactJS & node; pull requests can be made 
 	    <a
 	      href={'https://github.com/iteratehackerspace/iteratehackerspace.github.io'}>
-	     here</a>
+	     &#160;here</a>
 	  </Well>
 	</body>
       </html>
