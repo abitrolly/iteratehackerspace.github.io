@@ -1,8 +1,8 @@
 {
-  "Monday":"Linux hacking, learning, installing",
-  "Tuesday":"JavaScript on the backend",
+  "Monday":"Linux hacking, learning, installing (Debian)",
+  "Tuesday":"JavaScript on the backend (nodejs)",
   "Wednesday":"iOS, Objective-C, reverse engineering, security",
-  "Thursday": "JavaScript on the front end",
+  "Thursday": "JavaScript on the front end (ReactJS)",
   "Friday": "Wildcard, anything goes",
   "Saturday":"Hackathons, topic to be decided either earlier or the morning of"
 }
