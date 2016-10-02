@@ -4,8 +4,8 @@
   "description": "Code behind iteratehackerspace.github.io",
   "main": "index.js",
   "scripts":{
-    "run_babel":"node_modules/babel-cli/bin/babel.js --presets react site.jsx > site.js",
-    "build_site":"npm run run_babel; node site.js"
+    "run_babel": "babel --presets react site.jsx > site.js",
+    "build_site": "npm run run_babel; node site.js"
   },
   "repository": {
     "type": "git",
