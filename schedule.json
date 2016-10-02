@@ -1,7 +1,7 @@
 {
-  "Monday":"Linux hacking, learning, installing (Debian)",
-  "Tuesday":"JavaScript on the backend (nodejs)",
-  "Wednesday":"iOS, Objective-C, reverse engineering, security",
+  "Monday":"JavaScript on the backend (nodejs)",
+  "Tuesday":"Linux hacking, learning, installing (Debian)",
+  "Wednesday":"CS Theory, Data Structures, algorithms (in JavaScript or Python)",
   "Thursday": "JavaScript on the front end (ReactJS)",
   "Friday": "Wildcard, anything goes",
   "Saturday":"Hackathons, topic to be decided either earlier or the morning of"
