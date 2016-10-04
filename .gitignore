@@ -2,3 +2,5 @@ node_modules
 site.js
 .tern-port
 
+# config folder of the WebStorm
+.idea/
