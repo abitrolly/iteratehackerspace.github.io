@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts":{
     "run_babel": "babel --presets react site.jsx > site.js",
-    "build_site": "npm run run_babel; node site.js"
+    "build_site": "npm run run_babel && node site.js"
   },
   "repository": {
     "type": "git",
