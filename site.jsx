@@ -82,6 +82,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
       <html>
         <head>
           <meta charSet={'utf-8'}></meta>
+          <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
         </head>
         <body>
