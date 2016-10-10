@@ -2,7 +2,6 @@
 const React = require('react'),
       fs = require('fs'),
       ReactDOMServer = require('react-dom/server'),
-      JumboTron = require('react-bootstrap').Jumbotron,
       PageHeader = require('react-bootstrap').PageHeader,
       Well = require('react-bootstrap').Well,
       Table = require('react-bootstrap').Table;
