@@ -67,32 +67,43 @@ const coc_notes = [
 
 class HomePage extends React.Component {
   render () {
-    let bstrap =
+    const bstrap =
   "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css";
-    let google_link = 'https://www.google.com/maps/place/\
+    const google_link = 'https://www.google.com/maps/place/\
 IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 44.5242933,17z/data=!3m1!4b1!4m5!3m4!1s0x406abd4e4c4a93a9:\
 0xb1a196eecbc8204e!8m2!3d40.183162!4d44.526482';
-    let meetup_link = 'https://www.meetup.com/Professional-Programming-in-Yerevan/';
-    let fb_link = 'https://www.facebook.com/groups/410797219090898/';
-    let istc_link = 'http://www.istc.am/';
-    let eif_link = 'http://www.eif.am/';
+    const meetup_link = 'https://www.meetup.com/Professional-Programming-in-Yerevan/';
+    const fb_link = 'https://www.facebook.com/groups/410797219090898/';
+    const istc_link = 'http://www.istc.am/';
+    const eif_link = 'http://www.eif.am/';
+    const body_style = {
+      backgroundImage:"url('./iterate_group.jpg')",
+      backgroundSize:'cover'
+    };
     return (
       <html>
         <head>
           <meta charSet={'utf-8'}></meta>
           <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
+	  <style>{`div { opacity : 0.95 }`}</style>
         </head>
-        <body>
+        <body style={body_style}>
           <div className="container">
-            <PageHeader style={{paddingLeft: '1rem'}}>
-              iterate hackerspace <small> in Yerevan, Armenia</small>
-            </PageHeader>
+	    <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
+	      <center>
+		<h2>
+		  <em>iterate hackerspace</em>
+		</h2>
+		<small> in Yerevan, Armenia</small>
+	      </center>
+	    </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
               The hackerspace is a safe place where you can come and
               use our Debian Linux computers, experiment with open-source code,
-              learn new technologies and make new friends!
+              learn new technologies and make new friends! There is no cost to
+	      join us, all the workshops and usage of the computers is free.
               <br/>
               <br/>
               Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
@@ -104,6 +115,15 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
               прийти одни или с друзьями, используя linux Debian
               машины поэкспериментировать с открытым исходным кодом,
               изучить новейшие технологии а также завести новых друзей
+            </Well>
+            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
+              Subject to change, we have free workshops starting at 18:30.
+              They usually last until around 21:00. There is no formal registration
+              process just show up, although signup on the specific Meetup date
+              <a href={meetup_link}> here</a> is much appreciated.
+              <br/>
+              <br/>
+              <EventsTable schedule={this.props.schedule_data}/>
             </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
               The hackerspace is open from 9am-9pm, Monday through Saturday, and is
@@ -134,15 +154,6 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
               называется iterate в котором сообщается о каждой новой встрече.
               Спасибо <a href={istc_link}> ISTC </a> и <a href={eif_link}>EIF </a>
               за предоставление места, поддержку и всех необходимых ресурсов
-            </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
-              Subject to change, we have free workshops starting at 18:30.
-              They usually last until around 20:40. There is no formal registration
-              process, although signup on the specific Meetup date
-              <a href={meetup_link}> here</a> is much appreciated.
-              <br/>
-              <br/>
-              <EventsTable schedule={this.props.schedule_data}/>
             </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
               Code of Conduct: (adapted from Gothenburg Hackerspace)
