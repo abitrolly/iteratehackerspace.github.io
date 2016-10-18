@@ -106,7 +106,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	      join us, all the workshops and usage of the computers is free.
 	      Come chat with us on our own nodejs, React, websocket powered
 	      chat room running on an IBM cloud bluemix server: 
-	      <a href={'http://iteratechat.mybluemix.net/'}> here </a>
+	      <a href={'http://hyechat.mybluemix.net'}> here </a>
 	      source code:
 	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
               <br/>
