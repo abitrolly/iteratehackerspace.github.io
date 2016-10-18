@@ -104,6 +104,11 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
               use our Debian Linux computers, experiment with open-source code,
               learn new technologies and make new friends! There is no cost to
 	      join us, all the workshops and usage of the computers is free.
+	      Come chat with us on our own nodejs, React, websocket powered
+	      chat room running on an IBM cloud bluemix server: 
+	      <a href={'http://iteratechat.mybluemix.net/'}> here </a>
+	      source code:
+	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
               <br/>
               <br/>
               Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
