@@ -77,10 +77,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
     const fb_link = 'https://www.facebook.com/groups/410797219090898/';
     const istc_link = 'http://www.istc.am/';
     const eif_link = 'http://www.eif.am/';
-    const body_style = {
-      backgroundImage:"url('./iterate_group.jpg')",
-      backgroundSize:'cover'
-    };
+
     return (
       <html>
         <head>
@@ -88,8 +85,30 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
           <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
 	        <style>{`div { opacity : 0.95 }`}</style>
+          <style>{
+`video#bgvideo {
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-ms-transform: translateX(-50%) translateY(-50%);
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+
+background-size: cover;
+}`
+            }
+          </style>
         </head>
-        <body style={body_style}>
+        <body>
+          <video playsInline autoPlay muted loop id={'bgvideo'}>
+            <source src={'matrix.webm'} type={'video/webm'}/>
+          </video>
           <div className="container">
 	          <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
 	            <center>
