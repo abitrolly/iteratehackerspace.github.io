@@ -68,7 +68,7 @@ const coc_notes = [
 class HomePage extends React.Component {
   render () {
     const bstrap =
-  "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css";
+          "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css";
     const google_link = 'https://www.google.com/maps/place/\
 IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 44.5242933,17z/data=!3m1!4b1!4m5!3m4!1s0x406abd4e4c4a93a9:\
@@ -87,28 +87,28 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
           <meta charSet={'utf-8'}></meta>
           <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
-	  <style>{`div { opacity : 0.95 }`}</style>
+	        <style>{`div { opacity : 0.95 }`}</style>
         </head>
         <body style={body_style}>
           <div className="container">
-	    <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
-	      <center>
-		<h2>
-		  <em>iterate hackerspace</em>
-		</h2>
-		<small> in Yerevan, Armenia</small>
-	      </center>
-	    </Well>
+	          <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
+	            <center>
+		            <h2>
+		              <em>iterate hackerspace</em>
+		            </h2>
+		            <small> in Yerevan, Armenia</small>
+	            </center>
+	          </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
               The hackerspace is a safe place where you can come and
               use our Debian Linux computers, experiment with open-source code,
               learn new technologies and make new friends! There is no cost to
-	      join us, all the workshops and usage of the computers is free.
-	      Come chat with us on our own nodejs, React, websocket powered
-	      chat room running on an IBM cloud bluemix server: 
-	      <a href={'http://hyechat.mybluemix.net'}> here </a>
-	      source code:
-	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
+	            join us, all the workshops and usage of the computers is free.
+	            Come chat with us on our own nodejs, React, websocket powered
+	            chat room running on an IBM cloud bluemix server:
+	            <a href={'http://hyechat.mybluemix.net'}> here </a>
+	            source code:
+	            <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
               <br/>
               <br/>
               Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
@@ -187,7 +187,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
               Built with server-side ReactJS & node; pull requests can be made
               <a
                 href={'https://github.com/iteratehackerspace/iteratehackerspace.github.io'}>
-               &#160;here</a>
+                &#160;here</a>
             </Well>
           </div>
         </body>
