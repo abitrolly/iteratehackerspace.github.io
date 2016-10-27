@@ -107,7 +107,15 @@ webkit-filter: blur(3px);
 filter: blur(3px);
 
 background-size: cover;
-}`
+}
+@media screen and (max-width: 500px) {
+  h2 {
+  font-size: 22px;
+    }
+}
+
+
+`
             }
           </style>
         </head>
