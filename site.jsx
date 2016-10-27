@@ -108,16 +108,26 @@ filter: blur(3px);
 
 background-size: cover;
 }
+
 @media screen and (max-width: 500px) {
   h2 {
   font-size: 22px;
     }
 }
 
+td:hover {
+  transition-property: background-color;
+  transition-duration: 1.5s;
+  background-color: black;
+  color: green;
+}
 
+a {
+  color: green;
+}
 `
-            }
-          </style>
+}
+        </style>
         </head>
         <body>
           <video playsInline autoPlay muted loop id={'bgvideo'}>
