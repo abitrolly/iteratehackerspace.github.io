@@ -146,7 +146,7 @@ a {
 		            <h2>
 		              <em>iterate hackerspace</em>
 		            </h2>
-		            <small> in Yerevan, Armenia</small>
+		            <small> in Yerevan, Armenia 🇦🇲</small>
 	            </center>
 	          </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
@@ -181,7 +181,7 @@ a {
               <EventsTable schedule={this.props.schedule_data}/>
             </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
-              The hackerspace is open from 9am-9pm, Monday through Saturday, and is
+              The hackerspace is open from 5pm-9pm, Monday through Saturday, and is
               located in ISTC (IBM Innovative Solutions and Technologies Center), on
               the sixth floor of the Linguistics Building at
               Yerevan State University: <a href={google_link}>Location</a>.
@@ -192,7 +192,7 @@ a {
 
               <br/>
               <br/>
-              Հաքերսփեյս֊ը բաց է երկուշաբթիից շաբաթ՝ 9:00-21:00,
+              Հաքերսփեյս֊ը բաց է երկուշաբթիից շաբաթ՝ 17:00-21:00,
               ISTC (IBM Innovative Solutions and Technologies Center)
               ֊ի տարածքում՝ ԵՊՀ լեզվաբանության մասնաշենքի 6֊րդ հարկում։ Սա մեր
               <a href={fb_link}> ֆեյսբուքյան խումբն</a> է, որտեղ նույնպես
@@ -202,7 +202,7 @@ a {
               Հաքերսփեյսի տարածքը տրամադրելու և անհրաժեշտ ռեսուրսներով աջակցելու համար։
               <br/>
               <br/>
-              The Hackerspace  открыт с 9 утра до 9 вечера,
+              The Hackerspace открыт с 5 вечера до 9 вечера,
               с понедельника по субботу, территориалльно находится в
               ISTC (...) на 6 ом этаже, здания
               Linguistics около ЕГУ. Наша <a href={fb_link}>facebook группа </a>
