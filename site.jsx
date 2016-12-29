@@ -84,9 +84,9 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
           <meta charSet={'utf-8'}></meta>
           <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
-	        <style>{`div { opacity : 0.95 }`}</style>
+	  <style>{`div { opacity : 0.95 }`}</style>
           <style>{
-`video#bgvideo {
+	      `video#bgvideo {
 position: fixed;
 top: 50%;
 left: 50%;
@@ -130,35 +130,33 @@ a {
   background-size: cover !important
   height:100%;
   width:100%;
-
-
 `
-}
-        </style>
+	    }
+          </style>
         </head>
         <body>
           <video playsInline autoPlay muted loop id={'bgvideo'}>
             <source src={'matrix.webm'} type={'video/webm'}/>
           </video>
           <div className="container">
-	          <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
-	            <center>
-		            <h2>
-		              <em>iterate hackerspace</em>
-		            </h2>
-		            <small> in Yerevan, Armenia 🇦🇲</small>
-	            </center>
-	          </Well>
+	    <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
+	      <center>
+		<h2>
+		  <em>iterate hackerspace</em>
+		</h2>
+		<small> in Yerevan, Armenia 🇦🇲</small>
+	      </center>
+	    </Well>
             <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
               The hackerspace is a safe place where you can come and
               use our Debian Linux computers, experiment with open-source code,
               learn new technologies and make new friends! There is no cost to
-	            join us, all the workshops and usage of the computers is free.
-	            Come chat with us on our own nodejs, React, websocket powered
-	            chat room running on an IBM cloud bluemix server:
-	            <a href={'http://hyechat.mybluemix.net'}> here </a>
-	            source code:
-	            <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
+	      join us, all the workshops and usage of the computers is free.
+	      Come chat with us on our own nodejs, React, websocket powered
+	      chat room running on an IBM cloud bluemix server:
+	      <a href={'http://hyechat.mybluemix.net'}> here </a>
+	      source code:
+	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
               <br/>
               <br/>
               Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
