@@ -156,7 +156,10 @@ a {
 	      chat room running on an IBM cloud bluemix server:
 	      <a href={'http://hyechat.mybluemix.net'}> here </a>
 	      source code:
-	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here </a>
+	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here. </a>
+	      Be sure to also checkout the site
+	      <a href={'https://silicondzor.com'}> silicondzor.com</a> for all a central
+	      place to see all tech events in Armenia and to add your own.
               <br/>
               <br/>
               Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
