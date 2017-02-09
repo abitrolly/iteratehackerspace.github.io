@@ -6,6 +6,11 @@ const React = require('react'),
       Well = require('react-bootstrap').Well,
       Table = require('react-bootstrap').Table;
 
+const well_indent = {
+  marginLeft:'0.10rem',
+  marginRight:'0.10rem'
+};
+
 class EventsTable extends React.Component {
   render () {
     return (
@@ -81,32 +86,19 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
     return (
       <html>
         <head>
+	  <title>Armenia's only hackerpsace, in Yerevan</title>
           <meta charSet={'utf-8'}></meta>
-          <meta name={"viewport"} content={"width=device-width, initial-scale=1"}></meta>
+	  <meta name={"Armenian hackerspace"}
+		content={"Programmer Hackerspace in Yerevan, the capital of Armenia"}>
+	  </meta>
+          <meta name={"viewport"}
+		content={"width=device-width, initial-scale=1"}></meta>
           <link rel={"stylesheet"} href={bstrap}/>
 	  <style>{`div { opacity : 0.95 }`}</style>
-          <style>{
-	      `video#bgvideo {
-position: fixed;
-top: 50%;
-left: 50%;
-min-width: 100%;
-min-height: 100%;
-width: auto;
-height: auto;
-z-index: -100;
--ms-transform: translateX(-50%) translateY(-50%);
--moz-transform: translateX(-50%) translateY(-50%);
--webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-
-webkit-filter: blur(3px);
--moz-filter: blur(3px);
--o-filter: blur(3px);
--ms-filter: blur(3px);
-filter: blur(3px);
-
-background-size: cover;
+          <style>{`
+body {
+  background-image:url(./matrix.gif);
+  background-size:contain;
 }
 
 @media screen and (max-width: 500px) {
@@ -125,6 +117,7 @@ td:hover {
 a {
   color: green;
 }
+
 @media screen and (max-width: 800px){
   background: url(./matrix.gif)!important
   background-size: cover !important
@@ -135,9 +128,6 @@ a {
           </style>
         </head>
         <body>
-          <video playsInline autoPlay muted loop id={'bgvideo'}>
-            <source src={'matrix.webm'} type={'video/webm'}/>
-          </video>
           <div className="container">
 	    <Well style={{marginLeft: '7rem', marginRight: '7rem', marginTop:'5rem'}}>
 	      <center>
@@ -147,7 +137,8 @@ a {
 		<small> in Yerevan, Armenia 🇦🇲</small>
 	      </center>
 	    </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
+            <Well style={well_indent}>
+	      <h2>Purpose</h2>
               The hackerspace is a safe place where you can come and
               use our Debian Linux computers, experiment with open-source code,
               learn new technologies and make new friends! There is no cost to
@@ -173,7 +164,38 @@ a {
               машины поэкспериментировать с открытым исходным кодом,
               изучить новейшие технологии а также завести новых друзей
             </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
+            <Well style={well_indent}>
+	      <h2>Educational material</h2>
+	      English lecture notes for a bootcamp in coding,
+	      JavaScript/nodejs based
+	      <Table striped bordered condensed hover>
+		<thead>
+		  <tr>
+		    {['Intro to Linux, shell, git',
+		      'Intro to JavaScript',
+		      'Module System & Event loop',
+		      'Test-Driven Development',
+		      'Networking TCP/IP & Sockets',
+		      'Multicast',
+		      'Review',
+		      'Promises'
+		      ].map((lecture_title, idx) => {
+		      const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
+		      return (
+			<th>
+			  <a href={page}>{lecture_title}</a>
+			</th>
+		      );
+		    })}
+                  </tr>
+	        </thead>
+	      </Table>
+	      <div>
+		Armenian version is still being translated...
+	      </div>
+            </Well>
+            <Well style={well_indent}>
+              <h2>Schedule</h2>
               Subject to change, we have free workshops starting at 18:30.
               They usually last until around 21:00. There is no formal registration
               process just show up, although signup on the specific Meetup date
@@ -182,7 +204,8 @@ a {
               <br/>
               <EventsTable schedule={this.props.schedule_data}/>
             </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
+            <Well style={well_indent}>
+              <h2>Directions</h2>
               The hackerspace is open from 5pm-9pm, Monday through Saturday, and is
               located in ISTC (IBM Innovative Solutions and Technologies Center), on
               the sixth floor of the Linguistics Building at
@@ -212,10 +235,8 @@ a {
               Спасибо <a href={istc_link}> ISTC </a> и <a href={eif_link}>EIF </a>
               за предоставление места, поддержку и всех необходимых ресурсов
             </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
-              Code of Conduct: (adapted from Gothenburg Hackerspace)
-              <br/>
-              <br/>
+            <Well style={well_indent}>
+              <h3>Code of Conduct: (adapted from Gothenburg Hackerspace)</h3>
               <ul>
                 <li>
                   {coc_notes[0]}
@@ -231,7 +252,8 @@ a {
                 </li>
               </ul>
             </Well>
-            <Well style={{marginLeft: '1rem', marginRight: '1rem'}}>
+            <Well style={well_indent}>
+	      <h3>Acknowledgments</h3>
               Special thanks to Sparik Hayrapetyan, Aram Gevorgyan and Robert Adamian
               for helping with Armenian & Russian translations.
               <br/>
