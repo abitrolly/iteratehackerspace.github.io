@@ -182,7 +182,7 @@ a {
             </Well>
             <Well style={well_indent}>
 	      <h2>Educational material</h2>
-	      <detail>
+	      <details>
 		<summary>
 		  English lecture notes for a bootcamp in coding,
 		  JavaScript/nodejs based, Armenian version is 
@@ -195,7 +195,7 @@ a {
 		    </thead>
 		  </Table>
 		</div>
-	      </detail>
+	      </details>
 	      <div>
 	      </div>
             </Well>
