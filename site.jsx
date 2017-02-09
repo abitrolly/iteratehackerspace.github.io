@@ -14,7 +14,7 @@ const well_indent = {
 class EventsTable extends React.Component {
   render () {
     return (
-      <div className="table-responsive">
+      <div className={"table-responsive"}>
         <Table striped bordered condensed hover>
           <thead>
             <tr>
@@ -82,7 +82,23 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
     const fb_link = 'https://www.facebook.com/groups/410797219090898/';
     const istc_link = 'http://www.istc.am/';
     const eif_link = 'http://www.eif.am/';
-
+    const lectures =
+	  ['Intro to Linux, shell, git',
+	   'Intro to JavaScript',
+	   'Node Module System & Event loop',
+	   'Test-Driven Development',
+	   'Networking TCP/IP & Sockets',
+	   'UDP Multicast',
+	   'Review',
+	   'JavaScript Promises'
+	  ].map((lecture_title, idx) => {
+	    const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
+	    return (
+	      <th>
+		<a href={page}>{lecture_title}</a>
+	      </th>
+	    );
+	  });
     return (
       <html>
         <head>
@@ -148,7 +164,7 @@ a {
 	      <a href={'http://hyechat.mybluemix.net'}> here </a>
 	      source code:
 	      <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here. </a>
-	      Be sure to also checkout the site
+	      Be sure to also checkout
 	      <a href={'https://silicondzor.com'}> silicondzor.com</a> for a central
 	      place to see all tech events in Armenia and to add your own 🤘, follow
 	      us on <a href={'https://twitter.com/iteratehckrspac'}>twitter</a>
@@ -168,28 +184,13 @@ a {
 	      <h2>Educational material</h2>
 	      English lecture notes for a bootcamp in coding,
 	      JavaScript/nodejs based
-	      <Table striped bordered condensed hover>
-		<thead>
-		  <tr>
-		    {['Intro to Linux, shell, git',
-		      'Intro to JavaScript',
-		      'Node Module System & Event loop',
-		      'Test-Driven Development',
-		      'Networking TCP/IP & Sockets',
-		      'UDP Multicast',
-		      'Review',
-		      'JavaScript Promises'
-		      ].map((lecture_title, idx) => {
-		      const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
-		      return (
-			<th>
-			  <a href={page}>{lecture_title}</a>
-			</th>
-		      );
-		    })}
-                  </tr>
-	        </thead>
-	      </Table>
+	      <div className={"table-responsive"}>
+		<Table striped bordered condensed hover>
+		  <thead>
+		    <tr>{lectures}</tr>
+		  </thead>
+		</Table>
+	      </div>
 	      <div>
 		Armenian version is still being translated...
 	      </div>
