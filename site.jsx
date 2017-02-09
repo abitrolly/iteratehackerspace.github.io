@@ -173,12 +173,12 @@ a {
 		  <tr>
 		    {['Intro to Linux, shell, git',
 		      'Intro to JavaScript',
-		      'Module System & Event loop',
+		      'Node Module System & Event loop',
 		      'Test-Driven Development',
 		      'Networking TCP/IP & Sockets',
-		      'Multicast',
+		      'UDP Multicast',
 		      'Review',
-		      'Promises'
+		      'JavaScript Promises'
 		      ].map((lecture_title, idx) => {
 		      const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
 		      return (
