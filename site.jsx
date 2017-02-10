@@ -102,7 +102,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
     return (
       <html>
         <head>
-	  <title>Armenia's only hackerpsace, in Yerevan</title>
+	  <title>Armenia's only hackerspace, in Yerevan</title>
 	  <link rel={"shortcut icon"} href={"favicon.ico"} />
 	  <link rel={"icon"} type={"image/gif"} href={"animated_favicon1.gif"} />
           <meta charSet={'utf-8'}/>
