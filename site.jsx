@@ -103,12 +103,13 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
       <html>
         <head>
 	  <title>Armenia's only hackerpsace, in Yerevan</title>
-          <meta charSet={'utf-8'}></meta>
+	  <link rel={"shortcut icon"} href={"favicon.ico"} />
+	  <link rel={"icon"} type={"image/gif"} href={"animated_favicon1.gif"} />
+          <meta charSet={'utf-8'}/>
 	  <meta name={"Armenian hackerspace"}
-		content={"Programmer Hackerspace in Yerevan, the capital of Armenia"}>
-	  </meta>
+		content={"Programmer Hackerspace in Yerevan, the capital of Armenia"}/>
           <meta name={"viewport"}
-		content={"width=device-width, initial-scale=1"}></meta>
+		content={"width=device-width, initial-scale=1"}/>
           <link rel={"stylesheet"} href={bstrap}/>
 	  <style>{`div { opacity : 0.95 }`}</style>
           <style>{`
