@@ -156,6 +156,11 @@ a {
 	    </Well>
             <Well style={well_indent}>
 	      <h2>Purpose</h2>
+              Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
+              Debian Linux֊ով համակարգիչներից, ձեռք բերել open-source֊ի
+              հետ աշխատելու փորձ, սովորել նոր տեխնոլոգիաներ և ձեռք բերել նոր ընկերներ
+              <br/>
+              <br/>
               The hackerspace is a safe place where you can come and
               use our Debian Linux computers, experiment with open-source code,
               learn new technologies and make new friends! There is no cost to
@@ -169,11 +174,6 @@ a {
 	      <a href={'https://silicondzor.com'}> silicondzor.com</a> for a central
 	      place to see all tech events in Armenia and to add your own 🤘, follow
 	      us on <a href={'https://twitter.com/iteratehckrspac'}>twitter</a>
-              <br/>
-              <br/>
-              Հաքերսփեյս֊ը հուսալի վայր է, որտեղ կարող եք օգտվել մեր
-              Debian Linux֊ով համակարգիչներից, ձեռք բերել open-source֊ի
-              հետ աշխատելու փորձ, սովորել նոր տեխնոլոգիաներ և ձեռք բերել նոր ընկերներ
               <br/>
               <br/>
               The Hackerspace - безопасное место куда вы можете
