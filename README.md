@@ -8,7 +8,7 @@ To build the site do:
 0. `git clone https://github.com/iteratehackerspace/iteratehackerspace.github.io`
 1. `cd iteratehackerspace.github.io` 
 2. `npm install`
-3. `npm run build_site`
+3. `npm run build-site`
 
 Then you can just view `index.html` in any browser.
 

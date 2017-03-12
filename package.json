@@ -4,26 +4,25 @@
   "description": "Code behind iteratehackerspace.github.io",
   "main": "index.js",
   "scripts":{
-    "run_babel": "babel --presets react site.jsx > site.js",
-    "build_site": "npm run run_babel && node site.js"
+    "build-site": "babel --presets react site.jsx > site.js && node site.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iteratehackerspace/iteratehackerspace.github.io.git"
   },
   "author": "Edgar Aroutiounian",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/iteratehackerspace/iteratehackerspace.github.io/issues"
   },
   "homepage": "https://github.com/iteratehackerspace/iteratehackerspace.github.io#readme",
   "dependencies": {
-    "react": "^15.3.2",
-    "react-bootstrap": "^0.30.3",
-    "react-dom": "^15.3.2"
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.8",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-preset-react": "^6.16.0"
+    "babel-cli": "^6.23.0",
+    "babel-preset-react": "^6.23.0"
   }
 }
