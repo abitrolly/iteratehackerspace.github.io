@@ -163,7 +163,7 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    join us, all the workshops and usage of the computers is free.
 	    Come chat with us on our own nodejs, React, websocket powered
 	    chat room running on an IBM cloud bluemix server:
-	    <a href={'http://hyechat.mybluemix.net'}> here </a>
+	    <a href={'http://hyechat.herokuapp.com/'}> here </a>
 	    source code:
 	    <a href={'https://github.com/iteratehackerspace/react-local-chat'}> here. </a>
 	    Be sure to also checkout
@@ -181,9 +181,9 @@ IBM+Innovative+Solutions+and+Technologies+Center/@40.183162,\
 	    <h2>Կրթական Նյութեր/Educational material</h2>
 	    <details open={true} title={'click to hide'}>
 	      <summary>
-		Դուք պետք է սեղմեք հղումներ		  
+		Դուք պետք է սեղմեք հղումներ
 		(English lecture notes for a bootcamp in coding,
-		JavaScript/nodejs based, Armenian version is 
+		JavaScript/nodejs based, Armenian version is
 		still being translated.)
 	      </summary>
 	      <div className={"table-responsive"}>
