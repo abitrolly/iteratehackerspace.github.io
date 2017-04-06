@@ -190,7 +190,7 @@ npm install jasmine --save-dev
 
 And define a `test` npm script in your `package.json`:
 ```json
-  // excrept from package.json
+  // excerpt from package.json
   "scripts": {
     "test": "jasmine"
   },
@@ -209,7 +209,7 @@ For a module defined at the root of your project:
 ```javascript
 // file my-module.js
 module.exports = {
-  // some code here 
+  // some code here
 }
 ```
 You would have the following in `mymodule-spec.js`:
@@ -249,7 +249,7 @@ const calculator = require('../calculator');
 
 describe('multiplication', function() {
   it('should multiply 2 and 4', function() {
-    const product = calculator.multiply(2,3); 
+    const product = calculator.multiply(2,3);
     expect(product).toBe(6);
   });
 });

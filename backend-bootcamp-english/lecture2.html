@@ -82,7 +82,7 @@ Examples of (1) include **C**, **C++** and **OCaml**
 Examples of (2) include **Python**, **JavaScript** and **Ruby**
 
 (Java isn't exactly 1 or 2 as it compiles to Java bytecode and
-then its interpreted by the JVM)
+then it's interpreted by the JVM)
 	  </script>
 	</section>
 
@@ -255,7 +255,7 @@ as identifiers, they are reserved for the language itself, examples: `if`, `for`
 `var`, `function`, and more.
 
 
-Notice that we variables that we created started with `var`
+Notice that our variables that we created started with `var`
 In ES6, EcmaScript 6, we have three ways of declaring variables.
 
 ```
@@ -274,8 +274,8 @@ For that we need to talk about scope.
 	  <script type="text/template">
 ### _JavaScript: scope_
 -----------------------
-Scope is a fundamental idea in all programming languages and its especially
-important in JavaScript. It basically means where its legal to use a variable.
+Scope is a fundamental idea in all programming languages and it's especially
+important in JavaScript. It basically means where it's legal to use a variable.
 In ES6 scopes are introduced by `blocks`, some examples of things that
 introduce blocks include conditionals, loops, and functions.
 
@@ -401,7 +401,7 @@ TypeError: Assignment to constant variable.
 	  <script type="text/template">
 ### _JavaScript: scope cont..._
 --------------------------------
-So `const` is like `let` semantically, aka the meaning of how its used
+So `const` is like `let` semantically, aka the meaning of how it's used
 and scoping but with the additional benefit that variables made with
 `const` are not allowed to be reassigned. The final one, `var`, is function scoped.
 
@@ -670,7 +670,7 @@ All the arguments given to a function are stored in the variable
 	  <script type="text/template">
 ### _JavaScript: Functions cont..._
 -----------------------------------
-Modern `ES6` lets you collect all the argument in a variable using `...`
+Modern `ES6` lets you collect all the arguments in a variable using `...`
 ```
 const speaker = function(param1, param2, ...rest) {
   // param1 is 'Foo', param2 is 'Bar'
@@ -692,7 +692,7 @@ speaker('Hello');
 
 	<section data-markdown>
 	  <script type="text/template">
-### _JavaScript: execution context cont..._
+### _JavaScript: execution context_
 -------------------------------------------
 One of the hardest things to understand in JavaScript is
 the `this` variable, also known as the execution context.
@@ -708,8 +708,8 @@ const obj = {
 };
 obj.speak();
 ```
-The `this` variable is **dynamically** scoped, this means that its
-changes and doesn't use the data that you might think it does when
+The `this` variable is **dynamically** scoped, this means that it's
+changed and doesn't use the data that you might think it does when
 you use it.
 	  </script>
 	</section>
@@ -719,7 +719,7 @@ you use it.
 ### _JavaScript: execution context cont..._
 -------------------------------------------
 The `this` variable is a part of the `EcmaScript` spec, that means
-that its part of the language but its implementation depends on what
+that it's part of the language but its implementation depends on what
 environment you're running your JavaScript code in. In the browser it
 refers to the `window` object, in `node` it refers to the global object.
 Open the `node` repl and type `this`, you'll see the global object printed.
@@ -805,7 +805,7 @@ variable is `dynamically` scoped, not `lexically` scoped.
 	  <script type="text/template">
 ### _JavaScript: execution context cont..._
 -------------------------------------------
-To make sure that the our function uses the execution
+To make sure that our function uses the execution
 content that we want used we have to use `.bind`.
 
 `.bind` creates a new function that uses the execution context
