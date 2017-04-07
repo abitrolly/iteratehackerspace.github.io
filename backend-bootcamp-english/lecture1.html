@@ -77,7 +77,7 @@
 	   ## Edgar Aroutiounian
 	   ---------------------
 	   #### ISTC backend development course, Week-1, Fall 2016
-	   #### Yerevan, Armenia	   
+	   #### Yerevan, Armenia
 	  </script>
 	</section>
 
@@ -88,10 +88,10 @@
 	   Operating systems are what control our computers, you might know a few
 	   by name like _Windows_, _OS X_, and _Linux_
 
-	   We're going to be working with Linux, specifically Ubuntu inside of 
+	   We're going to be working with Linux, specifically Ubuntu inside of
 	   VirtualBox running on Windows.
 
-	   Operating systems control our computers, they ultimately control 
+	   Operating systems control our computers, they ultimately control
 	   the hardware, that is the physical parts of the computer and they
 	   control what instruction, (command), the CPU execs.
 	  </script>
@@ -159,7 +159,7 @@
 	   |           ------------------              |
 	   |          |                  |             |
 	   |          |   kernelspace    |             |
-	   |          |                  |             | 
+	   |          |                  |             |
 	   |          |                  |             |
 	   |           ------------------              |
 	   ---------------------------------------------
@@ -171,9 +171,9 @@
 	<section data-markdown>
 	  <script type="text/template">
 	   ### _Linux Terminology cont..._
-	   The Linux source code, located [here](https://github.com/torvalds/linux), is 
-	   about 20 million lines of `C` code. Userland programs can be written in 
-	   any program. Binaries (remember its another name for programs) on Linux 
+	   The Linux source code, located [here](https://github.com/torvalds/linux), is
+	   about 20 million lines of `C` code. Userland programs can be written in
+	   any program. Binaries (remember its another name for programs) on Linux
 	   are organized differently than on `Windows` or `OS X`. For example, on Windows
 	   programs end with `.exe`, but on Linux programs don't need to have that extension.
 	   Linux programs are organized in the
@@ -185,14 +185,14 @@
 	  <script type="text/template">
 	   ### _Linux Terminology cont..._
 	   The combination of the kernel and userspace makes up a `GNU/Linux`
-	   distribution. Popular distributions include `Ubuntu`, `Debian`, 
+	   distribution. Popular distributions include `Ubuntu`, `Debian`,
 	   `Mint`, `Fedora`, `CentOS` and more.
 
 	   ### _NOTE_
 	   ```
 	   Sometimes you'll hear the terms upstream and downstream of projects.
-	   A downstream project is one that is built on top of another project, 
-	   the upstream project, so Ubuntu is downstream of Debian
+	   A downstream project is one that is built on top of another project,
+	   the upstream project, so Ubuntu is downstream of Debian.
 
 	   ```
 	  </script>
@@ -203,15 +203,15 @@
 	   ### _Starting with the shell_
 	   -----------------------------
 
-	   The `shell` is the primary way we'll communicate with 
-	   the Operating System. Shell, terminal, bash, and command line 
+	   The `shell` is the primary way we'll communicate with
+	   the Operating System. Shell, terminal, bash, and command line
 	   all basically mean the same thing in this course.
-	   The shell maintains some **state** 
+	   The shell maintains some **state**
 
 	   ### _NOTE_
 	   ```
-	   State is another name for data that changes, 
-	   when we change that data we say that we mutated some state
+	   State is another name for data that changes,
+	   when we change that data we say that we mutated some state.
 	   ```
 	  </script>
 	</section>
@@ -226,17 +226,17 @@
                     -----
                    |  /  |
                     -----
-                  /       \ 
+                  /       \
              ------       ------
-            | home |     |  usr | 
+            | home |     |  usr |
              ------       ------
            /             /
-	   --------        --------       
+	   --------        --------
 	   | coding |      | coding |
 	   --------        --------
 	   ```
 	   An important concept is called a **Path**, there are two
-	   kinds of paths **Absolute Paths** and **Relative Paths**
+	   kinds of paths **Absolute Paths** and **Relative Paths**.
 
 	   Examples of Absolute path: /usr/home/coding
 
@@ -254,8 +254,8 @@
 	   Notice that an absolute path must always start from the beginning
 	   of the file sytem, at **/**
 
-	   With absolute paths, there can be no ambiguity about where the 
-	   file is on the file system, but with relative paths there an be 
+	   With absolute paths, there can be no ambiguity about where the
+	   file is on the file system, but with relative paths there can be
 	   ambiguity.
 
 	  </script>
@@ -281,10 +281,10 @@
 	  <script type="text/template">
 	   ### _file system + bash cont..._
 	   --------------------------------
-	   In the shell there are some important commands that we'll use 
+	   In the shell there are some important commands that we'll use
 over and over again.
 
-Note that `<some_path_here>` is not the thing you type, its a 
+Note that `<some_path_here>` is not the thing you type, it's a
 placeholder for what you'll put in.
 
 	   **This changes your directory to another directory**
@@ -311,8 +311,8 @@ placeholder for what you'll put in.
 	   ```
 	   $ dirname /usr/include/stdlib.h
 	   ```
-	   ** The shell also can do commands out of turn, 
-	   aka not left to right. This says to do `dirname` first, 
+	   ** The shell also can do commands out of turn,
+	   aka not left to right. This says to do `dirname` first,
 	   then give the result to ls
 	   **
 	   ```
@@ -331,15 +331,15 @@ placeholder for what you'll put in.
 
 	   ```
 	   #!/bin/bash
-	   for i in $(seq 8); do 
+	   for i in $(seq 8); do
 	       mkdir week-${i}
 	   done
 	   ```
 
-	   This script can be run like: 
+	   This script can be run like:
 	   ```
 	   $ bash printout.sh
-	   ``` 
+	   ```
 	   and it will make 8 directories.
 	  </script>
 	</section>
@@ -348,8 +348,8 @@ placeholder for what you'll put in.
 	  <script type="text/template">
 	   ### _making shell scripts_
 	   --------------------------
-	   
-	   We can also make the shell script file called `printout.sh` behave 
+
+	   We can also make the shell script file called `printout.sh` behave
 	   as if was a separate program by using `chmod`.
 
 	   ````
@@ -357,7 +357,7 @@ placeholder for what you'll put in.
 	   ```
 
 	   Then we can use it like any other program
-	   
+
 	   ```
 	   $ ./printout.sh
 	   ```
@@ -369,8 +369,8 @@ placeholder for what you'll put in.
 	  <script type="text/template">
 	   ### _git (Version Control)_
 	   ---------
-	   When we work on software we need a way to track the code, 
-	   a way to change it carefully and be able to work on a team, aka 
+	   When we work on software we need a way to track the code,
+	   a way to change it carefully and be able to work on a team, aka
 	   other programmers. This kind of tool is called version control.
 
 	   There are a few well known version control tools, some famous ones:
@@ -387,11 +387,11 @@ placeholder for what you'll put in.
 	   ### _git (Version Control)_
 	   ---------
 	   We will do our work on [github](http://github.com)
-	   Github is a business built on top of github, it is free to 
+	   Github is a business built on top of github, it is free to
 	   have an account there. Everyone must have an account on `github`.
 
 	   We use git to make `commits`, a good commit should be self contained
-	   and have a good commit message. A good commit message is in the present 
+	   and have a good commit message. A good commit message is in the present
 	   tense and describes what work is in the commit.
 
 
