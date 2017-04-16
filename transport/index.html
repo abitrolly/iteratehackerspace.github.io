@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <!--
+       The MIT License (MIT)
+
+       Copyright (c) 2015 Tom Panning
+
+       Permission is hereby granted, free of charge, to any person obtaining a copy
+       of this software and associated documentation files (the "Software"), to deal
+       in the Software without restriction, including without limitation the rights
+       to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+       copies of the Software, and to permit persons to whom the Software is
+       furnished to do so, subject to the following conditions:
+
+       The above copyright notice and this permission notice shall be included in
+       all copies or substantial portions of the Software.
+
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+       FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+       THE SOFTWARE.
+     -->
+  <head>
+    <meta charset="utf-8">
+
+    <style> .shell { color:aqua; } </style>
+    <title>
+      ResquaredNow
+    </title>
+    <meta name="author" content="Edgar Aroutiounian">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css"
+    id="theme">
+
+    <!-- href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" -->
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     var link = document.createElement('link');
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     link.href = window.location.search.match(/print-pdf/gi)
+	      ?  'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css'
+	       : 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/paper.css';
+     document.getElementsByTagName('head')[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+	<section data-markdown>
+	  <script type="text/template">
+	   # Resquared
+	   -----------
+
+	   1. Robert Gevorgyan
+
+	   2. Edgar Khanzadian
+
+	   3. Edgar Aroutiounian
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+	   # Problem
+	   -----------
+
+	   1. Transportation is either inconvenient, expensive or both.
+	   2. Urban transportation is only increasing, costs are increasing.
+	   3. Resources are underutilized, or misallocated.
+	   4. Time is incresingly valuable, especially for the urban professional class.
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+	   # Solution 
+	   ----------
+
+	   On demand services are our new reality, they make sense from several fronts
+	   including business, environment and economic (Think of Uber)
+
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+## ResquaredNow
+---------------
+We created an complete end to end transportation renting service
+featuring a mobile ordering system, `iOS`, `Android`, 
+and a custom Facebook chatbot service.
+
+Our customers can order an electric bicycle or car on their terms, their time
+and most importantly with complete convenience
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+## Business Model
+----------------
+Our target customers are urban professionals, people who are 
+happy to pay for either a subscription service or hourly rental 
+of a car or electric bicycle and don't need to drive more than say 20 KM 
+or just need a car for less than 24 hours.
+
+We have minimum overhead, no physical offices, very few staff. We also optimize 
+the locations of our vehicle in realtime and adjust to market forces
+with dynamic pricing, import for the upcoming summer season in tourist heavy 
+cities. (Think upcoming Diaspora Summer Season in Armenia)
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+### Purchase flow
+--------------
+1. Customer registers with our service via our mobile application, 
+dedicated website or even with our Facebook chat bot.
+2. Customer comes to our cars located in algorithmically placed locations
+(Explained in the technical overview)
+3. Customer knows at all times their utilization of our vehicle, in a car
+they see the KM used, hours left and cost of extension in realtime with our
+mobile application, `iOS` features a `Apple Watch` extension.
+4. Customer returns the car or continues their rental with possibly an 
+updated price dependent on market forces (Surge pricing)
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+	   ### Business Model Cont...
+	   -------------------------
+	   For our business model to work, we need to be ruthless in 
+	   constantly optimizing data and key metrics.
+
+	   1. We need to know which lots of inventory need to 
+	   stay full and which can be low, or completely closed in off season
+
+	   2. We need to have real time information from our vehicles, to verify that 
+	   customers are indeed driving less than a preallocated amount of KM, 
+	   not abusing the cars.
+
+
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+### Business Model (Technical side) Cont...
+-------------------------
+For `1`, we use the data provided by `GG` taxi and 
+some Machine Learning algorithms, Density-based spatial clustering of applications with noise, 
+to know which inventory lots need to be kept full. For example, if people are tending 
+to order many cars in Kentron from Amiryan, then logically we should keep our inventory there stocked up.
+We can ascertain this because `GG`'s data provided the geographic origin of taxi orders
+
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+### Business Model (Technical side) Cont...
+-------------------------
+
+Our partnership with `Wicastr` provides us with real time metrics
+from the vehicles, specifically KM added, gas remaining, and the 
+health of the car writ large. `Wicastr` provides us with independent
+self hosting internet nodes which can communicate to our backend services, 
+all in real time.
+
+Each car gets a dedicated `Linux`, `nodejs` server connected to our own ad-hoc, 
+secure, encrypted internet.
+	  </script>
+	</section>
+
+
+	<section data-markdown>
+	  <script type="text/template">
+	   ### Technical Details
+	   -------------------
+	   For this hackathon we implemented:
+
+	   1. A live server to handle the chatbox functionality: `IBM Watson`, `Bluemix`, `FB API`, `nodejs`
+	   2. A second live server to handle the web application and 
+	   real time communication with connected clients: `nodejs`
+	   3. An `iOS` and `Android` native application: `ReactNative`
+	   4. A web application connected to 1-3:`ReactJS`, `WebSockets`
+
+	  </script>
+	</section>
+
+	<section data-markdown>
+	  <script type="text/template">
+## Demonstration & Questions
+----------------------------
+Thank you.
+	  </script>
+	</section>
+
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.min.js"></script>
+
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       transitionSpeed:'slow',
+       previewLinks:false,
+       transition: 'fade', // none/fade/slide/convex/concave/zoom
+       // Optional reveal.js plugins
+       dependencies: [
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js',
+	   condition: function() { return !document.body.classList; } },
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js',
+	   condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js',
+	   condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js',
+	   async: true,
+	   condition: function() { return !!document.querySelector( 'pre code' ); },
+	   callback: function() { hljs.initHighlightingOnLoad(); } },
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true },
+	 { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
