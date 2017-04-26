@@ -25,13 +25,13 @@
      -->
   <head>
     <meta charset="utf-8">
-	<!-- https://cdnjs.com/libraries/reveal.js -->
+    <!-- https://cdnjs.com/libraries/reveal.js -->
     <title> Compilers, Interpreters and Python </title>
     <meta name="author" content="Edgar Aroutiounian"/>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css" id="theme"/>
 
@@ -43,51 +43,51 @@
      const link = document.createElement('link');
      link.rel = 'stylesheet';
      link.type = 'text/css';
-	 const pdf_css =
-	   'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css';
-	 const paper_css =
-	   'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+     const pdf_css =
+       'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css';
+     const paper_css =
+       'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
      link.href = window.location.search.match(/print-pdf/gi) ? pdf_css : paper_css;
      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
-	<style>
+    <style>
 
-	 section h4 {
-	   display:flex;
-	   justify-content:space-between;
-	 }
+     section h4 {
+       display:flex;
+       justify-content:space-between;
+     }
 
-	 p { font-size: xx-large !important; }
+     p { font-size: xx-large !important; }
 
-	 #pipeline {
-	   display:flex;
-	   justify-content:space-between;
-	 }
+     #pipeline {
+       display:flex;
+       justify-content:space-between;
+     }
 
-	 #pipeline div:nth-child(1) {
-	   background-color:#BCBC50;
-	   border-radius:50%;
-	   padding:50px;
-	 }
+     #pipeline div:nth-child(1) {
+       background-color:#BCBC50;
+       border-radius:50%;
+       padding:50px;
+     }
 
-	 #pipeline div:nth-child(2) {
-	   background-color:#D9D295;
-	   border-radius:50%;
-	   padding:50px;
-	 }
+     #pipeline div:nth-child(2) {
+       background-color:#D9D295;
+       border-radius:50%;
+       padding:50px;
+     }
 
-	 #pipeline div:nth-child(3) {
-	   background-color:#D39F64;
-	   border-radius:50%;
-	   padding:50px;
-	 }
-	 details p {
-	   background-color:#617A67;
-	   color:white;
-	 }
+     #pipeline div:nth-child(3) {
+       background-color:#D39F64;
+       border-radius:50%;
+       padding:50px;
+     }
+     details p {
+       background-color:#617A67;
+       color:white;
+     }
 
-	 #smaller-text { font-size: x-large !important;}
-	</style>
+     #smaller-text { font-size: x-large !important;}
+    </style>
 
   </head>
 
@@ -97,201 +97,201 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
-		<section>
-		  <h3>Compilers, Interpreters and Python</h3>
-		  <hr/>
-		  <p>A dive into some fundamentals, building up intuitions</p>
-		  <p style="text-decoration:underline;">
-			Iterate hackerspace at ISTC, <time datetime="2017-04-26">April 26, 2017</time>
-		  </p>
-		  <p>By Edgar Aroutiounian</p>
-		  <p>
-			Progress:
-			<meter min="0" max="100" value="0"/>
-		  </p>
-		</section>
+	<section>
+	  <h3>Compilers, Interpreters and Python</h3>
+	  <hr/>
+	  <p>A dive into some fundamentals, building up intuitions</p>
+	  <p style="text-decoration:underline;">
+	    Iterate hackerspace at ISTC, <time datetime="2017-04-26">April 26, 2017</time>
+	  </p>
+	  <p>By Edgar Aroutiounian</p>
+	  <p>
+	    Progress:
+	    <meter min="0" max="100" value="0"/>
+	  </p>
+	</section>
 
-		<section>
-		  <h4>
-			How does code actually run? <meter min="0" max="100" value="5"/>
-		  </h4>
-		  <hr/>
-		  <p>
-			We write code to make the computer do something useful, aka print something,
-			or log into Facebook, etc.
-		  </p>
-		  <p>
-			But question, what is code really? Answer, its just text! Think about what
-			you write in your editor, in emacs or Atom, or whatever. You are writing
-			instructions to the computer and we use programming languages so that
-			we can express our ideas to the computer easier.
-		  </p>
-		  <p>Some how our ideas needs to become concrete instructions to the
-			computer and for that we need the help of either a compiler or an
-			interpreter.
-		  </p>
-		</section>
+	<section>
+	  <h4>
+	    How does code actually run? <meter min="0" max="100" value="10"/>
+	  </h4>
+	  <hr/>
+	  <p>
+	    We write code to make the computer do something useful, aka print something,
+	    or log into Facebook, etc.
+	  </p>
+	  <p>
+	    But question, what is code really? Answer, its just text! Think about what
+	    you write in your editor, in emacs or Atom, or whatever. You are writing
+	    instructions to the computer and we use programming languages so that
+	    we can express our ideas to the computer easier.
+	  </p>
+	  <p>Some how our ideas needs to become concrete instructions to the
+	    computer and for that we need the help of either a compiler or an
+	    interpreter.
+	  </p>
+	</section>
 
-		<section>
-		  <h4>
-			Compilers and Interpreters <meter min="0" max="100" value="10"/>
-		  </h4>
-		  <hr/>
-		  <p>
-			So our goal is to have the CPU, the central processing unit, to do whatever
-			instructions we tell it to do.
-		  </p>
-		  <p>
-			Compilers and interpreters help us do that. Compilers take our source code and
-			generate files that are the direct CPU, machine code, instructions. Such files
-			we call binaries, or executables. On Linux they are called <code>ELF</code>, on
-			Windows they are called <code>.exe</code> files and on OS X they are called
-			<code>Mach-o</code> files.
-		  </p>
-		  <p>Both compilers and interpreters are themselves computer programs</p>
-		</section>
+	<section>
+	  <h4>
+	    Compilers and Interpreters <meter min="0" max="100" value="20"/>
+	  </h4>
+	  <hr/>
+	  <p>
+	    So our goal is to have the CPU, the central processing unit, to do whatever
+	    instructions we tell it to do.
+	  </p>
+	  <p>
+	    Compilers and interpreters help us do that. Compilers take our source code and
+	    generate files that are the direct CPU, machine code, instructions. Such files
+	    we call binaries, or executables. On Linux they are called <code>ELF</code>, on
+	    Windows they are called <code>.exe</code> files and on OS X they are called
+	    <code>Mach-o</code> files.
+	  </p>
+	  <p>Both compilers and interpreters are themselves computer programs</p>
+	</section>
 
-		<section>
-		  <h4>
-			Compiled or interpreted? <meter min="0" max="100" value="15"/>
-		  </h4>
-		  <hr/>
-		  <p>Not every programming language can be interpreted or compiled</p>
-		  <table>
-			<thead>
-			  <tr>
-				<th>Language</th>
-				<th >Compiled/Interpreted</th>
-				<th>Implementation</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <tr>
-				<td>Python</td>
-				<td style="text-align:center;">Interpreted</td>
-				<td> <code>$ python3 </code></td>
-			  </tr>
-			  <tr>
-				<td>C/C++</td>
-				<td style="text-align:center;">Compiled</td>
-				<td> <code>$ clang </code></td>
-			  </tr>
-			  <tr>
-				<td>JavaScript</td>
-				<td style="text-align:center;">Interpreted</td>
-				<td> <code>$ node </code></td>
-			  </tr>
-			  <tr>
-				<td>OCaml</td>
-				<td style="text-align:center;">Compiled</td>
-				<td> <code>$ ocamlopt </code></td>
-			  </tr>
-			</tbody>
-		  </table>
-		</section>
+	<section>
+	  <h4>
+	    Compiled or interpreted? <meter min="0" max="100" value="30"/>
+	  </h4>
+	  <hr/>
+	  <p>Not every programming language can be interpreted or compiled</p>
+	  <table>
+	    <thead>
+	      <tr>
+		<th>Language</th>
+		<th >Compiled/Interpreted</th>
+		<th>Implementation</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr>
+		<td>Python</td>
+		<td style="text-align:center;">Interpreted</td>
+		<td> <code>$ python3 </code></td>
+	      </tr>
+	      <tr>
+		<td>C/C++</td>
+		<td style="text-align:center;">Compiled</td>
+		<td> <code>$ clang </code></td>
+	      </tr>
+	      <tr>
+		<td>JavaScript</td>
+		<td style="text-align:center;">Interpreted</td>
+		<td> <code>$ node </code></td>
+	      </tr>
+	      <tr>
+		<td>OCaml</td>
+		<td style="text-align:center;">Compiled</td>
+		<td> <code>$ ocamlopt </code></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</section>
 
 
-		<section>
-		  <h4>
-			Why are some compiled or interpreted? <meter min="0" max="100" value="20"/>
-		  </h4>
-		  <hr/>
-		  <p>
-			It depends on whether the language is statically or dynamically typed. That means
-			it matters when we can know the types of values, either at compile time or
-			at runtime. If we know the types of values at compile time meaning that they are
-			known just by having the source code, then we can compile the language.
-		  </p>
-		  <p>
-			But if the programming language we use is dynamically typed, then we don't know
-			the types of values given just the source code and so we can't ask a compiler to
-			generate machine code since the compiler won't know how much memory to use for a
-			value nor will it know the types, aka what kinds of values are there.
-		  </p>
-		</section>
+	<section>
+	  <h4>
+	    Why are some compiled or interpreted? <meter min="0" max="100" value="40"/>
+	  </h4>
+	  <hr/>
+	  <p>
+	    It depends on whether the language is statically or dynamically typed. That means
+	    it matters when we can know the types of values, either at compile time or
+	    at runtime. If we know the types of values at compile time meaning that they are
+	    known just by having the source code, then we can compile the language.
+	  </p>
+	  <p>
+	    But if the programming language we use is dynamically typed, then we don't know
+	    the types of values given just the source code and so we can't ask a compiler to
+	    generate machine code since the compiler won't know how much memory to use for a
+	    value nor will it know the types, aka what kinds of values are there.
+	  </p>
+	</section>
 
-		<section>
-		  <h4>Similarities <meter min="0" max="100" value="25"/></h4>
-		  <hr/>
-		  <p>
-			Both compilers and interpreters start the same way, that is they have
-			the same beginning processing pipeline.
-		  </p>
-		  <p>
-			The beginning of the processing pipeline for compilers and interpreters is the same,
-			we call this the frontend of the pipeline.
-		  </p>
-		  <div id="pipeline">
-			<div>Lexer =></div>
-			<div>Parser =></div>
-			<div>Semantic Analysis =></div>
-		  </div>
-		</section>
+	<section>
+	  <h4>Similarities <meter min="0" max="100" value="50"/></h4>
+	  <hr/>
+	  <p>
+	    Both compilers and interpreters start the same way, that is they have
+	    the same beginning processing pipeline.
+	  </p>
+	  <p>
+	    The beginning of the processing pipeline for compilers and interpreters is the same,
+	    we call this the frontend of the pipeline.
+	  </p>
+	  <div id="pipeline">
+	    <div>Lexer =></div>
+	    <div>Parser =></div>
+	    <div>Semantic Analysis =></div>
+	  </div>
+	</section>
 
-		<section>
-		  <h4>Front end drilldown - Lexer <meter min="0" max="100" value="30"/></h4>
-		  <hr/>
-		  <p>
-			The first phase, the Lexer takes our input source code and
-			turns it into lexical tokens. What counts as a lexical token? Well its whatever
-			the language's grammar considers a token, usually expressed in BNF notation.
-			For example, think about <code>for</code> loops. Do they produce a value?
-			No, they only perform effects, they are actually called <code>statements</code>
-		  </p>
-		  <p>Now thinking about <code>1 + 1</code>, that produces a value, that is called
-			an <code>expression</code></p>
-		  <details>
-			<summary>
-			  Now is this a statement or an expression? <code class="javascript">const a = 1 + 1; </code>
-			</summary>
-			<p>It depends on the language!</p>
-		  </details>
-		</section>
+	<section>
+	  <h4>Front end drilldown - Lexer <meter min="0" max="100" value="60"/></h4>
+	  <hr/>
+	  <p>
+	    The first phase, the Lexer takes our input source code and
+	    turns it into lexical tokens. What counts as a lexical token? Well its whatever
+	    the language's grammar considers a token, usually expressed in BNF notation.
+	    For example, think about <code>for</code> loops. Do they produce a value?
+	    No, they only perform effects, they are actually called <code>statements</code>
+	  </p>
+	  <p>Now thinking about <code>1 + 1</code>, that produces a value, that is called
+	    an <code>expression</code></p>
+	  <details>
+	    <summary>
+	      Now is this a statement or an expression? <code class="javascript">const a = 1 + 1; </code>
+	    </summary>
+	    <p>It depends on the language!</p>
+	  </details>
+	</section>
 
-		<section>
-		  <h4>Front end drilldown - Parser <meter min="0" max="100" value="35"/></h4>
-		  <hr/>
-		  <p>
-			The next step is called parsing, that is taking the lexical tokens and creating
-			a data structure that lets you deal with the program, that data structure is called
-			an <code>AST</code>, or Abstract Syntax Tree.
-		  </p>
-		  <p>
-			Once we have an AST, then we have a data structure which lets us either
-			run the program or analyze it further. How much further we go with analyzing the
-			program depends on how much type information we have.
-		  </p>
-		</section>
+	<section>
+	  <h4>Front end drilldown - Parser <meter min="0" max="100" value="70"/></h4>
+	  <hr/>
+	  <p>
+	    The next step is called parsing, that is taking the lexical tokens and creating
+	    a data structure that lets you deal with the program, that data structure is called
+	    an <code>AST</code>, or Abstract Syntax Tree.
+	  </p>
+	  <p>
+	    Once we have an AST, then we have a data structure which lets us either
+	    run the program or analyze it further. How much further we go with analyzing the
+	    program depends on how much type information we have.
+	  </p>
+	</section>
 
-		<section>
-		  <h4>Front end drilldown - Semantic Analysis <meter min="0" max="100" value="40"/></h4>
-		  <hr/>
-		  <p id="smaller-text">
-			Semantic Analysis is a way to make some meaning of the program
-			before actually running it. If our language is compiled, that is it has
-			type information available at compile time then we can have a much richer
-			analysis of the program given just the source code. But even without types
-			we can do some analysis, we can at least generate call graphs.
-		  </p>
-		  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Sample-single-module-call-graph.png"/>
-		</section>
+	<section>
+	  <h4>Front end drilldown - Semantic Analysis <meter min="0" max="100" value="80"/></h4>
+	  <hr/>
+	  <p id="smaller-text">
+	    Semantic Analysis is a way to make some meaning of the program
+	    before actually running it. If our language is compiled, that is it has
+	    type information available at compile time then we can have a much richer
+	    analysis of the program given just the source code. But even without types
+	    we can do some analysis, we can at least generate call graphs.
+	  </p>
+	  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Sample-single-module-call-graph.png"/>
+	</section>
 
-		<section>
-		  <h4>Next steps <meter min="0" max="100" value="45"/></h4>
-		  <hr/>
-		  <p>
-			Now this is when compilers and interpreters diverge. At this point interpreters
-			usually just run the program, that is they evaluate whatever program is contained
-			in the AST, for example look at <code>eval.c</code> of Python's source code.
-		  </p>
-		  <p>
-			Compiled languages offer more steps, for which they can do optimization. An example
-			optimization is to remove a function that you never call,
-			or to data that is never used. The levels of optimization differ via compiler
-			and how much risky behavior one is willing to tolerate,
-			sometimes optimization causes code generation bugs.
-		  </p>
-		</section>
+	<section>
+	  <h4>Next steps <meter min="0" max="100" value="90"/></h4>
+	  <hr/>
+	  <p>
+	    Now this is when compilers and interpreters diverge. At this point interpreters
+	    usually just run the program, that is they evaluate whatever program is contained
+	    in the AST, for example look at <code>eval.c</code> of Python's source code.
+	  </p>
+	  <p>
+	    Compiled languages offer more steps, for which they can do optimization. An example
+	    optimization is to remove a function that you never call,
+	    or to data that is never used. The levels of optimization differ via compiler
+	    and how much risky behavior one is willing to tolerate,
+	    sometimes optimization causes code generation bugs.
+	  </p>
+	</section>
 
 
 
@@ -314,21 +314,21 @@
        transition: 'fade', // none/fade/slide/convex/concave/zoom
        // Optional reveal.js plugins
        dependencies: [
-		 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js',
-		   condition: function() { return !document.body.classList; } },
-		 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/marked.js',
-		   condition: function() { return !!document.querySelector('[data-markdown]'); } },
-		 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/markdown.min.js',
-		   condition: function() { return !!document.querySelector('[data-markdown]'); } },
-		 { src:
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js',
+	   condition: function() { return !document.body.classList; } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/marked.js',
+	   condition: function() { return !!document.querySelector('[data-markdown]'); } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/markdown.min.js',
+	   condition: function() { return !!document.querySelector('[data-markdown]'); } },
+	 { src:
 	 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/highlight/highlight.min.js',
-		   async: true,
-		   condition: function() { return !!document.querySelector( 'pre code' ); },
-		   callback: function() { hljs.initHighlightingOnLoad(); } },
-		 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.min.js',
-		   async: true },
-		 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.min.js',
-		   async: true }
+	   async: true,
+	   condition: function() { return !!document.querySelector( 'pre code' ); },
+	   callback: function() { hljs.initHighlightingOnLoad(); } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.min.js',
+	   async: true },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.min.js',
+	   async: true }
        ]
      });
     </script>
