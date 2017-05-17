@@ -309,7 +309,7 @@ $ node
 ### _Some Notes about modules in node_
 -------------------------------------
 1. modules in node are `cached`, that means that
-   you can the same value on `require` each time you load it.
+   you get the same value on `require` each time you load it.
    If you want the module to be freshly loaded each time you use
    it with `require` then do the `module.exports = <a function>`
    trick that was shown previously.
@@ -317,7 +317,7 @@ $ node
 2. All the modules that come with node, aka the standard library
    and offically called `node core` are compiled into the `node`
    binary, like `fs` and `http`. You can look at their documentation
-   [here](https://nodejs.org/api/)
+   [here.](https://nodejs.org/api/)
 
 3. Even if you name your file `http.js` and try to load it
    with `require('http')`, node will still pick its core module.
@@ -467,6 +467,14 @@ NEVER BLOCK THE THREAD
 	  </script>
 	</section>
 
+  <section data-markdown>
+    <script type="text/template">
+
+[HOME](http://iteratehackerspace.com/)
+
+    </script>
+  </section>
+
 
       </div>
     </div>
@@ -484,7 +492,7 @@ NEVER BLOCK THE THREAD
        history: true,
        center: true,
        transitionSpeed:'slow',
-       previewLinks:true,
+       previewLinks:false,
        transition: 'convex', // none/fade/slide/convex/concave/zoom
        // Optional reveal.js plugins
        dependencies: [

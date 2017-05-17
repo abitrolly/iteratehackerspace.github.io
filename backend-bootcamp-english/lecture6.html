@@ -74,17 +74,17 @@
 --------------
 The previous example we did made some assumptions.
 We assumed a kind protocol, that is we assumed HTTP because
-we wrote 
+we wrote
 
 ```
 GET / HTTP/1.1\r\nHost:example.com\r\n\r\n
 ```
 
-to the other computer. The HTTP protocol says 
-that a HTTP request has the request line, 
+to the other computer. The HTTP protocol says
+that a HTTP request has the request line,
 HTTP headers and possibly a body. You can read the offical `HTTP1.1`
 spec [here](https://www.w3.org/Protocols/rfc2616/rfc2616.html).
-`HTTP2` is gradually being [adopted](https://http2.github.io/)
+`HTTP2` is gradually being [adopted](https://http2.github.io/)․
 	  </script>
 	</section>
 
@@ -97,7 +97,7 @@ spec [here](https://www.w3.org/Protocols/rfc2616/rfc2616.html).
 needs to know whether data has been successfully transfered. Like you want
 to be sure that you're getting the full picture on the website and such.
 TCP is a routing, (routing means an algorithm for deciding how to send data across
-different computers), 
+different computers)․
 	  </script>
 	</section>
 
@@ -106,19 +106,20 @@ different computers),
 ## _Routing cont..._
 -----------
 In a simplified understanding:
-TCP does it this sending an acknowledgement whenever one side gets the data.
+TCP does it this sending an acknowledgement whenever one side
+gets the data.
 
 ```
-A 
+A
   \  (Here A sends the message to B)
-    \ -> -> -> -> -> -> -> -> -> -> -> -> -> B 
-                                          / 
+    \ -> -> -> -> -> -> -> -> -> -> -> -> -> B
+                                          /
 (And B sends back a message              /
-to A saying it got the data)            / 
+to A saying it got the data)            /
 A <- <- <- <- <- <- <- <- <- <- <- <- <-
 ```
-This is a kind of overhead to the protocol, the cost is resource usage 
-overhead but the benefit is knowing that data has or hasn't been transfered 
+This is a kind of overhead to the protocol, the cost is resource usage
+overhead but the benefit is knowing that data has or hasn't been transferred
 successfully.
 	  </script>
 	</section>
@@ -127,11 +128,11 @@ successfully.
 	  <script type="text/template">
 ## _Routing cont..._
 --------------------
-Sometimes we care more about performance, we just want to 
-send as much packets as possible to the other computer without 
-caring if the other computers got it or not. In cases like that 
+Sometimes we care more about performance, we just want to
+send as much packets as possible to the other computer without
+caring if the other computers got it or not. In cases like that
 we use another protocol called `User Datagram Protocol`,
-[`UDP`](https://en.wikipedia.org/wiki/User_Datagram_Protocol)
+[`UDP`](https://en.wikipedia.org/wiki/User_Datagram_Protocol)․
 	  </script>
 	</section>
 
@@ -139,14 +140,14 @@ we use another protocol called `User Datagram Protocol`,
 	  <script type="text/template">
 ## _Routing cont..._
 --------------------
-`UDP` is a protocol which just sends the data without 
+`UDP` is a protocol which just sends the data without
 caring if the other side, the other computer getting the data,
-got the data or not. This means that if you use just UDP, then 
+got the data or not. This means that if you use just UDP, then
 you might experience data loss.
 
-There are a few domains where we might care more about just getting 
+There are a few domains where we might care more about just getting
 as much data across than if all the data got there, that is
-we are okay with losing some packets. 
+we are okay with losing some packets.
 
 Examples of UDP usage include: Skype and other VOIP, Online Multiplayer
 games, and YouTube video streaming.
@@ -157,9 +158,9 @@ games, and YouTube video streaming.
 	  <script type="text/template">
 ## _Multicasting_
 -----------------
-Often we don't just want to send messages to one computer but to 
-many computers. With TCP we are directly talking to one computer 
-but that comes with some overhead. UDP lets us efficently send messages
+Often we don't just want to send messages to one computer but to
+many computers. With TCP we are directly talking to one computer
+but that comes with some overhead. UDP lets us efficiently send messages
 to everyone on a network without checking if they got it or not with
 some called `Multicast`
 
@@ -220,10 +221,10 @@ This should look like pretty standard node code, we establish
 some handlers for events. For data input we just read from `stdin`
 which means we'll just give the input via the terminal.
 
-Basically we sent a message to a "group" on the local network and 
+Basically we sent a message to a "group" on the local network and
 whoever is listening to that group will get the message. While with
 TCP we know who received the message, that is we can get an IP address
-from the other side, with multicast we don't know who got the message 
+from the other side, with multicast we don't know who got the message
 with just the protocol.
 
 	  </script>
@@ -234,11 +235,11 @@ with just the protocol.
 	  <script type="text/template">
 ## _Multicasting Chat Cont..._
 ------------------------------
-This is a pretty bare bones client, but it does work. One thing that 
+This is a pretty bare bones client, but it does work. One thing that
 you might have noticed is that there is a duplication of messages
-printed. This is because the sender is also a receiver so you 
-also get the message that you send out. As an application this is 
-a bug, since application logic should have you duplicate messages on 
+printed. This is because the sender is also a receiver so you
+also get the message that you send out. As an application this is
+a bug, since application logic should have you duplicate messages on
 the screen.
 
 HINT: This will be your project improvement.
@@ -251,10 +252,10 @@ HINT: This will be your project improvement.
 ## _Multicasting Chat Cont..._
 ------------------------------
 Another thing that you might have noticed is that its kinda ugly!
-There's no aesthetic, no instructions, no identification of who is 
-talking. Remember, this is multicast so everyone can say anything 
-as much as they want and you won't know who said it unless they tell 
-you. 
+There's no aesthetic, no instructions, no identification of who is
+talking. Remember, this is multicast so everyone can say anything
+as much as they want and you won't know who said it unless they tell
+you.
 
 HINT: This is another area of project improvement.
 	  </script>
@@ -264,14 +265,14 @@ HINT: This is another area of project improvement.
 	  <script type="text/template">
 ## _Making Multicasting Chat Pretty..._
 ---------------------------------------
-Remember the `htop` program? Its a terminal program which told us 
-about all the processes on the computer. `htop` uses something 
+Remember the `htop` program? It's a terminal program which told us
+about all the processes on the computer. `htop` uses something
 called `ncurses`, a hard to use `C` program. Because we are using node
-we have the entire `npm` ecosystem available to us! 
+we have the entire `npm` ecosystem available to us!
 
-The library you can use for terminal UI coding is 
+The library you can use for terminal UI coding is
 called [blessed](https://github.com/chjj/blessed) and another library
-which lets you do dashboards called 
+which lets you do dashboards called
 [blessed-contrib](https://github.com/yaronn/blessed-contrib)
 
 HINT: You will use `blessed-contrib` for a project.
@@ -284,14 +285,14 @@ HINT: You will use `blessed-contrib` for a project.
 ## _Multicasting Chat Protocol_
 -------------------------------
 Now let's address the other problem of duplication of message.
-We need to create a protocol which every implementation client of our 
-chat will need to implement. 
+We need to create a protocol which every implementation client of our
+chat will need to implement.
 
-Recall that the problem of duplication is that we don't know about the 
+Recall that the problem of duplication is that we don't know about the
 identity of who sent a message, this kind of logic needs to be implemented
 at the application level, that is our code. We can formalize that
-as a protocol, an agreed upon way of communicating, just like `HTTP` is a 
-protocol built on top of `TCP/IP`, so we can also invent our own protocol 
+as a protocol, an agreed upon way of communicating, just like `HTTP` is a
+protocol built on top of `TCP/IP`, so we can also invent our own protocol
 on top of `UDP`.
 
 	  </script>
@@ -301,8 +302,8 @@ on top of `UDP`.
 	  <script type="text/template">
 ## _ISTC-SPEAK Protocol_
 -------------------------------
-Let's invent a protocol called `ISTC-SPEAK`. Its a simple, 
-JSON based protocol on top of UDP. 
+Let's invent a protocol called `ISTC-SPEAK`. It՛s a simple,
+JSON based protocol on top of UDP.
 
 Here's its description:
 
@@ -313,11 +314,11 @@ msg ping := {identifier : String, uptime : Number }
 msg message := {identifier : Number, payload : String}
 ```
 <small>
-`ISTC-SPEAK` is made up of only two kinds of messages, `ping` 
-and `message`. Each needs to have an `identifier` field of type 
-`String`, `ping` has an extra field saying how long the sender 
+`ISTC-SPEAK` is made up of only two kinds of messages, `ping`
+and `message`. Each needs to have an `identifier` field of type
+`String`, `ping` has an extra field saying how long the sender
 has been running for and `message` has an extra field of the actual
-message that the sender wants to share with everyone on the multicast 
+message that the sender wants to share with everyone on the multicast
 network. Ping needs to be sent out every 25 seconds, so that clients
 can somewhat reliably know who is on the network.
 </small>
@@ -328,8 +329,8 @@ can somewhat reliably know who is on the network.
 	  <script type="text/template">
 ## _Group Project for rest of class_
 ------------------------------------
-Now we'll do a group project, in your own teams, you'll 
-implement a `ISTC-SPEAK` client. There are two requirements
+Now we'll do a group project, in your own teams, you'll
+implement a `ISTC-SPEAK` client. There are three requirements
 of this project.
 
 1. It must correctly implement the `ISTC-SPEAK` protocol
@@ -339,6 +340,14 @@ of this project.
 3. It must use `Promises`, that will be explained in the next lecture.
 	  </script>
 	</section>
+
+  <section data-markdown>
+    <script type="text/template">
+
+[HOME](http://iteratehackerspace.com/)
+
+    </script>
+  </section>
 
 
       </div>
@@ -357,7 +366,7 @@ of this project.
        history: true,
        center: true,
        transitionSpeed:'slow',
-       previewLinks:true,
+       previewLinks:false,
        transition: 'convex', // none/fade/slide/convex/concave/zoom
        // Optional reveal.js plugins
        dependencies: [
