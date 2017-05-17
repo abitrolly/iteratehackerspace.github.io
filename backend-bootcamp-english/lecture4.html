@@ -87,7 +87,8 @@ Got at least one *no* => test your code!
 Test-Driven Development makes sure that we, developers, test all critical aspects of our code, before it even exists.
 Everytime you'd go in a place to create code, do this instead:
 
-1. Write a simple test of the most obvious outcome the first iteration of your code should have
+1. Write a simple test of the most obvious outcome the first
+iteration of your code should have
 2. Run your test tool to execute that test
 3. It obviously fails (you haven't written any code yet)
 4. Write *just enough* code to make the test pass
@@ -101,7 +102,8 @@ Everytime you'd go in a place to create code, do this instead:
 	  <script type="text/template">
 ## _Side benefit_
 --------------------------
-It enforces us to think in terms of desired outcomes before we start coding.
+It enforces us to think in terms of desired outcomes
+before we start coding.
 
 
 	  </script>
@@ -112,7 +114,9 @@ It enforces us to think in terms of desired outcomes before we start coding.
 ## _What is a unit test?_
 --------------------------
 
-> A unit test is a set of assertions performed against one a specific unit of code (e.g. a function) to assess what it evaluates to.
+> A unit test is a set of assertions performed against
+one a specific unit of code (e.g. a function) to assess
+what it evaluates to.
 
 ```javascript
 // Test that sum is a function
@@ -136,7 +140,8 @@ const sum = ( a, b ) => a + b;
 assert(typeof sum === 'function');
 assert.equal(sum(2,3), 5);
 ```
-An `assert` statement will throw an exeption when the assertion does not pass, *do nothing otherwise*.
+An `assert` statement will throw an exeption when the
+assertion does not pass, *do nothing otherwise*.
 	  </script>
 	</section>
 
@@ -144,11 +149,14 @@ An `assert` statement will throw an exeption when the assertion does not pass, *
 	  <script type="text/template">
 ## _Assertion libraries_
 --------------------------
-The way we run assertions is determined by which assertion library we use. Here are the most popular for Javascript:
+The way we run assertions is determined by which assertion
+library we use. Here are the most popular for Javascript:
 
-- The [Assert API](https://nodejs.org/api/assert.html) integrated within Node.js
+- The [Assert API](https://nodejs.org/api/assert.html)
+integrated within Node.js
 - [Chai](http://chaijs.com/)
-- The one included in the [Jasmine testing framework](https://github.com/jasmine/jasmine/)
+- The one included in the
+[Jasmine testing framework](https://github.com/jasmine/jasmine/)
 	  </script>
 	</section>
 
@@ -156,7 +164,8 @@ The way we run assertions is determined by which assertion library we use. Here 
 	  <script type="text/template">
 ## _Chai_
 --------------------------
-Assertions styles depend on the chosen assertion library. `Chai` implements all three common styles of assertions:
+Assertions styles depend on the chosen assertion library.
+`Chai` implements all three common styles of assertions:
 
 - Should
 ```javascript
@@ -212,6 +221,13 @@ module.exports = {
   // some code here
 }
 ```
+  </script>
+</section>
+
+<section data-markdown>
+  <script type="text/template">
+## _Testing modules with Jasmine - continued_
+
 You would have the following in `mymodule-spec.js`:
 ```javascript
 
@@ -270,9 +286,18 @@ module.exports = {
 }
 ```
 
-Now clone `https://github.com/fuzzytern/node-jasmine-starter` and make all tests pass!
+Now clone `https://github.com/fuzzytern/node-jasmine-starter`
+and make all tests pass!
 	  </script>
 	</section>
+
+  <section data-markdown>
+    <script type="text/template">
+
+[HOME](http://iteratehackerspace.com/)
+
+    </script>
+  </section>
 
       </div>
     </div>
@@ -290,7 +315,7 @@ Now clone `https://github.com/fuzzytern/node-jasmine-starter` and make all tests
        history: true,
        center: true,
        transitionSpeed:'slow',
-       previewLinks:true,
+       previewLinks:false,
        transition: 'convex', // none/fade/slide/convex/concave/zoom
        // Optional reveal.js plugins
        dependencies: [

@@ -73,12 +73,12 @@
 ## _Networking_
 ---------------
 
-Networking is the when we have two or more computers 
-connected together. Every time we have one computer 
+Networking is the when we have two or more computers
+connected together. Every time we have one computer
 connected to another, we have a chance to network them.
 
-Networking is incredibly important and its what we will 
-focus on for the rest of the course. 
+Networking is incredibly important and it's what we will
+focus on for the rest of the course.
 
 	  </script>
 	</section>
@@ -87,11 +87,11 @@ focus on for the rest of the course.
 	  <script type="text/template">
 ## _Networking cont..._
 -----------------------
-Everyone is already familiar with one famous network, 
+Everyone is already familiar with one famous network,
 the `internet`!
 
 Note that the `internet` is different from the `web`. The
-web is built on top of the internet and uses another protocol 
+web is built on top of the internet and uses another protocol
 on top of the internet protocols, the web uses `HTTP`.
 
 There is something called a `network` stack...
@@ -117,13 +117,13 @@ We will focus on the TCP layer and access it with `sockets`
 -----------------------
 The four main levels of the networking stack are:
 
-1. Link, this is the physical hardware level, 
+1. Link, this is the physical hardware level,
    think physical ethernet wires.
-2. Network, this lets us uniquely identify machines, 
+2. Network, this lets us uniquely identify machines,
    think `IP` addresses
-3. Transport, this lets us move data (called packets) 
+3. Transport, this lets us move data (called packets)
    across the network, think TCP
-4. Application, 
+4. Application,
    this is where we build higher level protocols, think HTTP, FTP, etc
 
 	  </script>
@@ -134,8 +134,8 @@ The four main levels of the networking stack are:
 ## _Networking cont..._
 -----------------------
 Remember that any data moving from one computer to another
-is just `raw` data. In `node` this is represented by strings 
-or the `Buffer` object. node is specifically built for 
+is just `raw` data. In `node` this is represented by strings
+or the `Buffer` object. node is specifically built for
 data intensive applications, that is networked applications.
 
 Since such programs are typically Input/Output bound, I/O bound,
@@ -147,8 +147,8 @@ node's event based async style is perfect for such uses.
 	  <script type="text/template">
 ## _Sockets_
 -----------------------
-The way to communicate with networked computers is with 
-sockets. Sockets are implemented at the C/C++ level. You can 
+The way to communicate with networked computers is with
+sockets. Sockets are implemented at the C/C++ level. You can
 read about the `C` function call that makes a socket with:
 
 ```
@@ -175,12 +175,12 @@ Note that there is notion of `domain`, `type` and `protocol`.
 	  <script type="text/template">
 ## _Sockets cont..._
 --------------------
-There are different kinds of sockets, `Unix` sockets and `internet` 
-sockets; `HTTP` is typically built on top of `TCP` sockets. We will 
-work with `UDP` sockets. The different between `TCP` and `UDP` is 
+There are different kinds of sockets, `Unix` sockets and `internet`
+sockets; `HTTP` is typically built on top of `TCP` sockets. We will
+work with `UDP` sockets. The difference between `TCP` and `UDP` is
 how data is routed, aka moved, across the network and whether both
-sides of the communication need to know if the message actually made 
-it to the other side. 
+sides of the communication need to know if the message actually made
+it to the other side.
 
 (A web server is basically a lot of code written around a TCP socket)
 	  </script>
@@ -190,36 +190,33 @@ it to the other side.
 	  <script type="text/template">
 ## _node and sockets_
 ---------------------
-`node` makes is super easy to play with `sockets`.
+`node` makes it super easy to play with `sockets`.
 We will use the `net` module, you can find the documentation
-[here]() for it, I encourage you to read it often.
+[here](https://nodejs.org/api/net.html) for it, I encourage you to read it often.
 
-The `socket` object in `node` is an `EventEmitter`, that is 
+The `socket` object in `node` is an `EventEmitter`, that is
 it emits events and gives you a chance to handle it.
 	  </script>
 	</section>
 
 	<section data-markdown>
 	  <script type="text/template">
-## _node and sockets_
+## _node and sockets․․․_
 ---------------------
-<small> Purposefully made as a picture so you can't copy paste the code, 
+<small> Purposefully made as a picture so you can't copy paste the code,
 you must write it!</small>
 <img src='nodejs_socket.png' style='max-height:500px'/>
 	  </script>
 	</section>
 
-	<section data-markdown>
-	  <script type="text/template">
+  <section data-markdown>
+    <script type="text/template">
 
-	  </script>
-	</section>
+[HOME](http://iteratehackerspace.com/)
 
-	<section data-markdown>
-	  <script type="text/template">
+    </script>
+  </section>
 
-	  </script>
-	</section>
 
       </div>
     </div>
@@ -237,7 +234,7 @@ you must write it!</small>
        history: true,
        center: true,
        transitionSpeed:'slow',
-       previewLinks:true,
+       previewLinks:false,
        transition: 'convex', // none/fade/slide/convex/concave/zoom
        // Optional reveal.js plugins
        dependencies: [
