@@ -4,7 +4,7 @@
   "description": "Code behind iteratehackerspace.github.io",
   "main": "index.js",
   "scripts": {
-    "build-site": "babel --presets react site.jsx > site.js && node site.js",
+    "build-site": "babel --presets=es2015,react site.jsx > site.js && node site.js",
     "build-it": "babel --presets=es2015,react site.it.jsx --out-file site.it.js && node site.it.js"
   },
   "repository": {
