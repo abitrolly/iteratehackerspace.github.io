@@ -217,9 +217,12 @@ h3 {
   background-color: #00eb7f;
   display: block;
   border-radius: 50%;
-  line-height: 2em;
+  line-height: 1.8em;
   text-align: center;
   transition: box-shadow 200ms ease-in-out;
+}
+#social-block .fa{
+    line-height: inherit !important;
 }
 
 #social-block a:hover{ box-shadow: 0 0 15px 2px rgba(0, 235, 127, .5); }
