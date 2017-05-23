@@ -1,39 +1,6 @@
 import React from 'react';
 import fs from 'fs';
 import ReactDOMServer from 'react-dom/server';
-import {Well, Table} from 'react-bootstrap';
-import styled from 'styled-components';
-// import styled from 'styled-components';
-// import './style.css'
-
-
-const coc_notes = [
-  `iterate hackerspace is an inclusive society where everyone is
- welcome to discuss and learn more about technology regardless of age,
-  ethnicity, gender, sexuality or religion. We want all
- participants to have an enjoyable and fulfilling experience.
- Hence, all participants are expected to behave with mutual respect, tolerance,
- encouragement in mind.`,
-  `To clarify what is expected of members, everyone in iterate
-   Hackerspace is obliged to follow this code of conduct. It applies to
-   all of the association's physical gatherings and events,
-   as well as to communication channels and other virtual activities.`,
-  `Harassment includes offensive or unwanted comments
-   concerning, but not limited to, gender, sexual orientation, disabilities,
-   physical appearance, ethnicity or
-   religion. The following actions and behaviors are cause for countermeasures to
-   be taken: Sustained disruption of talks, deliberate intimidation, stalking, unwanted
-   photographs or recording, inappropriate physical contact, unwelcome sexual attention,
-   and pornographic pictures in public places (including slides and
-   profile/avatar pictures).`,
-  `The following countermeasures are to be
-   expected: 1) The alleged offender may be confronted and asked to change their behavior.
-   2) The alleged offender may be asked to leave the area until further notice. 3) If the behavior
-   continues, the alleged offender may be prohibited from
-   participating in all future events, and the incident will be reported to the
-   appropriate authorities. Our main interest is to sustain a friendly and welcoming
-   atmosphere for all those involved. Prohibition is a last resort.`,
-];
 
 const SocialBlock = () => {
   return (
@@ -142,7 +109,7 @@ return(
 
 const HeaderPart = (props)=> {
   return(
-  <div className="row padding-top-5">
+  <div className="row padding-top-5" id={props.cnt.id}>
 	  <div className="col-md-10 col-md-offset-1">
 	    <h2 className="text-center ">{props.cnt.title}</h2>
 	    <div className="divider-line"></div>
@@ -153,30 +120,9 @@ const HeaderPart = (props)=> {
 	  <div className="col-md-1"></div>
 	</div>
 )};
-
-const lectures =
-  ['Intro to Linux, shell, git',
-'Intro to JavaScript',
-'Node Module System & Event loop',
-'Test-Driven Development',
-'Networking TCP/IP & Sockets',
-'UDP Multicast',
-'Review',
-'JavaScript Promises'
-  ].map((data, idx) => {
-    const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
-    const pic = `images/icon-${idx + 1}.png`;
-    return (
-      <li key={data}>
-        <a href={page}>
-          <img src={pic} alt=""/>
-          <p className="padding-top-1">{data}</p>
-        </a>
-      </li>
-    );
-  });
   
 const headerItemsLectures = {
+  id: 'edu',
   title: 'Educational Materials',
   description: 'Here are the lecture notes from our bootcamps'
 }
@@ -189,7 +135,7 @@ const styleString = "container  project-title padding-top-2 padding-bottom-7 " +
 	<div className="row">
 	  <div className="col-md-12">
 	    <ul className="course-box">
-        {lectures}
+        {props.lectures}
 	    </ul>
 	  </div>
 	</div>
@@ -241,11 +187,12 @@ const TwoLineItem = ()=> {
   return (
   <div className="col-md-4 vertical-zigzag">
 	  <p className="text-regular">The schedule is subject to change.</p>
-	  <p className="text-regular">There is no formal registration process — <strong>just show up</strong>!</p>
+	  <p className="text-regular">There is no formal registration process — <span style={{fontWeight: 'bold'}}>just show up</span>!</p>
 	</div>
 )};
 
 const headerItemsSchedule = {
+  id: 'schedule',
   title: 'Course Schedule',
   description: 'All the workshops and usage of the computers is ',
   hlt: 'free'
@@ -272,7 +219,7 @@ const DescriptionWithLinksItem = ()=> {
     <p className="text-regular">The hackerspace is open from <b>17:00-21:00, Monday-Saturday</b>.</p>
     <p className="text-regular">We are located in <b>ISTC</b> (IBM Innovative Solutions and Technologies Center), on the sixth floor of the Linguistics Building at Yerevan State University.</p>
     <div className="padding-top-2">
-      <p className="text-uppercase green"><strong><i className="fa fa-heart" aria-hidden="true"></i> Big Thank You</strong></p>
+      <p className="text-uppercase green"><span style={{fontWeight: '700'}}><i className="fa fa-heart" aria-hidden="true"></i> Big Thank You</span></p>
       <p className="text-regular">We want to thank <span className="par-link"><a href="http://www.istc.am/">ISTC</a></span> and <span className="par-link"><a href="http://www.eif.am/">EIF</a></span> for providing us this space and supporting us with the necessary resources.</p>
     </div>
       </div>
@@ -286,6 +233,7 @@ const MapItem = (props)=> {
 )};
 
 const headerItemsLocation = {
+  id: 'location',
   title: 'Location'
 }
 const PageSectionLocation =(props)=> {
@@ -307,10 +255,10 @@ const CodeOfConductItem = ()=> {
       <div className="row padding-top-5">
 	<div className="col-md-8 col-md-offset-2">
 	  <ul className="conduct">
-	    <li><p className="text-regular"><strong>iterate hackerspace</strong> is an inclusive society where everyone is welcome to discuss and learn more about technology regardless of age, ethnicity, gender, sexuality or religion. We want all participants to have an enjoyable and fulfilling experience. Hence, all participants are expected to behave with mutual respect, tolerance, encouragement in mind.</p>
+	    <li><p className="text-regular"><span style={{fontWeight: 'bold'}}>iterate hackerspace</span> is an inclusive society where everyone is welcome to discuss and learn more about technology regardless of age, ethnicity, gender, sexuality or religion. We want all participants to have an enjoyable and fulfilling experience. Hence, all participants are expected to behave with mutual respect, tolerance, encouragement in mind.</p>
 	    </li>
 
-	    <li><p className="text-regular">Everyone at <strong>iterate hackerspace</strong> is obliged to follow this code of conduct. It applies to all of the association&#x27;s physical gatherings and events, as well as to communication channels and other virtual activities.</p>
+	    <li><p className="text-regular">Everyone at <span style={{fontWeight: 'bold'}}>iterate hackerspace</span> is obliged to follow this code of conduct. It applies to all of the association&#x27;s physical gatherings and events, as well as to communication channels and other virtual activities.</p>
 	    </li>
 
 	    <li><p className="text-regular">Harassment includes offensive or unwanted comments concerning, but not limited to, gender, sexual orientation, disabilities, physical appearance, ethnicity or religion. The following actions and behaviors are cause for countermeasures to be taken: Sustained disruption of talks, deliberate intimidation, stalking, unwanted photographs or recording, inappropriate physical contact, unwelcome sexual attention, and pornographic pictures in public places (including slides and profile/avatar pictures).</p>
@@ -330,6 +278,7 @@ const CodeOfConductItem = ()=> {
 )};
 
 const headerItemsConduct = {
+  id: 'conduct',
   title: 'Code of Conduct',
   description: 'These are adapted from Gothenburg Hackerspace.'
 }
@@ -397,24 +346,29 @@ const HomePage = ({schedule_data}) => {
   const meetup_link = 'https://www.meetup.com/Professional-Programming-in-Yerevan/';
   const fb_link = 'https://www.facebook.com/groups/410797219090898/';
   const istc_link = 'http://www.istc.am/';
-  const eif_link = 'http://www.eif.am/';
-  const lectures =
-    ['Intro to Linux, shell, git',
-	'Intro to JavaScript',
-	'Node Module System & Event loop',
-	'Test-Driven Development',
-	'Networking TCP/IP & Sockets',
-	'UDP Multicast',
-	'Review',
-	'JavaScript Promises'
-    ].map((lecture_title, idx) => {
-      const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
-      return (
-	<th key={lecture_title}>
-	  <a href={page}>{lecture_title}</a>
-	</th>
-      );
-    });
+  const eif_link = "http://www.eif.am/";
+  const lectures = [
+    "Intro to Linux, shell, git",
+    "Intro to JavaScript",
+    "Node Module System & Event loop",
+    "Test-Driven Development",
+    "Networking TCP/IP & Sockets",
+    "UDP Multicast",
+    "Review",
+    "JavaScript Promises"
+  ].map((data, idx) => {
+    const page = `backend-bootcamp-english/lecture${idx + 1}.html`;
+    const pic = `images/icon-${idx + 1}.png`;
+    return (
+      <li key={data}>
+        <a href={page}>
+          <img src={pic} alt="" />
+          <p className="padding-top-1">{data}</p>
+        </a>
+      </li>
+    );
+  });
+
   return (
     <html>
       <head>
@@ -435,9 +389,9 @@ const HomePage = ({schedule_data}) => {
         <HeaderSection />
         <WelcomeSection />
         <IntroSection />
-        <PageSectionLectures bgk='bg-sky' />
+        <PageSectionLectures lectures={lectures} bgk='bg-sky' />
         <PageSectionSchedule schedule={schedule_data} />
-        <PageSectionLocation bgk='bg-sky' location={google_link} />
+        <PageSectionLocation location={google_link} bgk='bg-sky' />
         <PageSectionConduct />
         <PageSectionThanks bgk='bg-sky' />
       </body>
