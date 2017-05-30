@@ -1,74 +1,4 @@
-import React, { Component } from 'react';
-import fs from 'fs';
-import ReactDOMServer from 'react-dom/server';
 
-const LectureSlide = ({title, content, step}) => {
-  const inner = content.map(c => <p key={c.slice(0, 10)}>{c}</p>);
-  return (
-	  <section>
-	    <h4>{title} <meter min={"0"} max={"100"} value={step}/></h4>
-	    <hr/>
-      {inner}
-	  </section>
-  );
-};
-
-const TitleSlide = ({lecture_name, byline}) => (
-  <section>
-	  <h3>{lecture_name}</h3>
-	  <hr/>
-	  <p>{byline}</p>
-	  <p style={{textDdecoration: 'underline'}}>ISTC -- Yerevan, Armenia</p>
-	  <p>By Edgar Aroutiounian</p>
-	  <p>Progress: <meter min={'0'} max={'100'} value={'0'}/></p>
-	</section>
-);
-
-const lectures = [
-  // Lecture 1
-  {
-    name: 'Introduction to React',
-    byline: 'First experience with React',
-    slides: [
-      // Slide 1
-      {title: 'Purpose of React',
-       content: [`
-Recall how we used the DOM APIs directly, how tedious that was and
-how error prone it was. Using things like document.createElement,
-document.body.appendChild(document.createElement('p')) were error prone
-and too low level.
-`, `
-Hence we use the React library, which
-`
-                ]},
-      {title: 'Model of React',
-       content: [
-         `React is View layer, `
-       ]
-
-      }
-      // Slide 2
-    ]
-  },
-  // Lecture 2
-  // Lecture 3
-  // Lecture 3
-];
-
-const build_lectures = () => {
-
-  const compiled_lectures = lectures.map((lecture, idx) => {
-    const title_slide = ReactDOMServer.renderToStaticMarkup(
-      <TitleSlide lecture_name={lecture.name} byline={lecture.byline}/>
-    );
-    const slides = lecture.slides.map((slide, idx) => {
-      const compiled_slide = ReactDOMServer.renderToStaticMarkup(
-        <LectureSlide step={idx + 7} title={slide.title} content={slide.content}/>
-      );
-      return compiled_slide;
-    });
-
-    return `
 <!doctype html>
 <html lang="en">
   <!--
@@ -97,7 +27,7 @@ const build_lectures = () => {
   <head>
     <meta charset="utf-8">
     <!-- https://cdnjs.com/libraries/reveal.js -->
-    <title> ${lecture.name} </title>
+    <title> Introduction to React </title>
     <meta name="author" content="Edgar Aroutiounian">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -136,8 +66,12 @@ const build_lectures = () => {
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-${title_slide}
-${slides}
+<section><h3>Introduction to React</h3><hr/><p>First experience with React</p><p style="text-ddecoration:underline;">ISTC -- Yerevan, Armenia</p><p>By Edgar Aroutiounian</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section>
+<section><h4>Purpose of React <meter min="0" max="100" value="7"></meter></h4><hr/><p>
+Recall how we used the DOM APIs directly, how tedious that was and
+how error prone it was. Using things like document.createElement,
+document.body.appendChild(document.createElement(&#x27;p&#x27;))
+</p></section>
       </div>
     </div>
 
@@ -176,20 +110,3 @@ ${slides}
     </script>
   </body>
 </html>
-`;
-  });
-
-  try { fs.mkdirSync('frontend-bootcamp'); }
-  catch (e) { }
-
-  compiled_lectures.forEach((slide, index) => {
-
-    try { fs.mkdirSync(`frontend-bootcamp/lecture-${index + 1}`); }
-    catch (e) {}
-
-    fs.writeFileSync(`frontend-bootcamp/lecture-${index + 1}/index.html`, slide);
-  });
-
-};
-
-build_lectures();
