@@ -33,7 +33,6 @@ const TitleSlide = ({lecture_name, byline}) => (
 	</section>
 );
 
-
 const build_lectures = (lectures, lang) => {
 
   const compiled_lectures = lectures.map((lecture, idx) => {

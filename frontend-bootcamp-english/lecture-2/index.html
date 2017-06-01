@@ -27,7 +27,7 @@
   <head>
     <meta charset="utf-8">
     <!-- https://cdnjs.com/libraries/reveal.js -->
-    <title> Introduction to React </title>
+    <title> Passing Data to Components </title>
     <meta name="author" content="Edgar Aroutiounian">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -55,7 +55,7 @@
     justify-content:space-between;
   }
 
-  p { font-size: xx-large !important; }
+  p { font-size: large !important; }
 
     </style>
 
@@ -66,12 +66,66 @@
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-<section><h3>Introduction to React</h3><hr/><p>First experience with React</p><p style="text-ddecoration:underline;">ISTC -- Yerevan, Armenia</p><p>By Edgar Aroutiounian</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section>
-<section><h4>Purpose of React <meter min="0" max="100" value="7"></meter></h4><hr/><p>Recall how we used the DOM APIs directly, how tedious that was and
-how error prone it was. Using things like document.createElement,
-document.body.appendChild(document.createElement(&#x27;p&#x27;)) were error prone
-and too low level.
-</p><p>Hence we use the React library, which</p><pre>document.createElement(&#x27;p&#x27;)</pre></section>,<section><h4>Model of React <meter min="0" max="100" value="8"></meter></h4><hr/><p>React is View layer</p></section>
+<section><h3>Passing Data to Components</h3><hr/><p>this.props &amp; this.state</p><p style="text-ddecoration:underline;">ISTC -- Yerevan, Armenia</p><p>By Edgar Aroutiounian</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section>
+<!-- -->
+<section><h4>Giving data to components <meter min="0" max="100" value="7"></meter></h4><hr/><p>Assume that we have this component, the &#x27;export default&#x27; makes
+it available to other ES6 modules</p><pre>
+
+// This file is called banner.js
+import React, { Component } from &#x27;react&#x27;;
+
+class Banner extends Component {
+
+  render() {
+    return (
+      &lt;section&gt;
+        &lt;h3&gt;Some shopping cart&lt;/h3&gt;
+        &lt;p&gt;item1&lt;/p&gt;
+      &lt;/section&gt;
+    );
+  }
+}
+
+export default Banner;
+
+</pre><p>This is a React component, it is called banner and it says
+how to render a simple section tag with a h3 as a top banner, with one elem </p></section>,<section><h4>Giving data to components cont... <meter min="0" max="100" value="8"></meter></h4><hr/><p>Say that this is the root of our application</p><pre>
+
+import React from &#x27;react&#x27;;
+import ReactDOM from &#x27;react-dom&#x27;;
+import Banner from &#x27;./banner&#x27;;
+
+// We ONLY need to call ReactDOM.render
+// ONCE in our whole application
+ReactDOM.render(&lt;Banner /&gt;, document.getElementById(&#x27;root&#x27;));
+</pre><p>Here we made the Banner component and use the render function from the
+react-dom package to mount the React component tree into the DOM element
+we picked as the root of our React component tree.</p></section>,<section><h4>Giving data to components cont... <meter min="0" max="100" value="9"></meter></h4><hr/><p>Our Banner component doesn&#x27;t get any data at the moment, it just is hardcoded
+to show one p tag. We can change that with using props.</p><pre>
+
+&lt;Banner
+  bannerHeader={&#x27;Shopping Cart&#x27;}
+  items={[&#x27;shoes&#x27;, &#x27;hats&#x27;]}/&gt;
+</pre><p>
+The bannerHeader and items that we passed in the JSX will be passed into the
+component and we can access them using the this.props property inside the
+component
+</p></section>,<section><h4>Giving data to components cont... <meter min="0" max="100" value="10"></meter></h4><hr/><pre>
+
+render() {
+  const { bannerHeader, items } = this.props;
+  const cart_items = items.map(elem =&gt; {
+    return &lt;p key={elem}&gt;{elem}&lt;/p&gt;;
+  });
+  return (
+    &lt;section&gt;
+      &lt;h3&gt;{bannerHeader}&lt;/h3&gt;
+      {cart_items}
+    &lt;/section&gt;
+  );
+}
+</pre></section>
+<!-- -->
       </div>
     </div>
 
