@@ -3,7 +3,7 @@ import fs from 'fs';
 import ReactDOMServer from 'react-dom/server';
 
 import lectures_en from './lib/bootcamps/frontend/lectures-en';
-// import lecture_am from './lib/bootcamps/frontend/lectures-am';
+import lectures_am from './lib/bootcamps/frontend/lectures-am';
 import make_lecture from './lib/slides';
 
 const LectureSlide = ({title, content, step}) => {
@@ -34,7 +34,7 @@ const TitleSlide = ({lecture_name, byline}) => (
 );
 
 
-const build_lectures = (lectures, language) => {
+const build_lectures = (lectures, lang) => {
 
   const compiled_lectures = lectures.map((lecture, idx) => {
     const title_slide = ReactDOMServer.renderToStaticMarkup(
@@ -51,17 +51,20 @@ const build_lectures = (lectures, language) => {
 
   });
 
-  try { fs.mkdirSync('frontend-bootcamp'); }
+  const path = `frontend-bootcamp-${lang === 'en' ? 'english' : 'armenian'}`;
+
+  try { fs.mkdirSync(path); }
   catch (e) { }
 
   compiled_lectures.forEach((slide, index) => {
 
-    try { fs.mkdirSync(`frontend-bootcamp/lecture-${index + 1}`); }
+    try { fs.mkdirSync(`${path}/lecture-${index + 1}`); }
     catch (e) {}
 
-    fs.writeFileSync(`frontend-bootcamp/lecture-${index + 1}/index.html`, slide);
+    fs.writeFileSync(`${path}/lecture-${index + 1}/index.html`, slide);
   });
 
 };
 
 build_lectures(lectures_en, 'en');
+build_lectures(lectures_am, 'am');
