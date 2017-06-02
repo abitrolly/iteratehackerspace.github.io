@@ -1,3 +1,5 @@
+/** Edgar Aroutiounian, twitter.com/@edgararout */
+
 import React, { Component } from 'react';
 import fs from 'fs';
 import ReactDOMServer from 'react-dom/server';
@@ -27,7 +29,7 @@ const TitleSlide = ({lecture_name, byline}) => (
 	  <h3>{lecture_name}</h3>
 	  <hr/>
 	  <p>{byline}</p>
-	  <p style={{textDdecoration: 'underline'}}>ISTC -- Yerevan, Armenia</p>
+	  <p style={{textDecoration: 'underline'}}>ISTC -- Yerevan, Armenia</p>
 	  <p>By Edgar Aroutiounian</p>
 	  <p>Progress: <meter min={'0'} max={'100'} value={'0'}/></p>
 	</section>
@@ -36,18 +38,29 @@ const TitleSlide = ({lecture_name, byline}) => (
 const build_lectures = (lectures, lang) => {
 
   const compiled_lectures = lectures.map((lecture, idx) => {
-    const title_slide = ReactDOMServer.renderToStaticMarkup(
-      <TitleSlide lecture_name={lecture.name} byline={lecture.byline}/>
-    );
-    const slides = lecture.slides.map((slide, idx) => {
-      const compiled_slide = ReactDOMServer.renderToStaticMarkup(
-        <LectureSlide step={idx + 7} title={slide.title} content={slide.content}/>
+
+    const title_slide =
+          <TitleSlide lecture_name={lecture.name} byline={lecture.byline}/>;
+
+    const slides = lecture.slides.map((slide, idx) => (
+      <LectureSlide key={slide.content}
+                    step={idx + 7}
+                    title={slide.title}
+                    content={slide.content}/>
+    ));
+
+    const all_slides = (title, slides) => {
+      return (
+        <div className={'slides'}>
+          {title}
+          {slides}
+        </div>
       );
-      return compiled_slide;
-    });
+    };
 
-    return make_lecture(lecture.name, title_slide, slides);
-
+    return make_lecture(lecture.name,
+                        ReactDOMServer.renderToStaticMarkup(all_slides(title_slide,
+                                                                       slides)));
   });
 
   const path = `frontend-bootcamp-${lang === 'en' ? 'english' : 'armenian'}`;
