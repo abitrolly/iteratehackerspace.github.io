@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-site": "babel --presets=es2015,react site.jsx > site.js && node site.js",
-    "front-end-lectures": "babel --presets=es2015,react front-end-lectures.js > f.js && node f.js"
+    "front-end-lectures": "babel --presets=es2015,react front-end-lectures.js > f.js && node f.js",
+    "watch": "fswatch -o lib | xargs -n1 -I{} ./build.sh"
   },
   "repository": {
     "type": "git",

@@ -12,12 +12,12 @@ const LectureSlide = ({title, content, step}) => {
   const inner = content.map(c => {
     const content = typeof c === 'string' ?
           <p key={c.slice(0, 10)}>{c}</p> :
-          <pre key={c.code.slice(0, 10)}>{c.code}</pre>;
+          <pre key={c.code.slice(0, 10)}>{c.code.trimLeft()}</pre>;
     return content;
   });
   return (
 	  <section>
-	    <h4>{title} <meter min={"0"} max={"100"} value={step}/></h4>
+	    <h4>{title} <meter min={"0"} max={"100"} value={`${step}`}/></h4>
 	    <hr/>
       {inner}
 	  </section>
@@ -44,7 +44,7 @@ const build_lectures = (lectures, lang) => {
 
     const slides = lecture.slides.map((slide, idx) => (
       <LectureSlide key={slide.content}
-                    step={idx + 7}
+                    step={idx}
                     title={slide.title}
                     content={slide.content}/>
     ));
