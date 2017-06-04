@@ -11,8 +11,8 @@ import make_lecture from './lib/slides';
 const LectureSlide = ({title, content, step}) => {
   const inner = content.map(c => {
     const content = typeof c === 'string' ?
-          <p key={c.slice(0, 10)}>{c}</p> :
-          <pre key={c.code.slice(0, 10)}>{c.code.trimLeft()}</pre>;
+          <p key={c.slice(0, 10)}>{c.trim()}</p> :
+          <pre key={c.code.slice(0, 10)}>{c.code.trim()}</pre>;
     return content;
   });
   return (
@@ -49,14 +49,8 @@ const build_lectures = (lectures, lang) => {
                     content={slide.content}/>
     ));
 
-    const all_slides = (title, slides) => {
-      return (
-        <div className={'slides'}>
-          {title}
-          {slides}
-        </div>
-      );
-    };
+    const all_slides =
+          (title, slides) => <div className={'slides'}>{title}{slides}</div>;
 
     return make_lecture(lecture.name,
                         ReactDOMServer.renderToStaticMarkup(all_slides(title_slide,
