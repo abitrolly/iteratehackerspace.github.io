@@ -11,8 +11,11 @@ import make_lecture from './lib/slides';
 const LectureSlide = ({title, content, step}) => {
   const inner = content.map(c => {
     const content = typeof c === 'string' ?
-          <p key={c.slice(0, 10)}>{c.trim()}</p> :
-          <pre key={c.code.slice(0, 10)}>{c.code.trim()}</pre>;
+          <p key={c.slice(0, 10)}>{c.trim()}</p> : (
+            <pre key={c.code.slice(0, 10)}>
+              <code className={'javascript hljs'}>{c.code.trim()}</code>
+            </pre>
+          );
     return content;
   });
   return (
