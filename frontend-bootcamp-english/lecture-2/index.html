@@ -80,11 +80,30 @@
 
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Introduction to React</h1><hr/><p>First experience with React</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By <a href="https://twitter.com/edgararout">Edgar Aroutiounian</a>, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>Purpose of React <meter min="0" max="100" value="0"></meter></h4><hr/><p>Recall how we used the DOM APIs directly, how tedious that was and
-how error prone it was. Using things like document.createElement</p><pre><code class="javascript hljs">const elem = document.createElement(&#x27;p&#x27;);
+<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Introduction to React</h1><hr/><p>First experience with React</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By <a href="https://twitter.com/edgararout">Edgar Aroutiounian</a>, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>Purpose of React <meter min="0" max="100" value="0"></meter></h4><hr/><p>The web browser provides us with an environment to run our
+JavaScript code, of course we have the standard JavaScript objects like Array, Date,
+but the browser also provides many more APIs, collectively this is called the DOM API,
+where DOM stands for Document Object Model</p><p>Many of the objects and functions that the DOM provides we will use
+in the front end of our web applications, for example</p><pre><code class="javascript hljs">// function to get new data
+fetch(&#x27;/post-form&#x27;, {
+  method: &#x27;post&#x27;, headers
+})
+// object that helps us extract query parameters from a string, can be used as:
+const params = new URLSearchParams(document.location.search)</code></pre><p>Sometimes though using the DOM APIs directly is tedious and error prone.
+for example, the API for controling and adding elements to the UI,
+things like document.createElement</p><pre><code class="javascript hljs">const elem = document.createElement(&#x27;p&#x27;);
 elem.textContent = &#x27;Hello world&#x27;;
-document.body.appendChild(elem);</code></pre><p>was 1) error prone, 2) too low level and 3) extremely tedious</p><p>Of course we can build applications like this but the DOM API is
-better not touched at all and instead we use JavaScript libraries.</p></section><section><h4>Model of React <meter min="0" max="100" value="50"></meter></h4><hr/><p>React is View layer</p></section></div>
+document.body.appendChild(elem);</code></pre><p>Of course we can build applications using the raw DOM API for making HTML
+element but the DOM API is better not touched at all
+and instead we use JavaScript libraries.</p></section><section><h4>Getting started with React project <meter min="0" max="100" value="33.33333333333333"></meter></h4><hr/><p>Getting started with React used to be a bit harder as you had to deal with
+tools like webpack and babel. However now it is much easier and we will use yarn, the
+new JavaScript package manager. Install yarn on your respective platform as described here:</p><a href="https://yarnpkg.com/lang/en/docs/install/">https://yarnpkg.com/lang/en/docs/install/</a><p>once you have yarn installed, you can make a new React project by doing:</p><pre><code class="javascript hljs">$ yarn create react-app istc_web_app</code></pre><p>where istc_web_app can be whatever name you want for your project.</p><p>now after cd into the project directory, we can start the project by running</p><pre><code class="javascript hljs">$ yarn start</code></pre><p>That will start a local development server, it will open a browser
+for you and tell you in the terminal what is the location of the server.</p></section><section><h4>Model of React <meter min="0" max="100" value="66.66666666666666"></meter></h4><hr/><p>First it is important to note that React just by itself is
+a library for making UI, it is the view layer of our application. React does not
+reimplement the browser environment the way that other libraries like Angular do, instead
+it emphasises using plain JavaScript idioms.</p><p>Because React is just a view library, you can integrate it into existing
+projects, like existing Angular, Backbone or whatever project</p><p>Often though we will pair React with other libraries, usually react-router
+for handling routing and redux or mobx for state management.</p></section></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
