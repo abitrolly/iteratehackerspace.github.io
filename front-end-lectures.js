@@ -22,7 +22,8 @@ const LectureSlide = ({ title, content, step }) => {
       );
     else if (c.link !== undefined)
       content = (
-        <a key={`${c.link.slice(10, 30)}${Math.random()}`} href={c.link}>
+        <a className={'links'} key={`${c.link.slice(10, 30)}${Math.random()}`}
+           href={c.link}>
           {c.link}
         </a>
       );
