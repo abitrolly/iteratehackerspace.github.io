@@ -31,11 +31,16 @@
     <meta name="author" content="Edgar Aroutiounian">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css" id="theme">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css"
+          id="theme">
     <!-- See the names choices here: https://github.com/isagalaev/highlight.js/tree/master/src/styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -60,8 +65,11 @@
 
   p { font-size: large !important; }
 
-  .title-slide > * {
+  section a { font-size: medium;  }
+
+  .title-slide > p, h1, a {
     font-size: xx-large !important;
+    padding: 0.25rem;
   }
 
     </style>
@@ -72,7 +80,61 @@
 
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Essential JavaScript for React, modern Web Dev</h1><hr/><p>Common JavaScript idioms</p><p style="text-decoration:underline;">Innovative Solutions and Technologies Center (ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By Edgar Aroutiounian, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>something <meter min="0" max="100" value="0"></meter></h4><hr/><p>some words</p></section></div>
+<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Essential JavaScript for React, modern Web Dev</h1><hr/><p>Common JavaScript idioms, an abridged whirlwind tour</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By <a href="https://twitter.com/edgararout">Edgar Aroutiounian</a>, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>EcmaScript 6 <meter min="0" max="100" value="0"></meter></h4><hr/><p>Modern Web Development uses the latest versions and features of JavaScript,
+which is offically known as EcmaScript</p><p>As of June 2017, most browsers support all of EcmaScript except
+for the ES6 module system, aka</p><pre><code class="javascript hljs">import React, { Component } from &#x27;react&#x27;;</code></pre><p>Technically that isn&#x27;t even legal ES6 because the ES6 module loader specification
+does not allow the creation of &#x27;naked&#x27; imports, that is imports that don&#x27;t
+specify a specific path or URI. However in practice this doesn&#x27;t really matter
+because we use babel and webpack to compile
+our JavaScript code into code that can run on today&#x27;s browsers.</p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import</a><p>Note, this lecture is going to move VERY fast and YOU MUST READ the links I post to MDN,
+please look at</p><a href="http://iteratehackerspace.com">http://iteratehackerspace.com</a><p>for a more comprehensive introduction to JavaScript (uses nodejs)</p></section><section><h4>Classes (not really, they are functions) <meter min="0" max="100" value="11.11111111111111"></meter></h4><hr/><p>ES6 introduced the concept of classes, but these &#x27;classes&#x27; are really just syntaxical
+sugar on top of plain JavaScript functions.</p><pre><code class="javascript hljs">class Person {
+  constructor(age, name) {this.age = age; this.name = name; }
+  speak() { console.log(&#x27;My name is&#x27;, this.name); }
+}
+
+const friend = new Person(27, &#x27;Ruzanna&#x27;);
+// This is the same as doing:
+function Person(age, name) { this.age = age; this.name = name; }
+Person.prototype.speak = function() { console.log(&#x27;My name is&#x27;, this.name); }
+
+const acquaint = new Person(23, &#x27;Tigran&#x27;);</code></pre><p>The benefit of using the class approach is that
+1) Calling without &#x27;new&#x27; is a TypeError exception,
+2) The code looks more familiar to programmers coming from other languages</p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes</a></section><section><h4>Using prototypes <meter min="0" max="100" value="22.22222222222222"></meter></h4><hr/><p>JavaScript is a prototype based language, that means that
+every Object has a prototype. When we defined classes, all the &#x27;methods&#x27; defined in the
+class are functions that are created for the prototype and the properties
+of the prototype (the things we access with . operator) are available for any Object
+that is on that prototype chain. Having a function defined on the prototype is better for
+memory usage than on each object because then we only make 1 copy of that function
+rather for each instance of the object. This is a common pattern</p><pre><code class="javascript hljs">class F {
+  constructor() {
+    this.speak = () =&gt; console.log(&#x27;Hello world&#x27;);
+  }
+  alternative_speak() { console.log(&#x27;Hello world&#x27;); }
+};
+// Both a1, a2 have methods .speak and .alternative_speak
+const a1 = new F;
+const a2 = new F;</code></pre><p>In this example the interpreter created only one alternative_speak function,
+it is on the prototype of F, but the interpreter is forced to create two speak functions
+because we have created the function (a fat arrow function) as a property created on each new
+instance of F</p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes</a></section><section><h4>Binding context <meter min="0" max="100" value="33.33333333333333"></meter></h4><hr/><p>JavaScript classes do not autobind their context, `this` object</p><p>Practically speaking, that means you will often see React code that binds functions</p><pre><code class="javascript hljs">class F {
+  constructor() {
+    this.handler = this.handler.bind(this);
+  }
+  handler(e) {
+    console.log(e.target.value);
+  }
+}</code></pre><p>In class we showed an example of the issues of not having the right context, the
+same issue comes up in React.</p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this</a></section><section><h4>static in JavaScript <meter min="0" max="100" value="44.44444444444444"></meter></h4><hr/><p>The static keyword also exists in JavaScript, it creates a property on
+the class object itself, not on the prototype. One library that uses this is
+react-native-navigation</p><pre><code class="javascript hljs">class HomeScreen extends Component {
+  static navigationOptions = ({navigation}) =&gt; ({
+    title: &#x27;Home Screen&#x27;,
+  });
+  // the render function
+}</code></pre><p>The navigationOptions property is on the HomeScreen object,
+not on the prototype of HomeScreen</p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a></section><section><h4>Object destructuring <meter min="0" max="100" value="55.55555555555556"></meter></h4><hr/><p>In the previous example, this</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p>might have looked strange, specifically the &#x27;({navigation})&#x27; part.
+It is called object destructuring</p></section><section><h4>Class properties <meter min="0" max="100" value="66.66666666666666"></meter></h4><hr/></section></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>

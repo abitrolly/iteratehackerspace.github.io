@@ -10,11 +10,23 @@ import make_lecture from "./lib/slides";
 
 const LectureSlide = ({ title, content, step }) => {
   const inner = content.map(c => {
-    const content = typeof c === "string"
-      ? <p key={c.slice(0, 10)}>{c.trim()}</p>
-      : <pre key={c.code.slice(0, 10)}>
+    let content = null;
+    // Hack of Math.random to force unique keys, NEVER DO THIS in non static context
+    if (typeof c === "string")
+      content = <p key={`${c.slice(10, 30)}${Math.random()}`}>{c.trim()}</p>;
+    else if (c.code !== undefined)
+      content = (
+        <pre key={`${c.code.slice(10, 30)}${Math.random()}`}>
           <code className={"javascript hljs"}>{c.code.trim()}</code>
-        </pre>;
+        </pre>
+      );
+    else if (c.link !== undefined)
+      content = (
+        <a key={`${c.link.slice(10, 30)}${Math.random()}`} href={c.link}>
+          {c.link}
+        </a>
+      );
+    else throw new Error("Unknown input", JSON.stringify(c));
     return content;
   });
   return (
@@ -32,10 +44,15 @@ const TitleSlide = ({ lecture_name, byline }) =>
     <hr />
     <p>{byline}</p>
     <p style={{ textDecoration: "underline" }}>
-      Innovative Solutions and Technologies Center (ISTC)
+      <a href={"http://istc.am/en/"}>
+        Innovative Solutions and Technologies Center
+      </a>(ISTC)
     </p>
     <p style={{ textDecoration: "underline" }}>Yerevan, Armenia</p>
-    <p style={{ fontStyle: "italic" }}>By Edgar Aroutiounian, Summer 2017</p>
+    <p style={{ fontStyle: "italic" }}>
+      By <a href={"https://twitter.com/edgararout"}>Edgar Aroutiounian</a>,
+      Summer 2017
+    </p>
     <p>Progress: <meter min={"0"} max={"100"} value={"0"} /></p>
   </section>;
 
@@ -79,4 +96,4 @@ const build_lectures = (lectures, lang) => {
 };
 
 build_lectures(lectures_en, "en");
-build_lectures(lectures_am, "am");
+// build_lectures(lectures_am, "am");

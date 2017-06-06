@@ -31,11 +31,16 @@
     <meta name="author" content="Edgar Aroutiounian">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css" id="theme">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css"
+          id="theme">
     <!-- See the names choices here: https://github.com/isagalaev/highlight.js/tree/master/src/styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -60,8 +65,11 @@
 
   p { font-size: large !important; }
 
-  .title-slide > * {
+  section a { font-size: medium;  }
+
+  .title-slide > p, h1, a {
     font-size: xx-large !important;
+    padding: 0.25rem;
   }
 
     </style>
@@ -72,7 +80,7 @@
 
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Introduction to React</h1><hr/><p>First experience with React</p><p style="text-decoration:underline;">Innovative Solutions and Technologies Center (ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By Edgar Aroutiounian, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>Purpose of React <meter min="0" max="100" value="0"></meter></h4><hr/><p>Recall how we used the DOM APIs directly, how tedious that was and
+<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Introduction to React</h1><hr/><p>First experience with React</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By <a href="https://twitter.com/edgararout">Edgar Aroutiounian</a>, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>Purpose of React <meter min="0" max="100" value="0"></meter></h4><hr/><p>Recall how we used the DOM APIs directly, how tedious that was and
 how error prone it was. Using things like document.createElement,
 document.body.appendChild(document.createElement(&#x27;p&#x27;)) were error prone
 and too low level.</p><p>Hence we use the React library, which</p><pre><code class="javascript hljs">document.createElement(&#x27;p&#x27;)</code></pre></section><section><h4>Model of React <meter min="0" max="100" value="50"></meter></h4><hr/><p>React is View layer</p></section></div>
