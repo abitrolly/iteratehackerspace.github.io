@@ -13,7 +13,11 @@ const LectureSlide = ({ title, content, step }) => {
     let content = null;
     // Hack of Math.random to force unique keys, NEVER DO THIS in non static context
     if (typeof c === "string")
-      content = <p key={`${c.slice(10, 30)}${Math.random()}`}>{c.trim()}</p>;
+      content = (
+        <p className={"plain-text"} key={`${c.slice(10, 30)}${Math.random()}`}>
+          {c.trim()}
+        </p>
+      );
     else if (c.code !== undefined)
       content = (
         <pre key={`${c.code.slice(10, 30)}${Math.random()}`}>
@@ -22,8 +26,10 @@ const LectureSlide = ({ title, content, step }) => {
       );
     else if (c.link !== undefined)
       content = (
-        <a className={'links'} key={`${c.link.slice(10, 30)}${Math.random()}`}
-           href={c.link}>
+        <a
+          className={"links"}
+          key={`${c.link.slice(10, 30)}${Math.random()}`}
+          href={c.link}>
           {c.link}
         </a>
       );
@@ -62,13 +68,12 @@ const build_lectures = (lectures, lang) => {
     const title_slide = (
       <TitleSlide lecture_name={lecture.name} byline={lecture.byline} />
     );
-
     const total = lecture.slides.length;
-
+    const starter = Math.floor(1 / total * 100);
     const slides = lecture.slides.map((slide, idx) =>
       <LectureSlide
         key={slide.content}
-        step={idx / total * 100}
+        step={idx / total * 100 + starter}
         title={slide.title}
         content={slide.content}
       />
@@ -80,18 +85,14 @@ const build_lectures = (lectures, lang) => {
       ReactDOMServer.renderToStaticMarkup(all_slides(title_slide, slides))
     );
   });
-
   const path = `frontend-bootcamp-${lang === "en" ? "english" : "armenian"}`;
-
   try {
     fs.mkdirSync(path);
   } catch (e) {}
-
   compiled_lectures.forEach((slide, index) => {
     try {
       fs.mkdirSync(`${path}/lecture-${index + 1}`);
     } catch (e) {}
-
     fs.writeFileSync(`${path}/lecture-${index + 1}/index.html`, slide);
   });
 };
