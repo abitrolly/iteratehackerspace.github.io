@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <!--
+       The MIT License (MIT)
+
+       Copyright (c) 2015 Tom Panning
+
+       Permission is hereby granted, free of charge, to any person obtaining a copy
+       of this software and associated documentation files (the "Software"), to deal
+       in the Software without restriction, including without limitation the rights
+       to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+       copies of the Software, and to permit persons to whom the Software is
+       furnished to do so, subject to the following conditions:
+
+       The above copyright notice and this permission notice shall be included in
+       all copies or substantial portions of the Software.
+
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+       FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+       THE SOFTWARE.
+     -->
+  <head>
+    <meta charset="utf-8">
+    <!-- https://cdnjs.com/libraries/reveal.js -->
+    <title> Databases & SQL </title>
+    <meta name="author" content="Edgar Aroutiounian">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css"
+          id="theme">
+    <!-- See the names choices here: https://github.com/isagalaev/highlight.js/tree/master/src/styles -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/ocean.min.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+     const link = document.createElement('link');
+     link.rel = 'stylesheet';
+     link.type = 'text/css';
+     const pdf_css =
+       'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css';
+     const paper_css =
+       'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+     link.href = window.location.search.match(/print-pdf/gi) ? pdf_css : paper_css;
+     document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <style>
+     section h4 {
+       display: flex;
+       justify-content: space-between;
+     }
+
+     section > p, li {
+       font-size: 1.75rem !important;
+     }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+		<section>
+		  <h2>Databases, relational databases and SQL</h2>
+		  <hr/>
+		  <p>A dive into Databases, SQL with some examples</p>
+		  <p style="text-decoration:underline;">
+			Yerevan Iterate hackerspace at ISTC, <time datetime="2017-06-14">Jun 14, 2017</time>
+		  </p>
+		  <p>By Edgar Aroutiounian</p>
+		  <p>
+			Progress:
+			<meter min="0" max="100" value="0"/>
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Databases, relational databases and SQL <meter min="0" max="100" value="6"/></h4>
+		  <hr/>
+		  <p>Databases are programs that are designed for one thing: Data!</p>
+		  <p>
+			There are different kinds of databases, different feature sets, different
+			strengths and weaknesses. Knowing about those differences is important for
+			when we try to pick a solution for our application needs.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Theory <meter min="0" max="100" value="12"/></h4>
+		  <hr/>
+		  <p>
+			The most important theory to know about in Databases is called
+			<a href="https://en.wikipedia.org/wiki/ACID">ACID</a>
+		  </p>
+		  <p>
+			ACID stands for Atomicity, Consistency, Isolation, Durability.
+		  </p>
+		  <ol>
+			<li>
+			  <p>
+				Atomicity means that we can add or remove data in either one shot or it doesn't
+				happen at all
+			  </p>
+			</li>
+			<li>
+			  <p>
+				Consistency means that the Database will respect the rules for the data,
+				like strings won't be written to where ints are expected.
+			  </p>
+			</li>
+			<li>
+			  <p>
+				Isolation means that doing touching data in one place won't inadvertantly
+				affect data in another part of the database
+			  </p>
+			</li>
+			<li>
+			  <p>Durability means that our data in the database won't be lost and will stay safe,
+				not corrupted just by existing in the DB
+			  </p>
+			</li>
+		  </ol>
+
+		</section>
+
+		<section>
+		  <h4>Theory <meter min="0" max="100" value="18"/></h4>
+		  <hr/>
+		  <p>
+			Not every database will be able to provide these guarantees and you won't
+			be able to have all 4 points in a single database implementation.
+		  </p>
+		  <p>
+			You need to choose and decide on those tradeoffs based off your business
+			application and business needs.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Relational DBs <meter min="0" max="100" value="25"/></h4>
+		  <hr/>
+		  <p>
+			The most popular kinds of databases used are called relational databases.
+		  </p>
+		  <p> The underlying theory for them was created by
+			<a href="https://en.wikipedia.org/wiki/Edgar_F._Codd">Edgar F. Codd</a>
+			while he was at IBM in the 1960s/1970s.
+		  </p>
+		  <p>
+			The high level idea is that data is put into tables which can think of
+			like Mathematical sets and when we do queries, asking for data, we are really
+			just doing set operations.
+		  </p>
+		  <p>
+			Relational databases are VERY popular, are the workhorse of every tech company.
+			You might even know some by name, Oracle, Postgres, Sqlite, IBM's DB2, MySQL,
+			and MSSQL Server
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Tallking to relational DBs (SQL) <meter min="0" max="100" value="31"/></h4>
+		  <hr/>
+		  <p>
+			We use a programming language called SQL to talk to Databases. There is a standard
+			version of SQL called ANSI SQL but each vendor usually adds their own extensions
+			and abilities to the SQL language. But once you know SQL for one langauge then
+			you basically know it for all of them.
+		  </p>
+		  <p>
+			SQL is a full programming langauge created just for relational databases.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>SQLite<meter min="0" max="100" value="37"/></h4>
+		  <hr/>
+		  <p> We will use SQLite for this workshop, it is a good implementation of the
+			relation database model. It's implemented in single C file. Sqlite is used on
+			every smartphone, every iOS, every Android phone.
+		  </p>
+		  <p> It comes on OS X, for Debian based distributions you can install it</p>
+		  <pre><code class="shell hljs">$ sudo aptitude install sqlite</code></pre>
+		</section>
+
+		<section>
+		  <h4>Writing SQL<meter min="0" max="100" value="43"/></h4>
+		  <hr/>
+		  <p>Let's get started and start making some tables, taken from
+			<a href="https://github.com/fxfactorial/silicondzor">silicondzor</a>
+		  </p>
+		  <pre><code class="sql hljs">
+--Say that this file is called create-tables.sql
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE account (
+    id INTEGER PRIMARY KEY autoincrement,
+    --How users are displayed on the screen and their login
+    display_name TEXT NOT NULL,
+    --Email used for login and password reset
+    email TEXT NOT NULL,
+    -- Holds a bcrypted hash
+    hashed_password TEXT NOT NULL,
+    is_verified INTEGER NOT NULL default 0,
+    verified_at INTEGER
+);</code></pre>
+		  <p>
+			SQL is not case sensitive but is usually convention to write SQL keywords in
+			uppercase.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Writing SQL<meter min="0" max="100" value="50"/></h4>
+		  <hr/>
+		  <p>We can run that code with like so</p>
+		  <pre><code class="shell hljs">$ cat create-tables.sql | sqlite3 iterate.db</code></pre>
+		  <p>and that creates a sqlite database contained in one file called iterate.db</p>
+		</section>
+
+		<section>
+		  <h4>Writing SQL<meter min="0" max="100" value="56"/></h4>
+		  <hr/>
+		  <p>Let's look at that table again</p>
+		  <pre><code class="sql hljs">--Say that this file is called create-tables.sql
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE account (
+    id INTEGER PRIMARY KEY autoincrement,
+    display_name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    hashed_password TEXT NOT NULL,
+    is_verified INTEGER NOT NULL default 0,
+    verified_at INTEGER
+);</code></pre>
+		  <p style="font-size: 1.25rem !important;">
+			The PRAGMA is not part of the SQL language, it is something for sqlite.
+			It turns on foreign keys, we will talk about that soon. We made a table called
+			account and it has columns named id, display_name, email, hashed_password,
+			is_verified and verified_at; you can think of a table like a spreadsheet or a
+			matrix. You can see the next thing after the field name is the type of the
+			column, the data type. By default all values are nullable, that means that you can
+			leave them empty when we start inserting data.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Adding data<meter min="0" max="100" value="62"/></h4>
+		  <hr/>
+		  <p>Let's add some data, let's play with the database directly</p>
+		  <pre><code class="shell hljs">$ sqlite3 iterate.db</code></pre>
+		  <p style="font-size: 1.25rem !important;">this will open something like</p>
+		  <pre><code class="shell hljs">SQLite version 3.16.0 2016-11-04 19:09:39
+Enter ".help" for usage hints.
+sqlite></code></pre>
+			<p style="font-size: 1.25rem !important;">
+			  Now in the sqlite shell, let's write some SQL to add some data
+		  </p>
+		  <pre><code class="sql hljs">sqlite> insert into account
+(display_name, email, hashed_password, is_verified) values
+('e_d_g_a_r', 'iteratehackerspace@gmail.com', '123', 1);
+insert into account
+(display_name, email, hashed_password, is_verified) values
+('aper', 'bro@hay.am', '456', 0);</code></pre>
+		  <p style="font-size: 1.25rem !important;">
+			Notice that in the sqlite shell, you can write across multiple lines.
+			SQL expects a ; to end the statement. Also notice that we didn't provide
+			a value for the id field and for the verified_at field. That is because id
+			had the qualifier autoincrement and verified_at didn't say NOT NULL, which
+			meant that it was nullable.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Getting data<meter min="0" max="100" value="69"/></h4>
+		  <hr/>
+		  <p>In SQL, the only way to get data is with the SELECT statement</p>
+		  <pre><code class="shell hljs">sqlite> select * from account;
+1|e_d_g_a_r|iteratehackerspace@gmail.com|123|1|
+2|aper|bro@hay.am|456|0|
+		  </code></pre>
+		  <p>
+			The * means every column from the table account, we can also be explicit
+			about what we want (PREFER THIS)
+		  </p>
+		  <pre><code class="shell hljs">sqlite> select display_name, email from account;
+e_d_g_a_r|iteratehackerspace@gmail.com
+aper|bro@hay.am</code></pre>
+		</section>
+
+		<section>
+		  <h4>Getting data with conditions<meter min="0" max="100" value="75"/></h4>
+		  <hr/>
+		  <p>
+			We can also get data with filtering, that is subject the data due to conditions
+		  </p>
+		  <pre><code class="shell hljs">sqlite> select * from account where display_name = 'aper';
+2|aper|bro@hay.am|456|0|</code></pre>
+		  <p>
+			Notice that SQL uses = for equality, not == like other languages, != in SQL is <>.
+			Some other common filtering, where display_name in ('aper', 'other_name');
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Let's get into a relationship<meter min="0" max="100" value="81"/></h4>
+		  <hr/>
+		  <p>The real power of relational databases are RELATIONS!</p>
+		  <p>Remeber the initial table we made, specifically this field</p>
+		  <pre><code class="sql hljs">id INTEGER PRIMARY KEY autoincrement</code></pre>
+		  <p>
+			This means that each record has a unique identifier called id and each time
+			we do a new insert, we get a new value for id because of the autoincrement.
+			Now to have this have any meaning, we need to connect it to another table,
+			lets make another table.
+		  </p>
+		</section>
+
+		<section>
+		  <h4>Let's get into a relationship cont...<meter min="0" max="100" value="87"/></h4>
+		  <hr/>
+		  <pre><code class="sql hljs">CREATE TABLE post (
+creator INTEGER NOT NULL,
+id INTEGER NOT NULL,
+creation_time INTEGER,
+title TEXT NOT NULL,
+content TEXT,
+web_link TEXT,
+upvotes INTEGER NOT NULL DEFAULT 1,
+FOREIGN KEY (creator) REFERENCES account(ID)
+);</code></pre>
+		  <p style="font-size: 1.25rem !important;">
+			Notice the line <code>FOREIGN KEY (creator) REFERENCES account(ID)</code>
+			It is saying that the column creator must reference a column named ID in the
+			table account, the table that we made earlier. Now lets add a record to the
+			<code>post</code> table.
+		  </p>
+		  <pre><code class="sql hljs">INSERT INTO post
+(creator, ID, creation_time, title, CONTENT, web_link)
+VALUES
+(1, 999, 123123123,
+'ReactJS is awesome', '', 'https://hyegar.com');</code></pre>
+		</section>
+
+		<section>
+		  <h4>Join up<meter min="0" max="100" value="100"/></h4>
+		  <hr/>
+		  <p>
+			Now that we have records that have a connection between each other with
+			keys, we can use those keys to get records. (Technically you don't need to have
+			the keys, but the keys enforce relationships between tables and are invaluable
+			for business logic like when you're trying to add records or delete them).
+		  </p>
+		  <pre><code class="sql hljs">select * from account, post
+where account.id = post.creator;
+1|e_d_g_a_r|iteratehackerspace@gmail.com|123|1||1|999|123123123|ReactJS is awesome||https://hyegar.com|1
+</code></pre>
+		  <p>
+			This is an implicit inner join and notice that its too much data,
+			let's try again
+		  </p>
+		  <pre><code class="sql hljs">select A.display_name, A.email, B.web_link, B.title
+from account as A, post as B
+where A.id = B.creator;
+e_d_g_a_r|iteratehackerspace@gmail.com|https://hyegar.com|ReactJS is awesome</code></pre>
+		  <p> That's now more usable, notice the aliasing of table names</p>
+		</section>
+
+
+      </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js">
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.min.js">
+	</script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       slideNumber: true,
+       center: true,
+       transitionSpeed:'slow',
+       previewLinks:false,
+       transition: 'fade', // none/fade/slide/convex/concave/zoom
+       // Optional reveal.js plugins
+       dependencies: [
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js',
+	   condition: function() { return !document.body.classList; } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/marked.js',
+	   condition: function() { return !!document.querySelector('[data-markdown]'); } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/markdown.min.js',
+	   condition: function() { return !!document.querySelector('[data-markdown]'); } },
+	 { src:
+	 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js',
+	   async: true,
+	   condition: function() { return !!document.querySelector( 'pre code' ); },
+	   callback: function() { hljs.initHighlightingOnLoad(); } },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.min.js',
+	   async: true },
+	 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.min.js',
+	   async: true }
+       ]
+     });
+    </script>
+  </body>
+</html>
