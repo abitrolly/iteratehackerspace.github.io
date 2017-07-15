@@ -126,31 +126,39 @@ const a2 = new F;</code></pre>
 }</code></pre><p class="plain-text">Դասարանում մենք տեսանք կոնտեքստի կարեւոչության 1 օրինակ, նույն խնդիրը առաջանում է React-ի հետ:</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this</a></section>
 
 
-<section><h4>static in JavaScript <meter min="0" max="100" value="35.57142857142857"></meter></h4><hr/><p class="plain-text">The static keyword also exists in JavaScript, it creates a property on
-the class object itself, not on the prototype. One library that uses this is
-react-native-navigation</p><pre><code class="javascript hljs">class HomeScreen extends Component {
+<section><h4>static-ը JavaScript-ում <meter min="0" max="100" value="35.57142857142857"></meter></h4><hr/><p class="plain-text">static բառը նույնպես կա JS-ում,
+  Նա ստեղծում է property հենց Object-ի վրա, ոչ թե պրոտոտիպի.
+react-native-navigation գրադարանը օգտագործում է դա:</p><pre><code class="javascript hljs">class HomeScreen extends Component {
   static navigationOptions = ({navigation}) =&gt; ({
     title: &#x27;Home Screen&#x27;,
   });
   // the render function
-}</code></pre><p class="plain-text">The navigationOptions property is on the HomeScreen object,
-not on the prototype of HomeScreen</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a></section><section><h4>Object destructuring <meter min="0" max="100" value="42.714285714285715"></meter></h4><hr/><p class="plain-text">In the previous example, this</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">might have looked strange, specifically the &#x27;({navigation})&#x27; part.
-It is called object destructuring, its a way to pull out values from Objects
-by key name directly. Here are some examples</p><pre><code class="javascript hljs">const foreman = {
+}</code></pre><p class="plain-text">navigationOptions-ը HomeScreen օբյեկտի վրա է,
+ոչ թե նրա պրոտոտիպի վրա</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a></section>
+
+
+<section><h4>Object destructuring <meter min="0" max="100" value="42.714285714285715"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակում, սա</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">հնարավոր է տարօրինակ թվացած լինի, հատկապես &#x27;({navigation})&#x27; մասը։
+Սա կոչվում է օբյեկտ destructuring, որը օբյեկտից արժեք ստանալու միջոց է, օգտագործելով նույն անունը։ Ահա մի քանի օրինակ</p><pre><code class="javascript hljs">const foreman = {
   name: &#x27;Gor&#x27;, age: 28,
   location: &#x27;Yerevan&#x27;, profession(){ console.log(this.age, this.name); }
 };
 // We only pulled out name and age as variable names based on keys
 const { name, age } = foreman;
 console.log(name, age);
-const { not_found } = foreman;</code></pre></section><section><h4>Object destructuring in functions <meter min="0" max="100" value="49.857142857142854"></meter></h4><hr/><p class="plain-text">The previous example</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">Is actually an example of object destructuring in function parameters, we do this because
-often times we pass Objects to function, so we might as well be able to pick out the fields right
-from the beginning.</p><pre><code class="javascript hljs">const person = {name: &#x27;Lilit&#x27;, profession: &#x27;programmer&#x27;};
+const { not_found } = foreman;</code></pre></section>
+
+<section><h4>Object destructuring-ը ֆունկցիաներում<meter min="0" max="100" value="49.857142857142854"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակը</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">
+  Իրականում object destrcturing-ի օրինակ է ֆունկցիաի պարամետրերում, սա արվում է որովհետեւ սովորաբար մենք ֆունկցիային օբյեկտ ենք փոխանցում։
+  Հետեւաբար մենք կարող ենք ունենալ մեզ պետք եղած արժեքները հենց սկզբում։</p><pre><code class="javascript hljs">const person = {name: &#x27;Lilit&#x27;, profession: &#x27;programmer&#x27;};
 const say_profession = ({profession}) =&gt; {
   console.log(&#x27;I am a &#x27;, profession);
 }
-say_profession(person);</code></pre><p class="plain-text">Notice that we didn&#x27;t have to give a name to all the fields in the object, we just
-pick the key names that we care about</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a></section><section><h4>Class properties <meter min="0" max="100" value="57"></meter></h4><hr/><p class="plain-text">As of June 2017, Class properties are at stage-2 TC39. That means that they aren&#x27;t
+say_profession(person);</code></pre><p class="plain-text">
+  Ուշադիր եղեք, որ մենք մեր ստացած փոփոխականին անուն չտվեցինք, այլ ուղղակի վերցրեցինք մեզ պետք եղած property-ները։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a></section>
+
+
+
+  <section><h4>Class properties <meter min="0" max="100" value="57"></meter></h4><hr/><p class="plain-text">As of June 2017, Class properties are at stage-2 TC39. That means that they aren&#x27;t
 an official part of the EcmaScript specificiation but most likely will be. We can still use it with
 the help of tools like babel, used under the hood of create-react-app</p><pre><code class="javascript hljs">class F {
   state = { items: []};
