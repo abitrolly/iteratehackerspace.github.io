@@ -45,3 +45,8 @@ or
 and the `yarn run watch` process will automatically rebuild the
 lectures. Follow the object structure as presented in
 `lectures-en.js`.
+
+Lectures are generated into pure HTML the directory
+`frontend-bootcamp-armenian` and `frontend-bootcamp-english`.
+
+Once you are satisified with the changes, open a Pull Request.
