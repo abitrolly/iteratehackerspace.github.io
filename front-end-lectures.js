@@ -98,4 +98,4 @@ const build_lectures = (lectures, lang) => {
 };
 
 build_lectures(lectures_en, "en");
-// build_lectures(lectures_am, "am");
+build_lectures(lectures_am, "am");
