@@ -231,21 +231,25 @@ promise_example().then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
 // Be sure to handle the errors with the .catch method
 promise_example(false)
 .then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
-.catch(error_handle =&gt; console.log(error_handle.message))</code></pre><a class="links" href="https://developers.google.com/web/fundamentals/getting-started/primers/promises">https://developers.google.com/web/fundamentals/getting-started/primers/promises</a></section><section><h4>async/await <meter min="0" max="100" value="92.71428571428571"></meter></h4><hr/><p class="plain-text">Working with Promises has one small hassle, that is that we have to
-handle the .then and .catch. ES7, the next version of EcmaScript, provides new keywords
-called async and await. async, await can only be used with functions and any function that
-uses await must be wrapped with the async keyword. We can use this in browsers because babel
-will compile the async,await into ES6 generator functions and using the yield keyword. Any function
-wrapped with async returns a Promise</p><pre><code class="javascript hljs">const load_data = async path =&gt; {
+.catch(error_handle =&gt; console.log(error_handle.message))</code></pre><a class="links" href="https://developers.google.com/web/fundamentals/getting-started/primers/promises">https://developers.google.com/web/fundamentals/getting-started/primers/promises</a></section>
+
+
+
+<section><h4>async/await <meter min="0" max="100" value="92.71428571428571"></meter></h4><hr/><p class="plain-text">
+  Խոստումներով աշխատելը որոշ դժվարություններ կարող է առաջացնել .then .catch-երի հետ կապված։ ES7-ը, ներմուծում է նոր հնարավորթյուններ։ async, await-ը կարող են օգտագործվել ֆունկցիաներում,
+  եւ այն ֆունկցիաները որ օգտագօրծում են await բառը, պետք է հայտարարված լինեն օգտագործելով async բառը։ Նորից՝ async/await-ը հնարավոր է օգտագործել babel-ի շնորհիվ, որը թարգմանում է async/await ֆունկցիաները գեներատոր ֆումնկցիաների, օգտագործելով yield-ի սինտաքսը։ Գեներատոր ֆունկցիաներն էլ վեռրադարձնում են խոստում։
+  </p><pre><code class="javascript hljs">const load_data = async path =&gt; {
   // get a request object, fetch by default does a HTTP GET request
   const req = await fetch(path);
   // Get the HTTP body as JSON, no need to use JSON.parse
   const results = await req.json();
   return results;
-}</code></pre><p class="plain-text">fetch is a function provided by the DOM API, (also implemented in React-Native),
-that gives us the ability to download new data. fetch returns a promise so we can use
-.then on the result, or we can use async/await which will &#x27;unwrap&#x27; the promise for us</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">https://developer.mozilla.org/en/docs/Web/API/Fetch_API</a></section><section><h4>async/await error handling <meter min="0" max="100" value="99.85714285714286"></meter></h4><hr/><p class="plain-text">async, await make asynchronous code LOOK as if it was synchronous, it
-turns the .catch error from a Promise into an exception</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
+}</code></pre><p class="plain-text">
+  fetch ֆունկցիան DOM API-ի տրամադրած ֆունկցիաներից է, որը հնարավորություն է տալիս ներբեռնելու նոր տվյալներ։
+  fetch-ը վերադարձնում է խոստում, որի վերադարձրած տվյալը կարող ենք օգտագործել .then-ի կամ async/await-ի միջոցով։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">https://developer.mozilla.org/en/docs/Web/API/Fetch_API</a></section>
+
+  <section><h4>async/await սխալի կարգավորում <meter min="0" max="100" value="99.85714285714286"></meter></h4><hr/>
+    <p class="plain-text">async, await-ը ասինխրոն կոդը ցույց են տալիս սինխրոն կոդի տեսքով, դա .catch error-ը դարձնում են բացառություն</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
   return new Promise((accept, reject) =&gt; {
     const func = () =&gt; success
       ? accept(&#x27;You waited 3 seconds, here is the data&#x27;)
@@ -256,8 +260,9 @@ turns the .catch error from a Promise into an exception</p><pre><code class="jav
 (async () =&gt; {
   try { await promise_example(false); }
   catch (e) { console.log(e.message); }
-})()</code></pre><p class="plain-text">Notice the sneaky way to do a top level async/await call since async/await can
-only be used in functions</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await</a></section></div>
+})()</code></pre><p class="plain-text">
+  Ուշադրություն դարձրեք հետաքրքիր ձեւին, որով կարող եք անել ամենաբարձր մակարդակի async/await կանչ։
+</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await</a></section></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
