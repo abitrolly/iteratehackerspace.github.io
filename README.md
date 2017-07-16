@@ -1,18 +1,47 @@
 iterate website
------------------
+---------------
 
-Make sure you have `node` installed. 
 
-To build the site do:
+# Building
+After cloning the repo, install all dependencies with `yarn`.
 
-0. `git clone https://github.com/iteratehackerspace/iteratehackerspace.github.io`
-1. `cd iteratehackerspace.github.io` 
-2. `npm install`
-3. `npm run build-site`
+```
+$ yarn
+```
 
-Then you can just view `index.html` in any browser.
+The site itself is in plain `index.html`.
 
-# JavaScript
-The project uses ReactJS's `jsx`
-and
-[bootstrap reimplemented in react](https://react-bootstrap.github.io/components.html)
+
+# Changing lecture notes
+
+You'll need to have `fswatch` installed,
+
+```
+$ brew install fswatch
+```
+
+And then just run:
+
+```
+$ yarn run watch
+```
+
+This will run `build.sh` whenever there is a file change to the
+lecture notes.
+
+The front end lectures are generated with the script
+`front-end-lectures.js`. Back end lectures are hard coded in the HTML
+itself, needs to be redone as frontend currently is.
+
+To make changes to the lectures, Armenian or English, simple change
+either
+
+`lib/bootcamps/frontend/lectures-en.js`
+
+or
+
+`lib/bootcamps/frontend/lectures-am.js`
+
+and the `yarn run watch` process will automatically rebuild the
+lectures. Follow the object structure as presented in
+`lectures-en.js`.
