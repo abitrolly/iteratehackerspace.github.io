@@ -27,7 +27,7 @@
   <head>
     <meta charset="utf-8">
     <!-- https://cdnjs.com/libraries/reveal.js -->
-    <title> Essential JavaScript for React, modern Web Dev </title>
+    <title> Introduction to React </title>
     <meta name="author" content="Edgar Aroutiounian">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -55,7 +55,7 @@
      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
     <style>
-
+     
   section h4 {
     display:flex;
     justify-content:space-between;
@@ -78,191 +78,122 @@
 
     <div class="reveal">
       <!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Տարրական JavaScript React-ի համար, ժամանակակից Web Dev</h1><hr/><p>JavaScript-ի կիրառվող արտահայտություններ</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Երևան, Հայաստան</p><p style="font-style:italic;"><a href="https://twitter.com/edgararout">Հարությունյան Էդգար</a>, ամառ 2017</p><p><meter min="0" max="100" value="0"></meter></p></section><section><h4>EcmaScript 6 <meter min="0" max="100" value="7"></meter></h4><hr/><p class="plain-text">Ժամանակակից վեբ ծրագրավորումը գործածում է JavaScript-ի վերջին հնարավորությունները,
-որոնք պաշտոնապես կոչվում են EcmaScript</p><p class="plain-text">Հունիս 2017-ի տվյալներով, բրաուզերների մեծ մասը հասկանում են ողջ EcmaScript-ը բացի
-ES6 մոդուլային համակարգից</p><pre><code class="javascript hljs">import React, { Component } from &#x27;react&#x27;;</code></pre><p class="plain-text">Տեխնիկապես դա անգամ օրինական ES6 չէ, որովհետեւ ES6-ի module loader-ը
-չի թույլատրում &#x27;naked import&#x27;-ների ստեղծումը, դրանք այն import-ներն են, որոնք չեն նշում կոնկրետ path կամ URI: Այնուամենայնիվ գործնականում դա նշանակություն չունի, քանի որ մենք օգտագործում ենք babel եւ webpack` JS-ը թարգմանելու այնպիսի կոդի, որ հասկանալի կլինի ժամանակակից բրաուզերների համար:
-</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import</a><p class="plain-text">Ուշադրություն դարձրեք, որ այս դասընթացը ՇԱՏ ԱՐԱԳ Է լինելու, հետեւաբար խնդրում եմ կարդալ MDN-ի հղումները</p><a class="links" href="http://iteratehackerspace.com/backend-bootcamp-english/lecture2.html">http://iteratehackerspace.com/backend-bootcamp-english/lecture2.html</a><p class="plain-text">for a more comprehensive introduction to JavaScript (uses nodejs)</p></section>
+<div class="slides"><section class="title-slide"><h1 style="font-size:xx-large;">Introduction to React</h1><hr/><p>First experience with React</p><p style="text-decoration:underline;"><a href="http://istc.am/en/">Innovative Solutions and Technologies Center</a>(ISTC)</p><p style="text-decoration:underline;">Yerevan, Armenia</p><p style="font-style:italic;">By <a href="https://twitter.com/edgararout">Edgar Aroutiounian</a>, Summer 2017</p><p>Progress: <meter min="0" max="100" value="0"></meter></p></section><section><h4>EcmaScript 6 <meter min="0" max="100" value="7"></meter></h4><hr/><p class="plain-text">Ժամանակակից վեբ ծրագրավորումը գործածում է JavaScript-ի վերջին հնարավորությունները,
+         որոնք պաշտոնապես կոչվում են EcmaScript</p><p class="plain-text">Հունիս 2017-ի տվյալներով, բրաուզերների մեծ մասը հասկանում են ողջ EcmaScript-ը բացի
+         ES6 մոդուլային համակարգից</p><pre><code class="javascript hljs">import React, { Component } from &#x27;react&#x27;;</code></pre><p class="plain-text">Տեխնիկապես դա անգամ օրինական ES6 չէ, որովհետեւ ES6-ի module loader-ը
+         չի թույլատրում &amp;#x27;naked import&amp;#x27;-ների ստեղծումը, դրանք այն import-ներն են, որոնք չեն նշում կոնկրետ path կամ URI: Այնուամենայնիվ գործնականում դա նշանակություն չունի, քանի որ մենք օգտագործում ենք babel եւ webpack JS-ը թարգմանելու այնպիսի կոդի, որ հասկանալի կլինի ժամանակակից բրաուզերների համար:</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/import</a><p class="plain-text">Ուշադրություն դարձրեք, որ այս դասընթացը ՇԱՏ ԱՐԱԳ Է լինելու, հետեւաբար խնդրում եմ կարդալ MDN-ի հղումները</p><a class="links" href="http://iteratehackerspace.com/backend-bootcamp-english/lecture2.html">http://iteratehackerspace.com/backend-bootcamp-english/lecture2.html</a></section><section><h4>Կլասեր (իրականում ֆունկցիաներ) <meter min="0" max="100" value="14.142857142857142"></meter></h4><hr/><p class="plain-text">ES6-ը ներկայացրեց կլասերի գաղափարը, բայց այս &#x27;կլասերը&#x27; իրականում պարզապես սինտաքսային շաքար են սովորական JS-ի ֆունկցիաների հիման վրա:</p><pre><code class="javascript hljs">class Person {
+   constructor(age, name) {this.age = age; this.name = name; }
+   speak() { console.log(&#x27;My name is&#x27;, this.name); }
+ }
 
+ const friend = new Person(27, &#x27;Ruzanna&#x27;);
+ // This is the same as doing:
+ function Person(age, name) { this.age = age; this.name = name; }
+ Person.prototype.speak = function() { console.log(&#x27;My name is&#x27;, this.name); }
 
-
-<section><h4>Կլասեր (իրականում ֆունկցիաներ) <meter min="0" max="100" value="14.142857142857142"></meter></h4><hr/><p class="plain-text">ES6-ը ներկայացրեց կլասերի գաղափարը, բայց այս &#x27;կլասերը&#x27; իրականում պարզապես սինտաքսային շաքար են սովորական JS-ի ֆունկցիաների հիման վրա:</p><pre><code class="javascript hljs">class Person {
-  constructor(age, name) {this.age = age; this.name = name; }
-  speak() { console.log(&#x27;My name is&#x27;, this.name); }
-}
-
-const friend = new Person(27, &#x27;Ruzanna&#x27;);
-// This is the same as doing:
-function Person(age, name) { this.age = age; this.name = name; }
-Person.prototype.speak = function() { console.log(&#x27;My name is&#x27;, this.name); }
-
-const acquaint = new Person(23, &#x27;Tigran&#x27;);</code></pre>
-<p class="plain-text">Կլասերի կիրառման առավելությունը հետեեւյալն է
-1) Առանց &#x27;new&#x27;-ի կանչվելը TypeError բացառություն է,
-2) Այլ լեզուների տիրապետող ծրագրավորողի համար կոդն ավելի ծանոթ է թվում</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes</a></section>
-
-
-<section><h4>Պրոտոտիպների կիրառում <meter min="0" max="100" value="21.285714285714285"></meter></h4><hr/>
-  <p class="plain-text">JavaScript-ը հիմնված է պրոտոտիպների վրա, դա նշանակում է, որ յուրաքանչյուր Object ունի պրոտոտիպ. Երբ մենք սահմանում էինք կլասերը, կլասում սահմանված բոլոր &#x27;method&#x27;-ները ֆունկցիաներ են՝ ստեղծված պրոտոտիպների համար, եւ պրոտոտիպի property-ները (այն ամենր, որ հասանելի է . օպերատորի միջոցով) հասանելի է պրոտոտիպի շղթայի վրա գտնվող ցանկացած Object-ի համար.
-    Պրոտոտիպի վրա սահմանված ֆունկցիան ավելի լավ է հիշողության համար, քանի որ այդ դեպքում կլասի հիման վրա սահմանված Object-ներում չի ստեղծվում ֆունկցիայի նոր օրինակ:
-    </p><pre><code class="javascript hljs">class F {
-  constructor() {
-    this.speak = () =&gt; console.log(&#x27;Hello world&#x27;);
-  }
-  alternative_speak() { console.log(&#x27;Hello world&#x27;); }
-};
-// Both a1, a2 have methods .speak and .alternative_speak
-const a1 = new F;
-const a2 = new F;</code></pre>
-<p class="plain-text">Այս օրնակում վերծանիչը ստեղծել է միայն 1 alternative_speak  ֆունկցիա, որը F պրոտոտիպի վրա է,
-  Բայց վերծանիչը ստիպված է ստեղծել 2 speak ֆունկցիաներ, քանի որ ֆունկցիան սահմանված է որպես property:</section>
-  <section><h4>Binding կոնտեքստ <meter min="0" max="100" value="28.428571428571427"></meter></h4><hr/><p class="plain-text">JS-ի կլասերը իրենց կոնտեքստները autobind չեն անում, `this` object</p><p class="plain-text">Սա նշանակում է, որ դուք հաճախ կտեսնեք React-ի կոդ, որը bind է անում իր ֆունկցիաները:</p><pre><code class="javascript hljs">class F {
-  constructor() {
-    this.handler = this.handler.bind(this);
-  }
-  handler(e) {
-    console.log(e.target.value);
-  }
-}</code></pre><p class="plain-text">Դասարանում մենք տեսանք կոնտեքստի կարեւոչության 1 օրինակ, նույն խնդիրը առաջանում է React-ի հետ:</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this</a></section>
-
-
-<section><h4>static-ը JavaScript-ում <meter min="0" max="100" value="35.57142857142857"></meter></h4><hr/><p class="plain-text">static բառը նույնպես կա JS-ում,
-  Նա ստեղծում է property հենց Object-ի վրա, ոչ թե պրոտոտիպի.
-react-native-navigation գրադարանը օգտագործում է դա:</p><pre><code class="javascript hljs">class HomeScreen extends Component {
-  static navigationOptions = ({navigation}) =&gt; ({
-    title: &#x27;Home Screen&#x27;,
-  });
-  // the render function
-}</code></pre><p class="plain-text">navigationOptions-ը HomeScreen օբյեկտի վրա է,
-ոչ թե նրա պրոտոտիպի վրա</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a></section>
-
-
-<section><h4>Object destructuring <meter min="0" max="100" value="42.714285714285715"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակում, սա</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">հնարավոր է տարօրինակ թվացած լինի, հատկապես &#x27;({navigation})&#x27; մասը։
-Սա կոչվում է օբյեկտ destructuring, որը օբյեկտից արժեք ստանալու միջոց է, օգտագործելով նույն անունը։ Ահա մի քանի օրինակ</p><pre><code class="javascript hljs">const foreman = {
-  name: &#x27;Gor&#x27;, age: 28,
-  location: &#x27;Yerevan&#x27;, profession(){ console.log(this.age, this.name); }
-};
-// We only pulled out name and age as variable names based on keys
-const { name, age } = foreman;
-console.log(name, age);
-const { not_found } = foreman;</code></pre></section>
-
-<section><h4>Object destructuring-ը ֆունկցիաներում<meter min="0" max="100" value="49.857142857142854"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակը</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">
-  Իրականում object destrcturing-ի օրինակ է ֆունկցիաի պարամետրերում, սա արվում է որովհետեւ սովորաբար մենք ֆունկցիային օբյեկտ ենք փոխանցում։
-  Հետեւաբար մենք կարող ենք ունենալ մեզ պետք եղած արժեքները հենց սկզբում։</p><pre><code class="javascript hljs">const person = {name: &#x27;Lilit&#x27;, profession: &#x27;programmer&#x27;};
-const say_profession = ({profession}) =&gt; {
-  console.log(&#x27;I am a &#x27;, profession);
-}
-say_profession(person);</code></pre><p class="plain-text">
-  Ուշադիր եղեք, որ մենք մեր ստացած փոփոխականին անուն չտվեցինք, այլ ուղղակի վերցրեցինք մեզ պետք եղած property-ները։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a></section>
-
-
-
-  <section><h4>Class properties <meter min="0" max="100" value="57"></meter></h4><hr/><p class="plain-text">
-     Հունիս 2017-ի տվյալներով կլաների property-ները TC39-ի 2րդ փուլում են։ Դա նշանակում է, որ պաշտոնապես դեռ JS-ի մաս չեն կազմում:
-    Մենք կարող ենք օգտագործել այդ հնարավորությունը օգտագօործելով babel, որը կարող ենք ձեռք բերել օգտագործելով create-react-app։
-  </p><pre><code class="javascript hljs">class F {
-  state = { items: []};
-  open_dropdown = () =&gt; {
-     console.log(&#x27;Some logic here&#x27;);
-  };
-}</code></pre><p class="plain-text">նույնն է թե</p><pre><code class="javascript hljs">class F {
-  constructor() {
-    this.open_dropdown = () =&gt; {
+ const acquaint = new Person(23, &#x27;Tigran&#x27;);</code></pre><p class="plain-text">Կլասերի կիրառման առավելությունը հետեեւյալն է
+ 1) Առանց &#x27;new&#x27;-ի կանչվելը TypeError բացառություն է,
+ 2) Այլ լեզուների տիրապետող ծրագրավորողի համար կոդն ավելի ծանոթ է թվում</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes</a></section><section><h4>Պրոտոտիպների կիրառում <meter min="0" max="100" value="21.285714285714285"></meter></h4><hr/><p class="plain-text">JavaScript-ը հիմնված է պրոտոտիպների վրա, դա նշանակում է, որ յուրաքանչյուր Object ունի պրոտոտիպ. Երբ մենք սահմանում էինք կլասերը, կլասում սահմանված բոլոր &#x27;method&#x27;-ները ֆունկցիաներ են՝ ստեղծված պրոտոտիպների համար, եւ պրոտոտիպի property-ները (այն ամենր, որ հասանելի է . օպերատորի միջոցով) հասանելի է պրոտոտիպի շղթայի վրա գտնվող ցանկացած Object-ի համար.
+           Պրոտոտիպի վրա սահմանված ֆունկցիան ավելի լավ է հիշողության համար, քանի որ այդ դեպքում կլասի հիման վրա սահմանված Object-ներում չի ստեղծվում ֆունկցիայի նոր օրինակ:</p><pre><code class="javascript hljs">class F {
+   constructor() {
+     this.speak = () =&gt; console.log(&#x27;Hello world&#x27;);
+   }
+   alternative_speak() { console.log(&#x27;Hello world&#x27;); }
+ };
+ // Both a1, a2 have methods .speak and .alternative_speak
+ const a1 = new F;
+ const a2 = new F;</code></pre><p class="plain-text">Այս օրնակում վերծանիչը ստեղծել է միայն 1 alternative_speak  ֆունկցիա, որը F պրոտոտիպի վրա է,
+   Բայց վերծանիչը ստիպված է ստեղծել 2 speak ֆունկցիաներ, քանի որ ֆունկցիան սահմանված է որպես property:</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes</a></section><section><h4>Binding կոնտեքստ <meter min="0" max="100" value="28.428571428571427"></meter></h4><hr/><p class="plain-text">JS-ի կլասերը իրենց կոնտեքստները autobind չեն անում, `this` object</p><p class="plain-text">Սա նշանակում է, որ դուք հաճախ կտեսնեք React-ի կոդ, որը bind է անում իր ֆունկցիաները:</p><pre><code class="javascript hljs">class F {
+   constructor() {
+     this.handler = this.handler.bind(this);
+   }
+   handler(e) {
+     console.log(e.target.value);
+   }
+ }</code></pre><p class="plain-text">Դասարանում մենք տեսանք կոնտեքստի կարեւոչության 1 օրինակ, նույն խնդիրը առաջանում է React-ի հետ:</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/this</a></section><section><h4>static-ը JavaScript-ում <meter min="0" max="100" value="35.57142857142857"></meter></h4><hr/><p class="plain-text">static բառը նույնպես կա JS-ում, Նա ստեղծում է property հենց Object-ի վրա, ոչ թե պրոտոտիպի.
+         react-native-navigation գրադարանը օգտագործում է դա:</p><pre><code class="javascript hljs">class HomeScreen extends Component {
+   static navigationOptions = ({navigation}) =&gt; ({
+     title: &#x27;Home Screen&#x27;,
+   });
+   // the render function
+ }</code></pre><p class="plain-text">TnavigationOptions-ը HomeScreen օբյեկտի վրա է,
+ ոչ թե նրա պրոտոտիպի վրա</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a></section><section><h4>Object destructuring <meter min="0" max="100" value="42.714285714285715"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակում, սա</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">հնարավոր է տարօրինակ թվացած լինի, հատկապես &#x27;({navigation})&#x27; մասը։
+         Սա կոչվում է օբյեկտ destructuring, որը օբյեկտից արժեք ստանալու միջոց է, օգտագործելով նույն անունը։ Ահա մի քանի օրինակ</p><pre><code class="javascript hljs">const foreman = {
+   name: &#x27;Gor&#x27;, age: 28,
+   location: &#x27;Yerevan&#x27;, profession(){ console.log(this.age, this.name); }
+ };
+ // We only pulled out name and age as variable names based on keys
+ const { name, age } = foreman;
+ console.log(name, age);
+ const { not_found } = foreman;</code></pre></section><section><h4>Object destructuring-ը ֆունկցիաներում <meter min="0" max="100" value="49.857142857142854"></meter></h4><hr/><p class="plain-text">Նախորդ օրինակը</p><pre><code class="javascript hljs">static navigationOptions = ({navigation}) =&gt; ({</code></pre><p class="plain-text">Իրականում object destrcturing-ի օրինակ է ֆունկցիաի պարամետրերում, սա արվում է որովհետեւ սովորաբար մենք ֆունկցիային օբյեկտ ենք փոխանցում։
+         Հետեւաբար մենք կարող ենք ունենալ մեզ պետք եղած արժեքները հենց սկզբում։</p><pre><code class="javascript hljs">const person = {name: &#x27;Lilit&#x27;, profession: &#x27;programmer&#x27;};
+ const say_profession = ({profession}) =&gt; {
+   console.log(&#x27;I am a &#x27;, profession);
+ }
+ say_profession(person);</code></pre><p class="plain-text">Ուշադիր եղեք, որ մենք մեր ստացած փոփոխականին անուն չտվեցինք, այլ ուղղակի վերցրեցինք մեզ պետք եղած property-ները։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment</a></section><section><h4>Class properties <meter min="0" max="100" value="57"></meter></h4><hr/><p class="plain-text">Հունիս 2017-ի տվյալներով կլաների property-ները TC39-ի 2րդ փուլում են։ Դա նշանակում է, որ պաշտոնապես դեռ JS-ի մաս չեն կազմում:
+         Մենք կարող ենք օգտագործել այդ հնարավորությունը օգտագօործելով babel, որը կարող ենք ձեռք բերել օգտագործելով create-react-app։</p><pre><code class="javascript hljs">class F {
+   state = { items: []};
+   open_dropdown = () =&gt; {
       console.log(&#x27;Some logic here&#x27;);
-    }
-    this.state = { items: []};
-  }
-}</code></pre></section>
-
-
-<section><h4>Object-ի տարածում<meter min="0" max="100" value="64.14285714285714"></meter></h4><hr/>
-  <p class="plain-text">
-    Object-ի տարածումը մեկ այլ հնարավորություն է, որը նույնպես JS-ի պաշտոնական մաս չէ, բայց babel-ը իրականում դա թարգմանելու է Object spread կանչերին։
-  </p><pre><code class="javascript hljs">const professional = {name: &#x27;Artur&#x27;, langs: [&#x27;C#&#x27;, &#x27;JavaScript&#x27;, &#x27;Armenian&#x27;]};
-const with_more = {...professional, background: [&#x27;WebDevelopment&#x27;]};</code></pre>
-<p class="plain-text">
-  Մենք ստեղծում ենք նոր օբյեկտ with_more անունով, որը professional օբյեկտի կրկնօրինակն է, բայց ունի 1 ավել արժեք, background անունով։
-</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator</a></section>
-
-
-
-<section><h4>import/export-ը ES6-ում <meter min="0" max="100" value="71.28571428571429"></meter></h4><hr/>
-  <p class="plain-text">ES6-ը համալրեց JS-ը մոդուլային համակարգով։</p><pre><code class="javascript hljs">// Assume this file is named funcs.js
-export const f = () =&gt; console.log(&#x27;Hello&#x27;);</code></pre>
-<p class="plain-text">
-  Սա նշանակում է, որ մոդուլը export է անելու f անունով ինչ որ բան, որը մենք կարող ենք import անել եւ օգտագործել։</p><pre><code class="javascript hljs">// Assume this file is called main.js
-import { f } from &#x27;./funcs&#x27;;
-f();</code></pre><p class="plain-text">
-  Մենք արեցինք մի բան, որը նման է, բայց ամբողջությամբ object destructuring չէ։
+   };
+ }</code></pre><p class="plain-text">And that is really the same as</p><pre><code class="javascript hljs">class F {
+   constructor() {
+     this.open_dropdown = () =&gt; {
+       console.log(&#x27;Some logic here&#x27;);
+     }
+     this.state = { items: []};
+   }
+ }</code></pre></section><section><h4>Object-ի տարածում <meter min="0" max="100" value="64.14285714285714"></meter></h4><hr/><p class="plain-text">Object-ի տարածումը մեկ այլ հնարավորություն է, որը նույնպես JS-ի պաշտոնական մաս չէ, բայց babel-ը իրականում դա թարգմանելու է Object spread կանչերին։</p><pre><code class="javascript hljs">const professional = {name: &#x27;Artur&#x27;, langs: [&#x27;C#&#x27;, &#x27;JavaScript&#x27;, &#x27;Armenian&#x27;]};
+ const with_more = {...professional, background: [&#x27;WebDevelopment&#x27;]};</code></pre><p class="plain-text">Մենք ստեղծում ենք նոր օբյեկտ with_more անունով, որը professional օբյեկտի կրկնօրինակն է, բայց ունի 1 ավել արժեք, background անունով։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator">https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator</a></section><section><h4>import/export-ը ES6-ում <meter min="0" max="100" value="71.28571428571429"></meter></h4><hr/><p class="plain-text">ES6-ը համալրեց JS-ը մոդուլային համակարգով։</p><pre><code class="javascript hljs">// Assume this file is named funcs.js
+ export const f = () =&gt; console.log(&#x27;Hello&#x27;);</code></pre><p class="plain-text">Սա նշանակում է, որ մոդուլը export է անելու f անունով ինչ որ բան, որը մենք կարող ենք import անել եւ օգտագործել։</p><pre><code class="javascript hljs">// Assume this file is called main.js
+ import { f } from &#x27;./funcs&#x27;;
+ f();</code></pre><p class="plain-text">Մենք արեցինք մի բան, որը նման է, բայց ամբողջությամբ object destructuring չէ։
 Նաեւ ուշադիր եղեք, որ մենք չենք ավելացրել .js-ը imort լինող file-ի անվանումից հետո։ ES6 մոդուլները
-singleton են, որը նշանակում է, պրոյեկտում մի քանի տեղ մոդուլը  import անելուց, այդ մոդուլի նոր օրինակ չի ստեղծվում։</p></section>
-
-
-<section><h4>import/export-ը ES6-ում <meter min="0" max="100" value="78.42857142857143"></meter></h4><hr/>
-  <p class="plain-text">Մենք export արեցինք f ֆունկցիան. Երբեմն անհրաժեշտ է լինում export անել միայն 1 արժեք։ Այդ դեպքում օգտագործում ենք export default</p><pre><code class="javascript hljs">// assume this is called header.js
-// Notice that it was not necessary to give the class a name
-export default class extends Component {
-  render() {
-    return &lt;h2&gt;Hello World&lt;/h2&gt;;
-  }
-}</code></pre><p class="plain-text">Այն օգտագորխվում է այսպես</p><pre><code class="javascript hljs">import call_it_anything_you_want from &#x27;./header&#x27;;
-// Can also rename it
-import * as Whatever from &#x27;./header&#x27;;
-// renaming also works with named exports, this is usual in react-router
-import { BrowserRouter as Router } from &#x27;react-router-dom&#x27;;</code></pre><a class="links" href="https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export">https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export</a></section>
-
-
-
-
-<section><h4>Promises (խոստումներ)<meter min="0" max="100" value="85.57142857142857"></meter></h4><hr/>
-  <p class="plain-text">JS ծրագրավորումը կենտրոնանում է ասինխրոն երեւույթների վրա։
-    Դա նշանակում է, որ մենք պետք է ասենք թե ինչ է կատարվելու ապագայում, JS-ում դա կատարվում է խոստումների միջոցով։
-    Խոստումը ապագայի գործողություն նկարագրելու ձեւ է։</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
-  return new Promise((accept, reject) =&gt; {
-    const func = () =&gt; success
-      ? accept(&#x27;You waited 3 seconds, here is the data&#x27;)
-      // Always use an Error object, it preserves the stack
-      : reject(new Error(&#x27;failure&#x27;));
-    setTimeout(func, 3 * 1000);
-  })
-}
-promise_example().then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
-// Be sure to handle the errors with the .catch method
-promise_example(false)
-.then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
-.catch(error_handle =&gt; console.log(error_handle.message))</code></pre><a class="links" href="https://developers.google.com/web/fundamentals/getting-started/primers/promises">https://developers.google.com/web/fundamentals/getting-started/primers/promises</a></section>
-
-
-
-<section><h4>async/await <meter min="0" max="100" value="92.71428571428571"></meter></h4><hr/><p class="plain-text">
-  Խոստումներով աշխատելը որոշ դժվարություններ կարող է առաջացնել .then .catch-երի հետ կապված։ ES7-ը, ներմուծում է նոր հնարավորթյուններ։ async, await-ը կարող են օգտագործվել ֆունկցիաներում,
-  եւ այն ֆունկցիաները որ օգտագօրծում են await բառը, պետք է հայտարարված լինեն օգտագործելով async բառը։ Նորից՝ async/await-ը հնարավոր է օգտագործել babel-ի շնորհիվ, որը թարգմանում է async/await ֆունկցիաները գեներատոր ֆումնկցիաների, օգտագործելով yield-ի սինտաքսը։ Գեներատոր ֆունկցիաներն էլ վեռրադարձնում են խոստում։
-  </p><pre><code class="javascript hljs">const load_data = async path =&gt; {
-  // get a request object, fetch by default does a HTTP GET request
-  const req = await fetch(path);
-  // Get the HTTP body as JSON, no need to use JSON.parse
-  const results = await req.json();
-  return results;
-}</code></pre><p class="plain-text">
-  fetch ֆունկցիան DOM API-ի տրամադրած ֆունկցիաներից է, որը հնարավորություն է տալիս ներբեռնելու նոր տվյալներ։
-  fetch-ը վերադարձնում է խոստում, որի վերադարձրած տվյալը կարող ենք օգտագործել .then-ի կամ async/await-ի միջոցով։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">https://developer.mozilla.org/en/docs/Web/API/Fetch_API</a></section>
-
-  <section><h4>async/await սխալի կարգավորում <meter min="0" max="100" value="99.85714285714286"></meter></h4><hr/>
-    <p class="plain-text">async, await-ը ասինխրոն կոդը ցույց են տալիս սինխրոն կոդի տեսքով, դա .catch error-ը դարձնում են բացառություն</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
-  return new Promise((accept, reject) =&gt; {
-    const func = () =&gt; success
-      ? accept(&#x27;You waited 3 seconds, here is the data&#x27;)
-      : reject(new Error(&#x27;failure&#x27;));
-    setTimeout(func, 3 * 1000);
-  })
-}
-(async () =&gt; {
-  try { await promise_example(false); }
-  catch (e) { console.log(e.message); }
-})()</code></pre><p class="plain-text">
-  Ուշադրություն դարձրեք հետաքրքիր ձեւին, որով կարող եք անել ամենաբարձր մակարդակի async/await կանչ։
-</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await</a></section></div>
+singleton են, որը նշանակում է, պրոյեկտում մի քանի տեղ մոդուլը  import անելուց, այդ մոդուլի նոր օրինակ չի ստեղծվում։</p></section><section><h4>import/export-ը ES6-ում <meter min="0" max="100" value="78.42857142857143"></meter></h4><hr/><p class="plain-text">Մենք export արեցինք f ֆունկցիան. Երբեմն անհրաժեշտ է լինում export անել միայն 1 արժեք։ Այդ դեպքում օգտագործում ենք &#x27;export default&#x27;</p><pre><code class="javascript hljs">// assume this is called header.js
+ // Notice that it was not necessary to give the class a name
+ export default class extends Component {
+   render() {
+     return &lt;h2&gt;Hello World&lt;/h2&gt;;
+   }
+ }</code></pre><p class="plain-text">Այն օգտագորխվում է այսպես</p><pre><code class="javascript hljs">import call_it_anything_you_want from &#x27;./header&#x27;;
+ // Can also rename it
+ import * as Whatever from &#x27;./header&#x27;;
+ // renaming also works with named exports, this is usual in react-router
+ import { BrowserRouter as Router } from &#x27;react-router-dom&#x27;;</code></pre><a class="links" href="https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export">https://developer.mozilla.org/en/docs/web/javascript/reference/statements/export</a></section><section><h4>Promises (խոստումներ) <meter min="0" max="100" value="85.57142857142857"></meter></h4><hr/><p class="plain-text">JS ծրագրավորումը կենտրոնանում է ասինխրոն երեւույթների վրա։
+           Դա նշանակում է, որ մենք պետք է ասենք թե ինչ է կատարվելու ապագայում, JS-ում դա կատարվում է խոստումների միջոցով։
+           Խոստումը ապագայի գործողություն նկարագրելու ձեւ է։</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
+   return new Promise((accept, reject) =&gt; {
+     const func = () =&gt; success
+       ? accept(&#x27;You waited 3 seconds, here is the data&#x27;)
+       // Always use an Error object, it preserves the stack
+       : reject(new Error(&#x27;failure&#x27;));
+     setTimeout(func, 3 * 1000);
+   })
+ }
+ promise_example().then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
+ // Be sure to handle the errors with the .catch method
+ promise_example(false)
+ .then(msg =&gt; console.log(&#x27;Given&#x27;, msg));
+ .catch(error_handle =&gt; console.log(error_handle.message))</code></pre><a class="links" href="https://developers.google.com/web/fundamentals/getting-started/primers/promises">https://developers.google.com/web/fundamentals/getting-started/primers/promises</a></section><section><h4>async/await <meter min="0" max="100" value="92.71428571428571"></meter></h4><hr/><p class="plain-text">Խոստումներով աշխատելը որոշ դժվարություններ կարող է առաջացնել .then .catch-երի հետ կապված։ ES7-ը, ներմուծում է նոր հնարավորթյուններ։ async, await-ը կարող են օգտագործվել ֆունկցիաներում,
+         եւ այն ֆունկցիաները որ օգտագօրծում են await բառը, պետք է հայտարարված լինեն օգտագործելով async բառը։ Նորից՝ async/await-ը հնարավոր է օգտագործել babel-ի շնորհիվ, որը թարգմանում է async/await ֆունկցիաները գեներատոր ֆումնկցիաների, օգտագործելով yield-ի սինտաքսը։ Գեներատոր ֆունկցիաներն էլ վեռրադարձնում են խոստում։</p><pre><code class="javascript hljs">const load_data = async path =&gt; {
+   // get a request object, fetch by default does a HTTP GET request
+   const req = await fetch(path);
+   // Get the HTTP body as JSON, no need to use JSON.parse
+   const results = await req.json();
+   return results;
+ }</code></pre><p class="plain-text">fetch ֆունկցիան DOM API-ի տրամադրած ֆունկցիաներից է, որը հնարավորություն է տալիս ներբեռնելու նոր տվյալներ։
+ fetch-ը վերադարձնում է խոստում, որի վերադարձրած տվյալը կարող ենք օգտագործել .then-ի կամ async/await-ի միջոցով։</p><a class="links" href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API">https://developer.mozilla.org/en/docs/Web/API/Fetch_API</a></section><section><h4>async/await սխալի կարգավորում <meter min="0" max="100" value="99.85714285714286"></meter></h4><hr/><p class="plain-text">async, await-ը ասինխրոն կոդը ցույց են տալիս սինխրոն կոդի տեսքով, դա .catch error-ը դարձնում են բացառություն</p><pre><code class="javascript hljs">const promise_example = (success=true) =&gt; {
+   return new Promise((accept, reject) =&gt; {
+     const func = () =&gt; success
+       ? accept(&#x27;You waited 3 seconds, here is the data&#x27;)
+       : reject(new Error(&#x27;failure&#x27;));
+     setTimeout(func, 3 * 1000);
+   })
+ }
+ (async () =&gt; {
+   try { await promise_example(false); }
+   catch (e) { console.log(e.message); }
+ })()</code></pre><p class="plain-text">Ուշադրություն դարձրեք հետաքրքիր ձեւին, որով կարող եք անել ամենաբարձր մակարդակի async/await կանչ։</p><a class="links" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await</a></section></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
