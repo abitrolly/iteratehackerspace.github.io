@@ -239,7 +239,7 @@ h3 {
 }
 
 .zigzag {
-  background-image: url('images/zigzag.png');
+  background-image: url('../images/zigzag.png');
   background-repeat: no-repeat;
 }
 
@@ -265,12 +265,12 @@ h3 {
 .course-box a:hover { color: #00eb7f; }
 
 .vertical-zigzag {
-  background-image: url('images/zigzag-vertical.png');
+  background-image: url('../images/zigzag-vertical.png');
   background-repeat: no-repeat;
   background-position: right;
 }
 
-.conduct > li { list-style-image: url('images/conduct-bullet.png'); }
+.conduct > li { list-style-image: url('../images/conduct-bullet.png'); }
 
 .conduct ol > li{ list-style-image: none;}
 
@@ -316,7 +316,7 @@ img{max-width: 100%}
 
 #main-nav .navtoogle{
   display: none;
-  background: none;	
+  background: none;
   border: none;
   cursor: pointer;
   right:20px;

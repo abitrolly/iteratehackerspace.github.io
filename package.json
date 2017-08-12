@@ -1,13 +1,13 @@
 {
   "name": "iteratehackerspace.github.io",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "description": "Code behind iteratehackerspace.github.io",
   "main": "index.js",
   "scripts": {
-    "build-site": "babel --presets=es2015,react site.jsx > site.js && node site.js",
+    "server": "webpack-dev-server",
     "front-end-lectures": "babel --presets=es2015,react front-end-lectures.js > f.js && node f.js",
     "watch": "fswatch -o lib -o front-end-lectures.js | xargs -n1 -I{} ./build.sh",
-    "pretty": "prettier --write --jsx-bracket-same-line front-end-lectures.js"
+    "bundle": "webpack --progress --colors -p"
   },
   "repository": {
     "type": "git",
@@ -20,17 +20,20 @@
   },
   "homepage": "https://github.com/iteratehackerspace/iteratehackerspace.github.io#readme",
   "dependencies": {
-    "bs-platform": "^1.8.1",
-    "global": "^4.3.2",
     "react": "^15.6.1",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.23.0",
     "htmltojsx": "^0.2.6",
-    "prettier": "^1.5.3"
+    "prettier": "^1.5.3",
+    "webpack": "^3.5.3",
+    "webpack-dev-server": "^2.7.1"
   }
 }
