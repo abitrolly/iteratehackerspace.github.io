@@ -93,53 +93,13 @@ export default () =>
     </div>
     <div className="container project-title padding-bottom-7 padding-top-4">
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-md-12">
           <div className="round bg-green center-div">
             <p className="text-center white text-medium">
               It's<br />
               <span className="bold text-large">free</span>
               <br />to join!
             </p>
-          </div>
-        </div>
-        <div className="col-md-5 padding-top-2">
-          <div className="row">
-            <div className="col-xs-3">
-              <img src="static/images/chat.png" alt="Chat icon" />
-            </div>
-            <div className="col-xs-9">
-              <p className="text-regular">
-                Come{' '}
-                <span className="par-link-bg">
-                  <a href="http://hyechat.herokuapp.com/">chat with us</a>
-                </span>{' '}
-                on <em>our own</em> <b>
-                  Node.js, React.js, Websocket-powered
-                </b>{' '}
-                chat room running on an <b>IBM Bluemix</b> server.
-              </p>
-              <p className="upper-link theme-color padding-top-half">
-                <a href="https://github.com/iteratehackerspace/react-local-chat">
-                  Here's the source code
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 padding-top-2">
-          <div className="row">
-            <div className="col-xs-3">
-              <img src="static/images/calendar.png" alt="calendar icon" />
-            </div>
-            <div className="col-xs-9">
-              <p className="text-regular">
-                Checkout{' '}
-                <span className="par-link-bg">
-                  <a href="https://silicondzor.com"> silicondzor.com</a>
-                </span>{' '}
-                to see <b>all tech events in Armenia </b> and to add your own 🤘
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -242,37 +202,21 @@ export default () =>
                 <tr>
                   <td />
                   <td>
-                    <b>18:30</b>
+                    <b>18:00</b>
                   </td>
-                  <td className="grey">19:00</td>
-                  <td className="grey">19:30</td>
-                  <td className="grey">20:00</td>
-                  <td className="grey">20:30</td>
+                  <td className="grey"></td>
+                  <td className="grey"></td>
+                  <td className="grey"></td>
+                  <td className="grey"></td>
                   <td>
-                    <b>21:00</b>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="weekday">MON</td>
-                  <td colSpan={6}>
-                    <div className="course-title">
-                      NSS-alive (JavaScript, Sqlite, Python)
-                    </div>
+                    <b>22:00</b>
                   </td>
                 </tr>
                 <tr>
                   <td className="weekday">TUE</td>
                   <td colSpan={6}>
                     <div className="course-title">
-                      NSS-alive (JavaScript, Sqlite, Python)
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="weekday">WED</td>
-                  <td colSpan={6}>
-                    <div className="course-title">
-                      Beginner Project (JavaScript + ReactJS)
+                      Terminal commands
                     </div>
                   </td>
                 </tr>
@@ -280,21 +224,15 @@ export default () =>
                   <td className="weekday">THU</td>
                   <td colSpan={6}>
                     <div className="course-title">
-                      Beginner Project (JavaScript + ReactJS)
+                      JavaScript (Primitives, Variable Initialization)
                     </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="weekday">FRI</td>
-                  <td colSpan={6}>
-                    <div className="course-title">Iterate Shell (C/C++)</div>
                   </td>
                 </tr>
                 <tr>
                   <td className="weekday">SAT</td>
                   <td colSpan={6}>
                     <div className="course-title">
-                      Iterate Shell (C/C++) + Capture The Flag
+                      JavaScript (Boolean Operators, if/switch Statements)
                     </div>
                   </td>
                 </tr>
@@ -317,12 +255,12 @@ export default () =>
         <div className="row">
           <div className="col-md-5">
             <p className="text-regular">
-              The hackerspace is open from <b>17:00-21:00, Monday-Saturday</b>.
+              The hackerspace is open from <b>18:00-22:00. Tuesday, Thursday, Saturday</b>.
             </p>
             <p className="text-regular">
-              We are located in <b>ISTC</b> (IBM Innovative Solutions and
-              Technologies Center), on the sixth floor of the Linguistics
-              Building at Yerevan State University.
+              We are located in <b>AUA</b> (American University of Armenia),
+              on the fourth floor of the AUA Paramaz Avedisian Building
+              in <strong>408E</strong> room
             </p>
             <div className="padding-top-2">
               <p className="text-uppercase green">
@@ -333,11 +271,7 @@ export default () =>
               <p className="text-regular">
                 We want to thank{' '}
                 <span className="par-link">
-                  <a href="http://www.istc.am/">ISTC</a>
-                </span>{' '}
-                and{' '}
-                <span className="par-link">
-                  <a href="http://www.eif.am/">EIF</a>
+                  <a href="http://www.aua.am/">AUA</a>
                 </span>{' '}
                 for providing us this space and supporting us with the necessary
                 resources.
@@ -346,7 +280,7 @@ export default () =>
           </div>
           <div className="col-md-6 col-md-offset-1">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.164070699225!2d44.52429331538868!3d40.18316197939299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd4e4c4a93a9%3A0xb1a196eecbc8204e!2sInnovative+Solutions+and+Technologies+Center+(ISTC)!5e0!3m2!1sen!2sus!4v1491031883044"
+              src="https://www.google.com/maps/place/%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6%D5%AB+%D4%B1%D5%B4%D5%A5%D6%80%D5%AB%D5%AF%D5%B5%D5%A1%D5%B6+%D5%80%D5%A1%D5%B4%D5%A1%D5%AC%D5%BD%D5%A1%D6%80%D5%A1%D5%B6/@40.1930377,44.5022866,17z/data=!3m1!4b1!4m5!3m4!1s0x406abd173fd4d621:0x213beef7d45c07c5!8m2!3d40.1930377!4d44.5044753"
               width={600}
               height={350}
               allowFullScreen
@@ -449,10 +383,6 @@ export default () =>
             <p className="text-regular">
               And huge appreciation and thanks to Mariam Melkumyan for
               completely redoing this site and making it gorgeous.
-            </p>
-            <p className="text-regular">
-              Thanks to <em>Sparik Hayrapetyan</em>, <em>Aram Gevorgyan</em> and{' '}
-              <em>Robert Adamian</em> for helping with Armenian translations.{' '}
             </p>
             <p className="padding-top-5">
               Built with ReactJS, please, make a pull requests on<span className="par-link">

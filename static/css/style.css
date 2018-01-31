@@ -292,6 +292,9 @@ img{max-width: 100%}
 .table-container{
   overflow-x:auto;
 }
+.timetable {
+  width: 100%;
+}
 .timetable td{
   padding: 10px 20px;
   line-height: 1.42857143;
