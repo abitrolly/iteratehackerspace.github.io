@@ -36,7 +36,7 @@
   padding: 0.625rem;
 }
 
-.title {
+.first-section-title {
   font-size: 3.75rem;
   font-weight: 900;
 }
@@ -50,12 +50,12 @@
   margin-top: 1.25rem;
 }
 
-.intro-description {
+.first-section-intro-description {
   font-size: 1.875rem;
   text-align: center;
 }
 
-.free-to-join {
+.first-section-free-to-join {
   color: white;
   width: 9.5rem;
   height: 9.5rem;
@@ -71,7 +71,7 @@
   background-color: green;
 }
 
-.free-to-join-strong {
+.first-section-free-to-join-strong {
   font-size: 1.875rem;
   font-weight: 700;
 }
