@@ -1,0 +1,127 @@
+.App {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.firstSection {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App-header {
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+  width: 90vw;
+}
+
+.iterateLogo {
+  width: 90;
+  height: 30;
+}
+
+.routeLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.routeLink {
+  padding: 10px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.greenSmallLine {
+  width: 10px;
+  border-top: 3px green solid;
+  border-left: 10px green solid;
+  border-right: 10px green solid;
+  border-bottom: 3px green solid;
+  margin-top: 20px;
+}
+
+.introDescription {
+  font-size: 30px;
+  text-align: center;
+}
+
+.freeToJoin {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  font-size: 23px;
+  font-weight: 200;
+  border-radius: 100px;
+  background-color: green;
+  color: white;
+}
+
+.freeToJoinStrong {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.secondSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7f7f7;
+}
+
+.secondSectionTitle {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.secondSectionDescription {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.secondSectionFirstRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.secondSectionCard {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 30px;
+  box-shadow:rgba(140, 160, 170, 0.1) 0px 0px 30px 15px;
+}
+
+.secondSectionCardIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.secondSectionCardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
