@@ -1,127 +1,126 @@
-.App {
-  align-items: center;
-  justify-content: center;
+.app {
   display: flex;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 
-.firstSection {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.first-section {
   width: 100vw;
-}
-
-.App-header {
+  height: 100vh;
   display: flex;
-  padding: 50px;
-  justify-content: space-around;
-  width: 90vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.iterateLogo {
+.app-header {
+  width: 90vw;
+  display: flex;
+  padding: 3.125rem;
+  justify-content: space-around;
+}
+
+.iterate-logo {
   width: 90;
   height: 30;
 }
 
-.routeLinks {
+.route-links {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
 }
 
-.routeLink {
-  padding: 10px;
+.route-link {
+  padding: 0.625rem;
 }
 
 .title {
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 900;
 }
 
-.greenSmallLine {
-  width: 10px;
-  border-top: 3px green solid;
-  border-left: 10px green solid;
-  border-right: 10px green solid;
-  border-bottom: 3px green solid;
-  margin-top: 20px;
+.green-small-line {
+  width: 0.625rem;
+  border-top: 0.1875rem green solid;
+  border-left: 0.625rem green solid;
+  border-right: 0.625rem green solid;
+  border-bottom: 0.1875rem green solid;
+  margin-top: 1.25rem;
 }
 
-.introDescription {
-  font-size: 30px;
+.intro-description {
+  font-size: 1.875rem;
   text-align: center;
 }
 
-.freeToJoin {
-  margin-top: 100px;
+.free-to-join {
+  color: white;
+  width: 9.5rem;
+  height: 9.5rem;
   display: flex;
+  font-size: 1.4375rem;
+  text-align: center;
+  margin-top: 6.25rem;
+  font-weight: 200;
+  align-items: center;
+  border-radius: 6.25rem;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  font-size: 23px;
-  font-weight: 200;
-  border-radius: 100px;
   background-color: green;
-  color: white;
 }
 
-.freeToJoinStrong {
+.free-to-join-strong {
+  font-size: 1.875rem;
   font-weight: 700;
-  font-size: 30px;
 }
 
-.secondSection {
+.second-section {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  justify-content: center;
   background-color: #f7f7f7;
 }
 
-.secondSectionTitle {
-  font-size: 30px;
+.second-section-title {
   font-weight: 900;
+  font-size: 1.875rem;
 }
 
-.secondSectionDescription {
-  font-size: 25px;
+.second-section-description {
   font-weight: 300;
+  font-size: 1.5rem;
 }
 
-.secondSectionFirstRow {
+.second-section-first-row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.secondSectionCard {
-  width: 200px;
-  height: 200px;
+.second-section-card {
+  width: 12.5rem;
+  height: 12.5rem;
+  margin: 1.875rem;
   display: flex;
-  flex-direction: column;
+  box-shadow:rgba(140, 160, 170, 0.1) 0rem 0rem 1.875rem 0.9375rem;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-color: white;
-  margin: 30px;
-  box-shadow:rgba(140, 160, 170, 0.1) 0px 0px 30px 15px;
 }
 
-.secondSectionCardIcon {
-  width: 50px;
-  height: 50px;
+.second-section-card-icon {
+  width: 3.125rem;
+  height: 3.125rem;
 }
 
-.secondSectionCardTitle {
-  font-size: 20px;
-  font-weight: 700;
+.second-section-card-title {
+  font-size: 1.25rem;
   text-align: center;
+  font-weight: 700;
 }
