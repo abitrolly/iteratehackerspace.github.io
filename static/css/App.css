@@ -12,6 +12,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-color: white;
 }
 
 .app-header {
@@ -123,4 +124,97 @@
   font-size: 1.25rem;
   text-align: center;
   font-weight: 700;
+}
+
+.third-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.third-section-title {
+  font-weight: 900;
+  font-size: 1.875rem;
+}
+
+.third-section-description {
+  font-weight: 300;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.third-section-description-strong {
+  font-weight: 900;
+}
+
+.third-section-info {
+  display: flex;
+  flex-direction: row;
+  padding: 3.1rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+}
+
+.third-section-note {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 3.5rem;
+}
+
+.third-section-note-text {
+  padding-right: 30px;
+  font-size: 20px;
+}
+
+.third-section-note-text-strong {
+  font-weight: 900;
+}
+
+.third-section-calendar {
+  display: flex;
+  flex-direction: column;
+}
+
+.third-section-time-wrapper {
+  display: flex;
+  font-weight: 900;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-bottom: 10px;
+}
+
+.third-section-day {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.third-section-workshop-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  padding-bottom: 10px;
+}
+
+.third-section-workshop {
+  background-color: #ffd015;
+  padding: 5px 15px;
+  border-radius: 16px;
+  width: 400px;
+}
+
+.zigzag-style {
+  width: 20px;
+  height: 100px;
+  background-image: url(../images/zigzag-vertical.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
