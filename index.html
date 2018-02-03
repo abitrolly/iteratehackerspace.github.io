@@ -9,7 +9,7 @@
 <body>
 
   <div class="app">
-    <div class="first-section">
+    <div class="first-section" onclick>
       <header class="app-header">
         <img src="static/images/logo.png" class="iterate-logo" alt="logo" />
         <div class="route-links">
@@ -46,40 +46,40 @@
         Here are the lecture notes from our bootcamps
       </div>
       <div class="second-section-first-row">
-        <div class="second-section-card">
+        <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
           <img src="static/images/icon-linux.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
           <img src="static/images/icon-js.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Intro to<br/>Javascript</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
           <img src="static/images/icon-js2.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
           <img src="static/images/icon-test.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Test-Drivent<br/>Development</div>
-        </div>
+        </a>
       </div>
       <div class="second-section-first-row">
-        <div class="second-section-card">
+        <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
           <img src="static/images/icon-udp.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
           <img src="static/images/icon-review.png" class="second-section-card-icon" />
           <div class="second-section-card-title">UDP Multicast</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
           <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Review</div>
-        </div>
-        <div class="second-section-card">
+        </a>
+        <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
           <img src="static/images/icon-network.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Javascript<br/>Promises</div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="third-section">
@@ -132,7 +132,7 @@
           <br/><br/>
           <div class="fourth-section-big-thank-you"> BIG THANK YOU</div>
           <br/>
-          We want to thank AUA for providing us this space and supporting us with the necessary resources.
+          We want to thank <a class="hover-link" href="http://www.aua.am/">AUA</a> for providing us this space and supporting us with the necessary resources.
         </div>
         <div>
           <iframe
@@ -154,36 +154,48 @@
         These are adapted from Gothenburg Hackerspace.
       </div>
       <div class="fifth-section-code">
-        <b>iterate hackerspace</b> is an inclusive society where everyone is welcome
-        to discuss and learn more about technology regardless of age, ethnicity,
-        gender, sexuality or religion. We want all participants to have an enjoyable
-        and fulfilling experience. Hence, all participants are expected to behave
-        with mutual respect, tolerance, encouragement in mind.
-        <br/><br/>
-        Everyone at iterate hackerspace is obliged to follow this code of conduct.
-        It applies to all of the association's physical gatherings and events,
-        as well as to communication channels and other virtual activities.
-        <br/><br/>
-        Harassment includes offensive or unwanted comments concerning,
-        but not limited to, gender, sexual orientation, disabilities,
-        physical appearance, ethnicity or religion. The following
-        actions and behaviors are cause for countermeasures to be
-        taken: Sustained disruption of talks, deliberate intimidation,
-        stalking, unwanted photographs or recording, inappropriate
-        physical contact, unwelcome sexual attention, and
-        pornographic pictures in public places (including
-        slides and profile/avatar pictures).
-        <br/><br/>
-        The following countermeasures are to be expected:
-        <br/><br/>
-        1. The alleged offender may be confronted and asked to change their behavior.
-        <br/><br/>
-        2. The alleged offender may be asked to leave the area until further notice.
-        <br/><br/>
-        3. If the behavior continues, the alleged offender may be prohibited from
-        participating in all future events, and the incident will be reported to
-        the appropriate authorities. Our main interest is to sustain a friendly
-        and welcoming atmosphere for all those involved. Prohibition is a last resort.
+        <ul>
+          <li class="fifth-section-code-item">
+            <b>iterate hackerspace</b> is an inclusive society where everyone is welcome
+            to discuss and learn more about technology regardless of age, ethnicity,
+            gender, sexuality or religion. We want all participants to have an enjoyable
+            and fulfilling experience. Hence, all participants are expected to behave
+            with mutual respect, tolerance, encouragement in mind.
+          </li>
+          <li class="fifth-section-code-item">
+            Everyone at <b>iterate hackerspace</b> is obliged to follow this code of conduct.
+            It applies to all of the association's physical gatherings and events,
+            as well as to communication channels and other virtual activities.
+          </li>
+          <li class="fifth-section-code-item">
+            Harassment includes offensive or unwanted comments concerning,
+            but not limited to, gender, sexual orientation, disabilities,
+            physical appearance, ethnicity or religion. The following
+            actions and behaviors are cause for countermeasures to be
+            taken: Sustained disruption of talks, deliberate intimidation,
+            stalking, unwanted photographs or recording, inappropriate
+            physical contact, unwelcome sexual attention, and
+            pornographic pictures in public places (including
+            slides and profile/avatar pictures).
+          </li>
+          <li class="fifth-section-code-item">
+            The following countermeasures are to be expected:
+            <ol>
+              <li class="fifth-section-code-inner-item">
+                The alleged offender may be confronted and asked to change their behavior.
+              </li>
+              <li class="fifth-section-code-inner-item">
+                The alleged offender may be asked to leave the area until further notice.
+              </li>
+              <li class="fifth-section-code-inner-item">
+                If the behavior continues, the alleged offender may be prohibited from
+                participating in all future events, and the incident will be reported to
+                the appropriate authorities. Our main interest is to sustain a friendly
+                and welcoming atmosphere for all those involved. Prohibition is a last resort.
+              </li>
+            </ol>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="sixth-section">
@@ -197,6 +209,18 @@
       </div>
     </div>
   </div>
+  <script>
+    const links = Array.from(document.getElementsByClassName("route-link")) || [];
+    const freeToJoin = document.getElementsByClassName("first-section-free-to-join")[0];
+    const scrollToPage = (pageNumber) => {
+      window.scrollTo( 0, pageNumber * window.innerHeight );
+    }
+    freeToJoin.onclick = scrollToPage.bind(null, 2);
+    links.map((link, i) => {
+      link.onclick = scrollToPage.bind(null, i);
+    })
+  </script>
+
 </body>
 </html>
 

@@ -9,6 +9,14 @@ body {
   justify-content: center;
 }
 
+.hover-link {
+  color: black;
+}
+
+.hover-link:hover {
+  color: #00eb7f;
+}
+
 .first-section {
   width: 100vw;
   height: 100vh;
@@ -36,10 +44,15 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
+  font-size: 0.9rem;
 }
 
 .route-link {
   padding: 0.625rem;
+  cursor: pointer;
+}
+.route-link:hover {
+  color: #337ab7;
 }
 
 .first-section-title {
@@ -66,6 +79,7 @@ body {
   color: white;
   width: 9.5rem;
   height: 9.5rem;
+  cursor: pointer;
   display: flex;
   font-size: 1.4375rem;
   text-align: center;
@@ -112,14 +126,21 @@ body {
 }
 
 .second-section-card {
+  color: black;
   width: 12.5rem;
   height: 12.5rem;
   margin: 1.875rem;
+  cursor: pointer;
   display: flex;
   box-shadow:rgba(140, 160, 170, 0.1) 0rem 0rem 1.875rem 0.9375rem;
   align-items: center;
   flex-direction: column;
+  text-decoration: none;
   background-color: white;
+}
+
+.second-section-card:hover {
+  color: #00eb7f;
 }
 
 .second-section-card-icon {
@@ -129,7 +150,7 @@ body {
 }
 
 .second-section-card-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-align: center;
   font-weight: 700;
   margin-top: 0.7rem;
@@ -277,7 +298,7 @@ body {
 }
 
 .fifth-section-title {
-  padding-top: 15vh;
+  padding-top: 10vh;
   font-weight: 900;
   font-size: 1.875rem;
 }
@@ -291,6 +312,22 @@ body {
 .fifth-section-code {
   width: 40vw;
   font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.5;
+  box-sizing: border-box;
+
+}
+
+.fifth-section-code-item {
+  display: list-item;
+  list-style-image: url(../images/conduct-bullet.png);
+  padding-bottom: 0.3rem;
+}
+
+.fifth-section-code-inner-item {
+  list-style-type: decimal;
+  list-style-image: none;
+  padding-bottom: 0.2rem;
 }
 
 .sixth-section {
