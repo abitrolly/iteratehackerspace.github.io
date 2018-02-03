@@ -246,11 +246,36 @@
 }
 
 .fourth-section-map {
-  width: 37.5rem;
-  height: 21.875rem;
+  /* width: 37.5rem;
+  height: 21.875rem; */
 }
 
 .fourth-section-big-thank-you {
   color: #00eb7f;
   font-weight: 900;
+}
+
+.fifth-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.fifth-section-title {
+  font-weight: 900;
+  font-size: 1.875rem;
+}
+
+.fifth-section-gothenberg {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.fifth-section-code {
+  width: 40vw;
+  font-size: 22px;
 }
