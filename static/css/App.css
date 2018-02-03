@@ -271,11 +271,32 @@
 }
 
 .fifth-section-gothenberg {
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: 300;
 }
 
 .fifth-section-code {
   width: 40vw;
-  font-size: 22px;
+  font-size: 1.375rem;
+}
+
+.sixth-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.sixth-section-title {
+  font-weight: 900;
+  font-size: 1.875rem;
+}
+
+.sixth-section-acknowledgment {
+  padding-top: 7vh;
+  font-size: 1.5625rem;
+  font-weight: 300;
 }
