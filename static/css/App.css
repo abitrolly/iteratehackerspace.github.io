@@ -44,10 +44,10 @@
 
 .green-small-line {
   width: 0.625rem;
-  border-top: 0.1875rem green solid;
-  border-left: 0.625rem green solid;
-  border-right: 0.625rem green solid;
-  border-bottom: 0.1875rem green solid;
+  border-top: 0.1875rem #00eb7f solid;
+  border-left: 0.625rem #00eb7f solid;
+  border-right: 0.625rem #00eb7f solid;
+  border-bottom: 0.1875rem #00eb7f solid;
   margin-top: 1.25rem;
 }
 
@@ -69,7 +69,7 @@
   border-radius: 6.25rem;
   flex-direction: column;
   justify-content: space-around;
-  background-color: green;
+  background-color: #00eb7f;
 }
 
 .first-section-free-to-join-strong {
@@ -217,4 +217,43 @@
   background-image: url(../images/zigzag-vertical.png);
   background-repeat: no-repeat;
   background-position: right;
+}
+
+.fourth-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+
+.fourth-section-title {
+  font-weight: 900;
+  font-size: 1.875rem;
+}
+
+.fourth-section-description-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90vw;
+  padding-top: 100px;
+}
+
+.fourth-section-description {
+  width: 400px;
+  font-size: 22px;
+}
+
+.fourth-section-map {
+  width: 600px;
+  height: 350px;
+}
+
+.fourth-section-big-thank-you {
+  color: #00eb7f;
+  font-weight: 900;
 }
