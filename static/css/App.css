@@ -1,3 +1,7 @@
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
 .app {
   display: flex;
   align-items: center;
@@ -11,7 +15,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
 }
 
@@ -19,6 +23,7 @@
   width: 90vw;
   display: flex;
   padding: 3.125rem;
+  padding-bottom: 15vh;
   justify-content: space-around;
 }
 
@@ -49,6 +54,7 @@
   border-right: 0.625rem #00eb7f solid;
   border-bottom: 0.1875rem #00eb7f solid;
   margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .first-section-intro-description {
@@ -63,7 +69,7 @@
   display: flex;
   font-size: 1.4375rem;
   text-align: center;
-  margin-top: 6.25rem;
+  margin-top: 9.25rem;
   font-weight: 200;
   align-items: center;
   border-radius: 6.25rem;
@@ -83,11 +89,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f7f7f7;
 }
 
 .second-section-title {
+  padding-top: 15vh;
   font-weight: 900;
   font-size: 1.875rem;
 }
@@ -95,6 +102,7 @@
 .second-section-description {
   font-weight: 300;
   font-size: 1.5rem;
+  padding-bottom: 10vh;
 }
 
 .second-section-first-row {
@@ -111,11 +119,11 @@
   box-shadow:rgba(140, 160, 170, 0.1) 0rem 0rem 1.875rem 0.9375rem;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   background-color: white;
 }
 
 .second-section-card-icon {
+  margin-top: 3rem;
   width: 3.125rem;
   height: 3.125rem;
 }
@@ -124,6 +132,7 @@
   font-size: 1.25rem;
   text-align: center;
   font-weight: 700;
+  margin-top: 0.7rem;
 }
 
 .third-section {
@@ -132,16 +141,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
 }
 
 .third-section-title {
+  padding-top: 15vh;
   font-weight: 900;
   font-size: 1.875rem;
 }
 
 .third-section-description {
+  padding-bottom: 20vh;
   font-weight: 300;
   font-size: 1.5rem;
 }
@@ -222,11 +233,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f7f7f7;
 }
 
 .fourth-section-title {
+  padding-top: 15vh;
   font-weight: 900;
   font-size: 1.875rem;
 }
@@ -246,8 +258,7 @@
 }
 
 .fourth-section-map {
-  /* width: 37.5rem;
-  height: 21.875rem; */
+  border: none;
 }
 
 .fourth-section-big-thank-you {
@@ -261,11 +272,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white;
 }
 
 .fifth-section-title {
+  padding-top: 15vh;
   font-weight: 900;
   font-size: 1.875rem;
 }
@@ -273,11 +285,12 @@
 .fifth-section-gothenberg {
   font-size: 1.5625rem;
   font-weight: 300;
+  padding-bottom: 5vh;
 }
 
 .fifth-section-code {
   width: 40vw;
-  font-size: 1.375rem;
+  font-size: 1.05rem;
 }
 
 .sixth-section {
@@ -286,17 +299,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f7f7f7;
 }
 
 .sixth-section-title {
   font-weight: 900;
+  padding-top: 15vh;
   font-size: 1.875rem;
 }
 
 .sixth-section-acknowledgment {
-  padding-top: 7vh;
+  padding-top: 15vh;
   font-size: 1.5625rem;
   font-weight: 300;
 }
