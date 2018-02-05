@@ -294,6 +294,7 @@ body {
 
 .fourth-section-map {
   border: none;
+  max-width: 100%;
 }
 
 .fourth-section-big-thank-you {
