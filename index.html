@@ -9,15 +9,16 @@
 <body>
 
   <div class="app">
+    <a href="first-sect"></a>
     <div class="first-section" onclick>
       <header class="app-header">
         <img src="static/images/logo.png" class="iterate-logo" alt="logo" />
         <div class="route-links">
-          <div class="route-link">PURPOSE</div>
-          <div class="route-link">EDUCATIONAL MATERIALS</div>
-          <div class="route-link">SCHEDULE</div>
-          <div class="route-link">LOCATION</div>
-          <div class="route-link">CODE OF CONDUCT</div>
+          <a href="#first-sect" class="route-link">PURPOSE</a>
+          <a href="#second-sect" class="route-link">EDUCATIONAL MATERIALS</a>
+          <a href="#third-sect" class="route-link">SCHEDULE</a>
+          <a href="#fourth-sect" class="route-link">LOCATION</a>
+          <a href="#fifth-sect" class="route-link">CODE OF CONDUCT</a>
         </div>
       </header>
       <div class="first-section-title">
@@ -25,18 +26,19 @@
       </div>
       <hr class="green-small-line"/>
       <div class="first-section-intro-description">
-        It's a safe place where you can use our Debian Linux<br/>
-        computers, experiment with open-source code, learn new<br/>
+        It's a safe place where you can use our Debian Linux
+        computers, experiment with open-source code, learn new
         technologies and make new friends!
       </div>
-      <div class="first-section-free-to-join">
+      <a href="#third-sect" class="first-section-free-to-join">
         <div>
           <div>it's</div>
           <div class="first-section-free-to-join-strong">free</div>
           <div>to join!</div>
         </div>
-      </div>
+      </a>
     </div>
+    <a name="sec-sect"></a>
     <div class="second-section">
       <div class="second-section-title">
         Educational Materials
@@ -45,7 +47,90 @@
       <div class="second-section-description">
         Here are the lecture notes from our bootcamps
       </div>
-      <div class="second-section-first-row">
+
+      <div class="second-section-cards-normal">
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
+            <img src="static/images/icon-linux.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
+            <img src="static/images/icon-js.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Intro to<br/>Javascript</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
+            <img src="static/images/icon-js2.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
+            <img src="static/images/icon-test.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Test-Drivent<br/>Development</div>
+          </a>
+        </div>
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
+            <img src="static/images/icon-udp.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
+            <img src="static/images/icon-review.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">UDP Multicast</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
+            <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Review</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
+            <img src="static/images/icon-network.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Javascript<br/>Promises</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="second-section-cards-ipad">
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
+            <img src="static/images/icon-linux.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
+            <img src="static/images/icon-js.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Intro to<br/>Javascript</div>
+          </a>
+        </div>
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
+            <img src="static/images/icon-js2.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
+            <img src="static/images/icon-test.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Test-Drivent<br/>Development</div>
+          </a>
+        </div>
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
+            <img src="static/images/icon-udp.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
+            <img src="static/images/icon-review.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">UDP Multicast</div>
+          </a>
+        </div>
+        <div class="second-section-row">
+          <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
+            <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Review</div>
+          </a>
+          <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
+            <img src="static/images/icon-network.png" class="second-section-card-icon" />
+            <div class="second-section-card-title">Javascript<br/>Promises</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="second-section-cards-phone">
         <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
           <img src="static/images/icon-linux.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
@@ -62,8 +147,6 @@
           <img src="static/images/icon-test.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Test-Drivent<br/>Development</div>
         </a>
-      </div>
-      <div class="second-section-first-row">
         <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
           <img src="static/images/icon-udp.png" class="second-section-card-icon" />
           <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
@@ -82,6 +165,7 @@
         </a>
       </div>
     </div>
+    <a name="third-sect"></a>
     <div class="third-section">
       <div class="third-section-title">
         Course Schedule
@@ -119,6 +203,7 @@
         </div>
       </div>
     </div>
+    <a name="fourth-sect"></a>
     <div class="fourth-section">
       <div class="fourth-section-title">
         Location
@@ -135,16 +220,17 @@
           We want to thank <a class="hover-link" href="http://www.aua.am/">AUA</a> for providing us this space and supporting us with the necessary resources.
         </div>
         <div>
-          <iframe
+            <iframe
             class="fourth-section-map"
             src="https://www.google.com/maps/embed/v1/place?q=american%20university%20of%20armenia&key=AIzaSyBYuIxkYTmTmYz-OENF-di1SIC2xvYEqSE"
-            width=600
+            width=300
             height=350
             allowFullScreen
           ></iframe>
         </div>
       </div>
     </div>
+    <a name="fifth-sect"></a>
     <div class="fifth-section">
       <div class="fifth-section-title">
         Code of Conduct
@@ -198,13 +284,14 @@
         </ul>
       </div>
     </div>
+    <a name="sixth-sect"></a>
     <div class="sixth-section">
       <div class="sixth-section-title">
         ACKNOWLEDGMENTS
       </div>
       <hr class="green-small-line"/>
       <div class="sixth-section-acknowledgment">
-        And huge appreciation and thanks to Mariam Melkumyan<br/>
+        And huge appreciation and thanks to Mariam Melkumyan
         for completely redoing this site and making it gorgeous.
       </div>
     </div>
@@ -215,7 +302,7 @@
     const scrollToPage = (pageNumber) => {
       window.scrollTo( 0, pageNumber * window.innerHeight );
     }
-    freeToJoin.onclick = scrollToPage.bind(null, 2);
+    freeToJoin.onclick = // scrollToPage.bind(null, 2);
     links.map((link, i) => {
       link.onclick = scrollToPage.bind(null, i);
     })
