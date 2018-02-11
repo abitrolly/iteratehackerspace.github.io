@@ -76,7 +76,7 @@ body {
 .first-section-intro-description {
   font-size: 1.875rem;
   text-align: center;
-  width: 70vw;
+  width: 50vw;
 }
 
 .first-section-free-to-join {
@@ -400,6 +400,9 @@ body {
   }
   .first-section {
     height: inherit;
+  }
+  .first-section-intro-description {
+    width: 70vw;
   }
   .second-section {
     height: inherit;
