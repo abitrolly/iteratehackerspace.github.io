@@ -8,29 +8,28 @@
   <link rel="stylesheet" type="text/css" href="static/css/App.css" />
 </head>
 <body>
-
   <div class="app">
-    <a href="first-sect"></a>
+    <a name="first-sect"></a>
     <div class="first-section" onclick>
       <header class="app-header">
         <img src="static/images/logo.png" class="iterate-logo" alt="logo" />
         <div class="route-links">
-          <a href="#first-sect" class="route-link">PURPOSE</a>
-          <a href="#second-sect" class="route-link">EDUCATIONAL MATERIALS</a>
-          <a href="#third-sect" class="route-link">SCHEDULE</a>
-          <a href="#fourth-sect" class="route-link">LOCATION</a>
-          <a href="#fifth-sect" class="route-link">CODE OF CONDUCT</a>
+          <a href="#purpose" onClick="scroll(this)" class="route-link">PURPOSE</a>
+          <a href="#educational-materials" onClick="scroll(this)" class="route-link">EDUCATIONAL MATERIALS</a>
+          <a href="#schedule" onClick="scroll(this)" class="route-link">SCHEDULE</a>
+          <a href="#location" onClick="scroll(this)" class="route-link">LOCATION</a>
+          <a href="#code-of-conduct" onClick="scroll(this)" class="route-link">CODE OF CONDUCT</a>
         </div>
       </header>
       <div class="first-section-title">
-        Welcome to hackerspace.
+        Welcome to hackerspace
       </div>
       <hr class="green-small-line"/>
       <div class="first-section-intro-description">
         It’s a safe place where you can learn new technologies,
         experiment with open-source code and make new friends.
       </div>
-      <a href="#third-sect" class="first-section-free-to-join">
+      <a href="#third-sect" class="first-section-free-to-join free-to-join-rotate">
         <div>
           <div>it's</div>
           <div class="first-section-free-to-join-strong">free</div>
@@ -38,7 +37,7 @@
         </div>
       </a>
     </div>
-    <a name="sec-sect"></a>
+    <a name="educational-material"></a>
     <div class="second-section">
       <div class="second-section-title">
         Educational Materials
@@ -165,23 +164,22 @@
         </a>
       </div>
     </div>
-    <a name="third-sect"></a>
+    <a name="schedule"></a>
     <div class="third-section">
       <div class="third-section-title">
         Course Schedule
       </div>
-      <hr class="green-small-line"/>
+      <hr class="course-line"/>
       <div class="third-section-description">
         All the workshops and usage of the computers is&nbsp<b>free.</b>
       </div>
       <div class="third-section-info">
         <div class="third-section-note">
           <div class="third-section-note-text">
-            The schedule is subject to change.
+            The schedule is updated weekly
             <br/><br/>
             There is no formal registration process - &nbsp<div class="third-section-note-text-strong">just show up!</div>
           </div>
-          <span class="zigzag-style"/>
         </div>
         <div class="third-section-calendar">
           <div class="third-section-time-wrapper">
@@ -190,20 +188,20 @@
           </div>
           <div class="third-section-workshop-wrapper">
             <div class="third-section-day">TUE</div>
-            <div class="third-section-workshop">Javascript (for loops, while loops, Arrays)</div>
+            <div class="third-section-workshop">JavaScript (for loops, while loops)</div>
           </div>
           <div class="third-section-workshop-wrapper">
             <div class="third-section-day">THU</div>
-            <div class="third-section-workshop">Javascript (Functions, Scope, Var)</div>
+            <div class="third-section-workshop">JavaScript (Functions, Scope, Var)</div>
           </div>
           <div class="third-section-workshop-wrapper">
             <div class="third-section-day">SAT</div>
-            <div class="third-section-workshop">JavaScript (Recursion, Objects)</div>
+            <div class="third-section-workshop">JavaScript (Recursion)</div>
           </div>
         </div>
       </div>
     </div>
-    <a name="fourth-sect"></a>
+    <a name="location"></a>
     <div class="fourth-section">
       <div class="fourth-section-title">
         Location
@@ -213,7 +211,7 @@
         <div class="fourth-section-description">
           The hackerspace is open from&nbsp<b>18:00-22:00. Tuesday, Thursday, Saturday.</b>
           <br/><br/>
-          We are located in <b>AUA</b> (American University of Armenia), on the fourth floor of the AUA Paramaz Avedisian Building in <b>408E</b> room
+          We are located in <b>AUA</b> (American University of Armenia), on the fourth floor of the AUA Paramaz Avedisian Building, in <b>408E</b> room
           <br/><br/>
           <div class="fourth-section-big-thank-you"> BIG THANK YOU</div>
           <br/>
@@ -230,7 +228,7 @@
         </div>
       </div>
     </div>
-    <a name="fifth-sect"></a>
+    <a name="code-of-conduct"></a>
     <div class="fifth-section">
       <div class="fifth-section-title">
         Code of Conduct
@@ -306,6 +304,10 @@
     links.map((link, i) => {
       link.onclick = scrollToPage.bind(null, i);
     })
+    const scroll = elem => {
+      const scrolled = document.getElementById(elem.id)
+      scrolled.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+    }
   </script>
 
 </body>
