@@ -48,15 +48,15 @@ body {
   width: 100vw;
   display: flex;
   padding-top: 0.25rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   margin-bottom: 3rem;
   justify-content: space-around;
   background: linear-gradient(45deg, #fff, #eee 75%, #f4f4f4); 
   box-shadow: rgba(140, 160, 170, 0.1) 0rem 0rem 1.875rem 0.9375rem;
   color: #76C4E2; 
   border-bottom: 1px solid #76C4E2;
-  border-bottom-left-radius: 50%; 
-  border-bottom-right-radius: 50%; 
+  /* border-bottom-left-radius: 50%;  */
+  /* border-bottom-right-radius: 50%;  */
 }
 
 .iterate-logo {
@@ -353,7 +353,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(45deg, #408BC9, #76C4E2 65%, #CDECFF);
+  background-color: white;
   /* background-color: white; */
   padding-bottom: 10vh;
 }
@@ -413,13 +413,13 @@ body {
 
 .sixth-section {
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #555;
-  color: #ccc;
+  background-color: #eee;
+  color: #555;
 }
 
 .sixth-section-title {
@@ -513,7 +513,7 @@ body {
   }
 
   .sixth-section {
-    height: 30vh;
+    height: 40vh;
   }
 }
 @media (max-width: 770px) {
@@ -531,7 +531,7 @@ body {
   }
 
   .sixth-section {
-    height: 50vh;
+    height: 60vh;
   }
 
   .sixth-section-title {
