@@ -1,92 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <title>iterate</title>
-  <link rel="shortcut icon" href="static/images/favicon-blue.gif" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#76C4E2"/>
-  <link rel="stylesheet" type="text/css" href="static/css/App.css" />
-</head>
-<body>
-  <div class="app">
-    <a name="first-sect"></a>
-    <div class="first-section" onclick>
-      <header class="app-header">
-        <img alt="Logo" src="static/images/logo.png" class="iterate-logo" alt="logo" />
-        <div class="route-links">
-          <a onClick="a('#educational-materials')" class="route-link">EDUCATIONAL MATERIALS</a>
-          <a onClick="a('#course-schedule')" class="route-link">COURSE SCHEDULE</a>
-          <a onClick="a('#location')" class="route-link">LOCATION</a>
-          <a onClick="a('#code-of-conduct')" class="route-link">CODE OF CONDUCT</a>
-        </div>
-      </header>
-      <div class="first-section-title">
-        Welcome to hackerspace
+  <head>
+    <meta charset="utf-8" />
+    <title>iterate</title>
+    <link rel="shortcut icon" href="static/images/favicon-blue.gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#76C4E2"/>
+    <link rel="stylesheet" type="text/css" href="static/css/App.css" />
+  </head>
+  <body>
+    <div class="app">
+      <a name="first-sect"></a>
+      <div class="first-section" onclick>
+	<header class="app-header">
+          <img alt="Logo" src="static/images/logo.png" class="iterate-logo" alt="logo" />
+          <div class="route-links">
+            <a onClick="a('#educational-materials')" class="route-link">EDUCATIONAL MATERIALS</a>
+            <a onClick="a('#course-schedule')" class="route-link">COURSE SCHEDULE</a>
+            <a onClick="a('#location')" class="route-link">LOCATION</a>
+            <a onClick="a('#code-of-conduct')" class="route-link">CODE OF CONDUCT</a>
+          </div>
+	</header>
+	<div class="first-section-title">
+          Welcome to hackerspace
+	</div>
+	<hr class="green-small-line"/>
+	<div class="first-section-intro-description">
+          A safe place where you can learn new technologies,
+          experiment with open-source code and make new friends.
+	</div>
+	<a onClick="scroll('#location')" class="first-section-free-to-join free-to-join-rotate">
+          <div>
+            <div>it's</div>
+            <div class="first-section-free-to-join-strong">free</div>
+            <div>to join!</div>
+          </div>
+	</a>
       </div>
-      <hr class="green-small-line"/>
-      <div class="first-section-intro-description">
-        A safe place where you can learn new technologies,
-        experiment with open-source code and make new friends.
-      </div>
-      <a onClick="scroll('#location')" class="first-section-free-to-join free-to-join-rotate">
-        <div>
-          <div>it's</div>
-          <div class="first-section-free-to-join-strong">free</div>
-          <div>to join!</div>
-        </div>
-      </a>
-    </div>
-    <div class="second-section" id="educational-materials">
-      <div class="second-section-title">
-        Educational Materials
-      </div>
-      <hr class="green-small-line"/>
-      <div class="second-section-description">
-        Here are the lecture notes from our bootcamps
-      </div>
+      <div class="second-section" id="educational-materials">
+	<div class="second-section-title">
+          Educational Materials
+	</div>
+	<hr class="green-small-line"/>
+	<div class="second-section-description">
+          Here are the lecture notes from our bootcamps
+	</div>
 
-      <div class="second-section-cards-normal">
-        <div class="second-section-row">
-          <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
-            <img src="static/images/icon-linux.png" alt="Intro to Linux, Shell, Git" class="second-section-card-icon" />
-            <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
-            <img src="static/images/icon-js.png" alt="Intro to JavaScript" class="second-section-card-icon" />
-            <div class="second-section-card-title">Intro to<br/>Javascript</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
-            <img src="static/images/icon-js2.png" alt="Node Module, System and Event Loop" class="second-section-card-icon" />
-            <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
-            <img src="static/images/icon-test.png" alt="Test-Driven Development" class="second-section-card-icon" />
-            <div class="second-section-card-title">Test-Drivent<br/>Development</div>
-          </a>
-        </div>
-        <div class="second-section-row">
-          <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
-            <img src="static/images/icon-udp.png" alt="Networking, TCP/IP and Sockets" class="second-section-card-icon" />
-            <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
-            <img src="static/images/icon-review.png" alt="UDP Multicast" class="second-section-card-icon" />
-            <div class="second-section-card-title">UDP Multicast</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
-            <img src="static/images/icon-js-promises.png" alt="Review"  class="second-section-card-icon" />
-            <div class="second-section-card-title">Review</div>
-          </a>
-          <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
-            <img src="static/images/icon-network.png" alt="JavaScript Promises" class="second-section-card-icon" />
-            <div class="second-section-card-title">Javascript<br/>Promises</div>
-          </a>
-        </div>
-      </div>
+	<div class="second-section-cards-normal">
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
+              <img src="static/images/icon-linux.png" alt="Intro to Linux, Shell, Git" class="second-section-card-icon" />
+              <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
+              <img src="static/images/icon-js.png" alt="Intro to JavaScript" class="second-section-card-icon" />
+              <div class="second-section-card-title">Intro to<br/>Javascript</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
+              <img src="static/images/icon-js2.png" alt="Node Module, System and Event Loop" class="second-section-card-icon" />
+              <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
+              <img src="static/images/icon-test.png" alt="Test-Driven Development" class="second-section-card-icon" />
+              <div class="second-section-card-title">Test-Drivent<br/>Development</div>
+            </a>
+          </div>
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
+              <img src="static/images/icon-udp.png" alt="Networking, TCP/IP and Sockets" class="second-section-card-icon" />
+              <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
+              <img src="static/images/icon-review.png" alt="UDP Multicast" class="second-section-card-icon" />
+              <div class="second-section-card-title">UDP Multicast</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
+              <img src="static/images/icon-js-promises.png" alt="Review"  class="second-section-card-icon" />
+              <div class="second-section-card-title">Review</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
+              <img src="static/images/icon-network.png" alt="JavaScript Promises" class="second-section-card-icon" />
+              <div class="second-section-card-title">Javascript<br/>Promises</div>
+            </a>
+          </div>
+	</div>
 
-      <div class="second-section-cards-ipad">
-        <div class="second-section-row">
+	<div class="second-section-cards-ipad">
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
+              <img src="static/images/icon-linux.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
+              <img src="static/images/icon-js.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Intro to<br/>Javascript</div>
+            </a>
+          </div>
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
+              <img src="static/images/icon-js2.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
+              <img src="static/images/icon-test.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Test-Drivent<br/>Development</div>
+            </a>
+          </div>
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
+              <img src="static/images/icon-udp.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
+              <img src="static/images/icon-review.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">UDP Multicast</div>
+            </a>
+          </div>
+          <div class="second-section-row">
+            <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
+              <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Review</div>
+            </a>
+            <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
+              <img src="static/images/icon-network.png" class="second-section-card-icon" />
+              <div class="second-section-card-title">Javascript<br/>Promises</div>
+            </a>
+          </div>
+	</div>
+
+	<div class="second-section-cards-phone">
           <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
             <img src="static/images/icon-linux.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
@@ -95,8 +137,6 @@
             <img src="static/images/icon-js.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Intro to<br/>Javascript</div>
           </a>
-        </div>
-        <div class="second-section-row">
           <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
             <img src="static/images/icon-js2.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
@@ -105,8 +145,6 @@
             <img src="static/images/icon-test.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Test-Drivent<br/>Development</div>
           </a>
-        </div>
-        <div class="second-section-row">
           <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
             <img src="static/images/icon-udp.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
@@ -115,8 +153,6 @@
             <img src="static/images/icon-review.png" class="second-section-card-icon" />
             <div class="second-section-card-title">UDP Multicast</div>
           </a>
-        </div>
-        <div class="second-section-row">
           <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
             <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Review</div>
@@ -125,188 +161,150 @@
             <img src="static/images/icon-network.png" class="second-section-card-icon" />
             <div class="second-section-card-title">Javascript<br/>Promises</div>
           </a>
-        </div>
+	</div>
       </div>
-
-      <div class="second-section-cards-phone">
-        <a href="backend-bootcamp-english/lecture1.html" class="second-section-card">
-          <img src="static/images/icon-linux.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Intro to Linux,<br/> Shell, Git</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture2.html" class="second-section-card">
-          <img src="static/images/icon-js.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Intro to<br/>Javascript</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture3.html" class="second-section-card">
-          <img src="static/images/icon-js2.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Node Module<br/>System & Event<br/>Loop</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture4.html" class="second-section-card">
-          <img src="static/images/icon-test.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Test-Drivent<br/>Development</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture5.html" class="second-section-card">
-          <img src="static/images/icon-udp.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Networking<br/>TCP/IP & Sockets</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture6.html" class="second-section-card">
-          <img src="static/images/icon-review.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">UDP Multicast</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture7.html" class="second-section-card">
-          <img src="static/images/icon-js-promises.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Review</div>
-        </a>
-        <a href="backend-bootcamp-english/lecture8.html" class="second-section-card">
-          <img src="static/images/icon-network.png" class="second-section-card-icon" />
-          <div class="second-section-card-title">Javascript<br/>Promises</div>
-        </a>
+      <div class="third-section" id="course-schedule">
+	<div class="third-section-title">
+          Course Schedule
+	</div>
+	<hr class="course-line"/>
+	<div class="third-section-description">
+          All the workshops and usage of the computers is&nbsp<b>free.</b>
+	</div>
+	<div class="third-section-info">
+          <div class="third-section-note">
+            <div class="third-section-note-text">
+              The schedule is updated weekly
+              <br/><br/>
+              There is no formal registration process - &nbsp<div class="third-section-note-text-strong">just show up!</div>
+            </div>
+          </div>
+          <div class="third-section-calendar">
+            <div class="third-section-time-wrapper">
+              <div>18:00</div>
+              <div>22:00</div>
+            </div>
+            <div class="third-section-workshop-wrapper">
+              <div class="third-section-day">TUE</div>
+              <div class="third-section-workshop">C++ (Types)</div>
+            </div>
+            <div class="third-section-workshop-wrapper">
+              <div class="third-section-day">THU</div>
+              <div class="third-section-workshop">JavaScript (Context/Classes)</div>
+            </div>
+            <div class="third-section-workshop-wrapper">
+              <div class="third-section-day">SAT</div>
+              <div class="third-section-workshop">JavaScript (Context/Classes)</div>
+            </div>
+          </div>
+	</div>
       </div>
-    </div>
-    <div class="third-section" id="course-schedule">
-      <div class="third-section-title">
-        Course Schedule
-      </div>
-      <hr class="course-line"/>
-      <div class="third-section-description">
-        All the workshops and usage of the computers is&nbsp<b>free.</b>
-      </div>
-      <div class="third-section-info">
-        <div class="third-section-note">
-          <div class="third-section-note-text">
-            The schedule is updated weekly
+      <div class="fourth-section" id="location">
+	<div class="fourth-section-title">
+          Location
+	</div>
+	<hr class="green-small-line" />
+	<div class="fourth-section-description-wrapper">
+          <div class="fourth-section-description">
+            The hackerspace is open from&nbsp<b>18:00-22:00. Tuesday, Thursday, Saturday.</b>
             <br/><br/>
-            There is no formal registration process - &nbsp<div class="third-section-note-text-strong">just show up!</div>
+            We are located in <b>AUA</b> (American University of Armenia), on the fourth floor of the AUA Paramaz Avedisian Building, in <b>408E</b> room
+            <br/><br/>
+            <div class="fourth-section-big-thank-you"> BIG THANK YOU</div>
+            <br/>
+            We want to thank <a class="hover-link" href="http://www.aua.am/">AUA</a> for providing us this space and supporting us with the necessary resources.
           </div>
-        </div>
-        <div class="third-section-calendar">
-          <div class="third-section-time-wrapper">
-            <div>18:00</div>
-            <div>22:00</div>
-          </div>
-          <div class="third-section-workshop-wrapper">
-            <div class="third-section-day">TUE</div>
-            <div class="third-section-workshop">C++ (Types)</div>
-          </div>
-          <div class="third-section-workshop-wrapper">
-            <div class="third-section-day">THU</div>
-            <div class="third-section-workshop">JavaScript (Context/Classes)</div>
-          </div>
-          <div class="third-section-workshop-wrapper">
-            <div class="third-section-day">SAT</div>
-            <div class="third-section-workshop">JavaScript (Context/Classes)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="fourth-section" id="location">
-      <div class="fourth-section-title">
-        Location
-      </div>
-      <hr class="green-small-line" />
-      <div class="fourth-section-description-wrapper">
-        <div class="fourth-section-description">
-          The hackerspace is open from&nbsp<b>18:00-22:00. Tuesday, Thursday, Saturday.</b>
-          <br/><br/>
-          We are located in <b>AUA</b> (American University of Armenia), on the fourth floor of the AUA Paramaz Avedisian Building, in <b>408E</b> room
-          <br/><br/>
-          <div class="fourth-section-big-thank-you"> BIG THANK YOU</div>
-          <br/>
-          We want to thank <a class="hover-link" href="http://www.aua.am/">AUA</a> for providing us this space and supporting us with the necessary resources.
-        </div>
-        <div>
+          <div>
             <iframe
             title="Google Maps"
             class="fourth-section-map"
-            src="https://www.google.com/maps/embed/v1/place?q=american%20university%20of%20armenia&key=AIzaSyBYuIxkYTmTmYz-OENF-di1SIC2xvYEqSE"
+            src="https://www.google.com/maps/embed/v1/place?q=Հայաստանի+Ամերիկյան+Համալսարան&key=AIzaSyBYuIxkYTmTmYz-OENF-di1SIC2xvYEqSE"
             width=600
             height=350
             allowFullScreen
-          ></iframe>
-        </div>
+            ></iframe>
+          </div>
+	</div>
+      </div>
+      <div class="fifth-section" id="code-of-conduct">
+	<div class="fifth-section-title">
+          Code of Conduct
+	</div>
+	<hr class="code-line"/>
+	<div class="fifth-section-gothenberg">
+          These are adapted from Gothenburg Hackerspace.
+	</div>
+	<div class="fifth-section-code">
+          <ul>
+            <li class="fifth-section-code-item">
+              <b>iterate hackerspace</b> is an inclusive society where everyone is welcome
+              to discuss and learn more about technology regardless of age, ethnicity,
+              gender, sexuality or religion. We want all participants to have an enjoyable
+              and fulfilling experience. Hence, all participants are expected to behave
+              with mutual respect, tolerance, encouragement in mind.
+            </li>
+            <li class="fifth-section-code-item">
+              Everyone at <b>iterate hackerspace</b> is obliged to follow this code of conduct.
+              It applies to all of the association's physical gatherings and events,
+              as well as to communication channels and other virtual activities.
+            </li>
+            <li class="fifth-section-code-item">
+              Harassment includes offensive or unwanted comments concerning,
+              but not limited to, gender, sexual orientation, disabilities,
+              physical appearance, ethnicity or religion. The following
+              actions and behaviors are cause for countermeasures to be
+              taken: Sustained disruption of talks, deliberate intimidation,
+              stalking, unwanted photographs or recording, inappropriate
+              physical contact, unwelcome sexual attention, and
+              pornographic pictures in public places (including
+              slides and profile/avatar pictures).
+            </li>
+            <li class="fifth-section-code-item">
+              The following countermeasures are to be expected:
+              <ol>
+		<li class="fifth-section-code-inner-item">
+                  The alleged offender may be confronted and asked to change their behavior.
+		</li>
+		<li class="fifth-section-code-inner-item">
+                  The alleged offender may be asked to leave the area until further notice.
+		</li>
+		<li class="fifth-section-code-inner-item">
+                  If the behavior continues, the alleged offender may be prohibited from
+                  participating in all future events, and the incident will be reported to
+                  the appropriate authorities. Our main interest is to sustain a friendly
+                  and welcoming atmosphere for all those involved. Prohibition is a last resort.
+		</li>
+              </ol>
+            </li>
+          </ul>
+	</div>
+      </div>
+      <a name="sixth-sect"></a>
+      <div class="sixth-section">
+	<div class="sixth-section-title">
+          ACKNOWLEDGMENTS
+	</div>
+	<hr class="code-line"/>
+	<div class="sixth-section-acknowledgment">
+          Huge appreciation and thanks to Mariam Melkumyan
+          for completely redoing this site and making it gorgeous.
+	</div>
       </div>
     </div>
-    <div class="fifth-section" id="code-of-conduct">
-      <div class="fifth-section-title">
-        Code of Conduct
-      </div>
-      <hr class="code-line"/>
-      <div class="fifth-section-gothenberg">
-        These are adapted from Gothenburg Hackerspace.
-      </div>
-      <div class="fifth-section-code">
-        <ul>
-          <li class="fifth-section-code-item">
-            <b>iterate hackerspace</b> is an inclusive society where everyone is welcome
-            to discuss and learn more about technology regardless of age, ethnicity,
-            gender, sexuality or religion. We want all participants to have an enjoyable
-            and fulfilling experience. Hence, all participants are expected to behave
-            with mutual respect, tolerance, encouragement in mind.
-          </li>
-          <li class="fifth-section-code-item">
-            Everyone at <b>iterate hackerspace</b> is obliged to follow this code of conduct.
-            It applies to all of the association's physical gatherings and events,
-            as well as to communication channels and other virtual activities.
-          </li>
-          <li class="fifth-section-code-item">
-            Harassment includes offensive or unwanted comments concerning,
-            but not limited to, gender, sexual orientation, disabilities,
-            physical appearance, ethnicity or religion. The following
-            actions and behaviors are cause for countermeasures to be
-            taken: Sustained disruption of talks, deliberate intimidation,
-            stalking, unwanted photographs or recording, inappropriate
-            physical contact, unwelcome sexual attention, and
-            pornographic pictures in public places (including
-            slides and profile/avatar pictures).
-          </li>
-          <li class="fifth-section-code-item">
-            The following countermeasures are to be expected:
-            <ol>
-              <li class="fifth-section-code-inner-item">
-                The alleged offender may be confronted and asked to change their behavior.
-              </li>
-              <li class="fifth-section-code-inner-item">
-                The alleged offender may be asked to leave the area until further notice.
-              </li>
-              <li class="fifth-section-code-inner-item">
-                If the behavior continues, the alleged offender may be prohibited from
-                participating in all future events, and the incident will be reported to
-                the appropriate authorities. Our main interest is to sustain a friendly
-                and welcoming atmosphere for all those involved. Prohibition is a last resort.
-              </li>
-            </ol>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <a name="sixth-sect"></a>
-    <div class="sixth-section">
-      <div class="sixth-section-title">
-        ACKNOWLEDGMENTS
-      </div>
-      <hr class="code-line"/>
-      <div class="sixth-section-acknowledgment">
-        Huge appreciation and thanks to Mariam Melkumyan
-        for completely redoing this site and making it gorgeous.
-      </div>
-    </div>
-  </div>
-  <script>
-    // const links = Array.from(document.getElementsByClassName("route-link")) || [];
-    // const freeToJoin = document.getElementsByClassName("first-section-free-to-join")[0];
-    // const scrollToPage = (pageNumber) => {
-    //   window.scrollTo( 0, pageNumber * window.innerHeight );
-    // }
-    // freeToJoin.onclick = // scrollToPage.bind(null, 2);
-    // links.map((link, i) => {
-    //   link.onclick = scrollToPage.bind(null, i);
-    // })
-    const a = (id) => {
-      console.log('fired')
-      history.pushState(null, null, `${id}`)
-      document.querySelector(`${id}`).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
-    }
-  </script>
-
-</body>
+    <script>
+     // const links = Array.from(document.getElementsByClassName("route-link")) || [];
+     // const freeToJoin = document.getElementsByClassName("first-section-free-to-join")[0];
+     // const scrollToPage = (pageNumber) => {
+     //   window.scrollTo( 0, pageNumber * window.innerHeight );
+     // }
+     // freeToJoin.onclick = // scrollToPage.bind(null, 2);
+     // links.map((link, i) => {
+     //   link.onclick = scrollToPage.bind(null, i);
+     // })
+     const a = id => {
+       history.pushState(null, null, `${id}`)
+       document.querySelector(`${id}`).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+     }
+    </script>
+  </body>
 </html>
