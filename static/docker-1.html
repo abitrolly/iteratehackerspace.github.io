@@ -7,19 +7,21 @@
 
   <title>Docker</title>
 
-  <link rel="stylesheet" href="presentation_dependencies/css/reveal.css">
-  <link rel="stylesheet" href="presentation_dependencies/css/theme/night.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/reveal.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/theme/sky.css" id="theme"/>
 
   <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="presentation_dependencies/lib/css/atom-one-dark.css">
-
   <!-- Printing and PDF exports -->
   <script>
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match(/print-pdf/gi) ? 'presentation_dependencies/css/print/pdf.css' : 'presentation_dependencies/css/print/paper.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
+   const link = document.createElement('link');
+   link.rel = 'stylesheet';
+   link.type = 'text/css';
+   const pdf_css =
+		 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/pdf.css';
+   const paper_css =
+		 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/css/print/paper.css';
+   link.href = window.location.search.match(/print-pdf/gi) ? pdf_css : paper_css;
+   document.getElementsByTagName('head')[0].appendChild(link);
   </script>
 </head>
 
@@ -795,21 +797,43 @@ $ docker kill <CONTAINER_ID>
       </section>
     </div>
   </div>
-  <script src="presentation_dependencies/lib/js/head.min.js"></script>
-  <script src="presentation_dependencies/js/reveal.js"></script>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/js/reveal.min.js"></script>
   <script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-      dependencies: [
-        { src: 'presentation_dependencies/plugin/markdown/marked.js' },
-        { src: 'presentation_dependencies/plugin/markdown/markdown.js' },
-        { src: 'presentation_dependencies/plugin/notes/notes.js', async: true },
-        { src: 'presentation_dependencies/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-      ]
-    });
+   // More info about config & dependencies:
+   // - https://github.com/hakimel/reveal.js#configuration
+   // - https://github.com/hakimel/reveal.js#dependencies
+
+   Reveal.initialize({
+		 controls: true,
+		 progress: true,
+		 history: true,
+		 center: true,
+		 transitionSpeed:'slow',
+		 previewLinks:false,
+		 transition: 'fade', // none/fade/slide/convex/concave/zoom
+		 // Optional reveal.js plugins
+		 dependencies: [
+			 { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/lib/js/classList.js',
+				      condition: function() { return !document.body.classList; } },
+			    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/marked.js',
+						     condition: function() { return !!document.querySelector('[data-markdown]'); } },
+			    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/markdown/markdown.min.js',
+						     condition: function() { return !!document.querySelector('[data-markdown]'); } },
+			   { src:
+      'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/highlight/highlight.min.js',
+					      async: true,
+					      condition: function() { return !!document.querySelector( 'pre code' ); },
+					      callback: function() { hljs.initHighlightingOnLoad(); } },
+			    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/zoom-js/zoom.min.js',
+						     async: true },
+			   { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.4.1/plugin/notes/notes.min.js',
+					 async: true }
+		 ]
+	 });
+
   </script>
 </body>
 
