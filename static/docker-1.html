@@ -229,7 +229,7 @@ on the container, we can do the reverse for directories on the host.
 
       <section data-markdown>
         <textarea data-template>
-          ## Stopping and restarting with volumes
+          ## But first...lets stop running containers
 Do:
 
 ```bash
@@ -240,6 +240,20 @@ This will show you all the running containers, take the `CONTAINER ID` and copy 
 
 ```bash
 $ docker kill <CONTAINER_ID>
+					```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+# Going from Host to container
+
+Let's do that now,
+
+```bash
+$ docker run -it --rm -p 3000:3000 \
+  -v $(pwd)/src:/home/iterate/application/src \
+  iterate/summer-class:latest
 ```
         </textarea>
       </section>
