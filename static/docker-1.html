@@ -240,7 +240,7 @@ This will show you all the running containers, take the `CONTAINER ID` and copy 
 
 ```bash
 $ docker kill <CONTAINER_ID>
-					```
+```
         </textarea>
       </section>
 
@@ -255,35 +255,26 @@ $ docker run -it --rm -p 3000:3000 \
   -v $(pwd)/src:/home/iterate/application/src \
   iterate/summer-class:latest
 ```
+
+The `-v` means `volume` and must take absolute paths, this flag tells docker
+to use our `src` directory and have it be mounted into the running container.
+
+Now let's try our instance again in the browser, should work great.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Lets look at the Dockerfile
+We will look at the Dockerfile in pieces, you can see the whole thing here:
+[https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018/blob/master/Dockerfile](https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018/blob/master/Dockerfile)
+
         </textarea>
       </section>
 
       <section data-markdown>
         <textarea data-template>
           ## Couple of notes
-
-          Due to the fact that there is no difference between a class and a function (at the first sight), it is a convention to write the first letter of a class name in uppercase.
-          This makes the code more readable.
-
-          What will be the difference in
-          ```js
-          //1
-          const joeWithNew = new Person('Joe', 'programmer', 'black');
-
-          //2
-          const joeWithouthNew = Person('Joe', 'programmer', 'black');
-          ```
-        </textarea>
-      </section>
-
-      <section data-markdown>
-        <textarea data-template>
-          ## Couple of notes
-
-          joeWithNew will be an <span style="color:red">instance of Person</span>,
-          whereas joeWithouthNew will be <span style="color:blue">undefined</span>.
-
-          Why? Because Person is just a function and it returns undefined.
         </textarea>
       </section>
 
@@ -291,20 +282,6 @@ $ docker run -it --rm -p 3000:3000 \
         <textarea data-template>
           ## Execution context
 
-          As we know, it is possible to force a context on a JS function.
-
-          ```js
-          function foo(){
-            console.log(this.bar);
-          }
-
-          const zoo = {
-            bar: 'hey'
-          };
-
-          foo.call(zoo);
-          foo.apply(zoo);
-          ```
         </textarea>
       </section>
 
@@ -313,7 +290,6 @@ $ docker run -it --rm -p 3000:3000 \
           <textarea data-template>
             ## Execution context
 
-            So there actually has to be a way to declare functions like sleep and run, then force the context of the object we want on it.
           </textarea>
         </section>
         <section data-markdown>
