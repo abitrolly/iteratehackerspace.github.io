@@ -139,7 +139,7 @@ $ brew cask install docker
 
       <section data-markdown>
         <textarea data-template>
-          ## Making the Docker Image
+          ### Making the Docker Image
 Double check that you docker installed:
 
 ```bash
@@ -158,7 +158,7 @@ $ docker build -t iterate/summer-class:latest .
 
       <section data-markdown>
         <textarea data-template>
-          ## While it is building, let's explain:
+          ### While it is building, let's explain:
 
 Sometimes you will see it this way as well:
 
@@ -177,7 +177,7 @@ Just remember that you don't have access to the build context this way.
 
       <section data-markdown>
         <textarea data-template>
-          ## What was the command we did?
+          ### What was the command we did?
 First let's see the built image:
 
 ```bash
@@ -191,7 +191,7 @@ Docker naming convention is like `[ORG]/[PROJECT]:[RELEASE-CUT]`
 
       <section data-markdown>
         <textarea data-template>
-          ## Running our image, aka making a container
+          ### Running our image, aka making a container
 We run our project with:
 
 ```
@@ -215,7 +215,7 @@ Now check in the browser.
 
       <section data-markdown>
         <textarea data-template>
-          ## Making changes and seeing results
+          ### Making changes and seeing results
 Let's make some changes to our application, to `src/App.js` and on line 11,
 change the words "Welcome to iterate" to something else, like "Welcome to _iterate_".
 
@@ -229,7 +229,7 @@ on the container, we can do the reverse for directories on the host.
 
       <section data-markdown>
         <textarea data-template>
-          ## But first...lets stop running containers
+          ### But first...lets stop running containers
 Do:
 
 ```bash
@@ -246,7 +246,7 @@ $ docker kill <CONTAINER_ID>
 
       <section data-markdown>
         <textarea data-template>
-# Going from Host to container
+### Going from Host to container
 
 Let's do that now,
 
@@ -265,7 +265,7 @@ Now let's try our instance again in the browser, should work great.
 
       <section data-markdown>
         <textarea data-template>
-          ## Lets look at the Dockerfile
+          ### Lets look at the Dockerfile
 We will look at the Dockerfile in pieces, you can see the whole thing here:
 [https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018/blob/master/Dockerfile](https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018/blob/master/Dockerfile)
 
@@ -274,7 +274,7 @@ We will look at the Dockerfile in pieces, you can see the whole thing here:
 
       <section data-markdown>
         <textarea data-template>
-          ## Couple of notes
+          ## Top part
         </textarea>
       </section>
 
