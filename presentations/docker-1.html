@@ -1,0 +1,816 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Docker</title>
+
+  <link rel="stylesheet" href="presentation_dependencies/css/reveal.css">
+  <link rel="stylesheet" href="presentation_dependencies/css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="presentation_dependencies/lib/css/atom-one-dark.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'presentation_dependencies/css/print/pdf.css' : 'presentation_dependencies/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-markdown>
+        <textarea data-template>
+          <h3 style="color:#e7ad52">Meta Introduction</h3>
+					<h5>
+						My name is Edgar Aroutiounian,
+						I work with self driving cars for GM in San Francisco.
+					</h5>
+					<hr/>
+					<h5>
+						This class will move fast and assumes some knowledge, this is fine as you
+						can ask iterate hackers and each other for help in understanding the material.
+					</h5>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          <h3 style="color:#e7ad52">Docker</h3>
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Introduction - What is Docker?
+
+          We use Docker to provide "process isolation" for our applications/projects.
+
+          process isolation is trying to keep your application and all its dependencies
+          away from the actual issue of running your application.
+
+          We want to make it easy to build our project, to have it be reproducible on
+          every machine that has docker installed.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Motiviating Example
+
+          Think of `apt-get`. You have probably been used to doing
+```bash
+sudo apt-get install libfoobarbaz
+```
+
+<hr/>
+
+But installing this is "destructive", because you are changing the filesystem and changing
+the libraries available to the whole system. Sometimes this gives the familiar
+"it works on my machine but not on yours" issues.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+            ## Docker terms
+1. Host. This is the system on which the docker binary is running
+2. Dockerfile. This file describes all the steps that docker needs to do to build an image.
+3. Image. This the result of the docker binary running the Dockerfile.
+4. Container. A running instance of an image.
+5. docker-compose. A program that we use with `yaml` files to make it easier to manage
+   services built with docker.
+6. build context. The directory and items not in .dockerignore in which the Dockerfile is located
+   when the docker binary builds the image.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Getting our project - Setup
+
+Go ahead and go to our project repo:
+[https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018](https://github.com/iteratehackerspace/iterate-summer-javascript-class-2018)
+					<hr/>
+
+Fork the project to your account. Then clone (`git clone`)
+the project and add our main repo as a new remote
+to repo. I assume you already setup ssh keys with github.
+
+```bash
+$ git remote add upstream git@github.com:iteratehackerspace/iterate-summer-javascript-class-2018.git
+```
+
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Installing Docker
+If you DO NOT have docker, then go to your newly cloned copy of the repo
+and install it on your Ubuntu/Debian machine with:
+
+```bash
+sudo bash machine-setup/install-docker.sh
+```
+
+**NOTE** that this will restart your machine.
+					<hr/>
+On `OS X` just do:
+
+```bash
+$ brew cask install docker
+```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Making the Docker Image
+Double check that you docker installed:
+
+```bash
+$ command docker -v
+```
+
+Should print out a version at least `18`.
+					<hr/>
+Now in the repo, lets build the image:
+
+```bash
+$ docker build -t iterate/summer-class:latest .
+```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## While it is building, let's explain:
+
+Sometimes you will see it this way as well:
+
+```bash
+docker build -t iterate/summer-class:latest - < Dockerfile
+```
+
+this is also acceptable but you don't get the build context.
+The build context is where docker starts out from when it makes the image.
+
+We passed the `Dockerfile` via shell redirection, aka `<`.
+
+Just remember that you don't have access to the build context this way.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## What was the command we did?
+First let's see the built image:
+
+```bash
+$ docker images
+```
+
+You should see our image built there, it has the name `iterate/summer-class`.
+Docker naming convention is like `[ORG]/[PROJECT]:[RELEASE-CUT]`
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Running our image, aka making a container
+We run our project with:
+
+```
+$ docker run --rm iterate/summer-class
+```
+
+And then try to open `localhost:3000` in our browser.
+
+But you see that nothing comes up, why?
+
+Because a running container is by default NOT exposed to the host via ports.
+You have to explicitly port forward, this is very good for process isolation.
+
+```
+$ docker run -p 3000:3000 --rm iterate/summer-class
+```
+
+Now check in the browser.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Making changes and seeing results
+Let's make some changes to our application, to `src/App.js` and on line 11,
+change the words "Welcome to iterate" to something else, like "Welcome to _iterate_".
+
+Make those changes, do you see the results in the web browser?
+
+Well no, you won't. Why? Again process isolation, Docker is using its copy of the file instead
+of the copy on the host machine, which is what you are editing. Just like we exposed the port
+on the container, we can do the reverse for directories on the host.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Stopping and restarting with volumes
+Do:
+
+```bash
+$ docker ps
+```
+
+This will show you all the running containers, take the `CONTAINER ID` and copy paste it in:
+
+```bash
+$ docker kill <CONTAINER_ID>
+```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Couple of notes
+
+          Due to the fact that there is no difference between a class and a function (at the first sight), it is a convention to write the first letter of a class name in uppercase.
+          This makes the code more readable.
+
+          What will be the difference in
+          ```js
+          //1
+          const joeWithNew = new Person('Joe', 'programmer', 'black');
+
+          //2
+          const joeWithouthNew = Person('Joe', 'programmer', 'black');
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Couple of notes
+
+          joeWithNew will be an <span style="color:red">instance of Person</span>,
+          whereas joeWithouthNew will be <span style="color:blue">undefined</span>.
+
+          Why? Because Person is just a function and it returns undefined.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Execution context
+
+          As we know, it is possible to force a context on a JS function.
+
+          ```js
+          function foo(){
+            console.log(this.bar);
+          }
+
+          const zoo = {
+            bar: 'hey'
+          };
+
+          foo.call(zoo);
+          foo.apply(zoo);
+          ```
+        </textarea>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Execution context
+
+            So there actually has to be a way to declare functions like sleep and run, then force the context of the object we want on it.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js
+            function Person(name, profession, colorOfHair){
+              this.name = name;
+              this.profession = profession;
+              this.colorOfHair = colorOfHair;
+            }
+
+            function run(){
+              console.log(`I am ${this.name}, and I am running.`);
+            }
+
+            function sleep(){
+              console.log(`Shshsh, ${this.name} is sleeping.`);
+            }
+
+            const joe = new Person('Joe', 'programmer', 'black');
+            const doe = new Person('Doe', 'biker', 'red');
+
+            run.call(joe);
+            run.call(doe);
+            ```
+          </textarea>
+        </section>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Why?
+
+          Yes, it is possible. But why would we actually do that?
+
+          The reason is memory management.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Why?
+
+          In the first example where the methods were being assigned to <span style="color:red">this</span> (the object itself), the size of the object was approximately <span style="color:orange">102B</span>.
+
+          On the other hand, when the functions were independant the size of the object was approximately <span style="color:orange">86B</span>.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Why?
+
+          Now imagine that there are 100 instances of Person class. <span style="color:orange">1600B</span> of redundant memory is being used. We had the same result by forcing a context on a function.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Solution
+
+          There has to be a way to solve this problem. We need a function that every time will be called by an automatically forced context.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          #### The solution is the __prototype__.
+
+          ```js
+          function Person(name, profession, colorOfHair){
+            this.name = name;
+            this.profession = profession;
+            this.colorOfHair = colorOfHair;
+          }
+
+          Person.prototype.run = function(){
+            console.log(`I am ${this.name}, and I am running.`);
+          }
+
+          Person.prototype.sleep = function(){
+            console.log(`Shshsh, ${this.name} is sleeping.`);
+          }
+
+          const joe = new Person('Joe', 'programmer', 'black');
+          const doe = new Person('Doe', 'biker', 'red');
+
+          joe.run();
+          doe.run();
+          ```
+        </textarea>
+      </section>
+
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Static methods
+
+          Sometimes we do not want to add methods to the prototype of the class, and not pass it to any instance of the class.
+          In other words, we do not want that method to be accessible on the prototype chain.
+          Very often those methods are just utility (helper) functions for an application.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Static methods
+
+          For example, all the methods in the Math class (or object, because everything in JS are objects)
+          are <span style="color: red">static</span>.
+          And they are used as utility functions in our JS apps.
+          ```js
+          Math.floor();
+          Math.ceil();
+          Math.random();
+          ```
+        </textarea>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Static methods
+
+            To create a static method, we just add the word <span style="color: red">static</span> in front of it.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js
+            class MyMath {
+              static random(n){ // we want a function to return a random number from 0 to n
+                return Math.random() * n;
+              }
+
+              notAStaticMethod(){
+                console.log('hey, I am not a static method.');
+              }
+            }
+
+            console.log(MyMath.random);
+            console.log(MyMath.notAStaticMethod);
+            console.log(MyMath.prototype.notAStaticMethod);
+            console.log(MyMath.random(5));
+            ```
+          </textarea>
+        </section>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Getters and setters
+
+          Although very often you can do things with regular methods,
+          <span style="color:orange">setters</span> and <span style="color:orange">getters</span> exist in JS.
+          We can say, that they are dynamic properties.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Getter
+
+          ```js
+          class MyArray {
+            constructor(elems){
+              const elements = [...elems];
+              this.elements = elements;
+            }
+
+            get length(){
+              let l = 0;
+              for (let i in this.elements){
+                l++;
+              }
+              return l;
+            }
+          }
+
+          const array = new MyArray([1,3,5,1,'a',true]);
+          console.log(array.length);
+          ```
+        </textarea>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Getter
+
+            A good thing about getters is that even if we assign a new value to them, they are not going to be mutated.
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js
+            class MyArray {
+              constructor(elems){
+                const elements = [...elems];
+                this.elements = elements;
+              }
+
+              get length(){
+                let l = 0;
+                for (let i in this.elements){
+                  l++;
+                }
+                return l;
+              }
+            }
+
+            const array = new MyArray([1,3,5,1,'a',true]);
+            console.log(array.length);
+
+            array.length = 0;
+            console.log(array.length);
+            ```
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Setter
+
+            Just like getter, setter is function that is used like property.
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            ```js
+            class Person {
+              set fullName(name){
+                [this.firstName, this.lastName] = name.split(' ');
+              }
+            }
+
+            // note if a class does not have
+            // a constructor it can be initialized
+            // without the braces
+
+            const p = new Person;
+            p.fullName = 'Joe Doe';
+            console.log(p.firstName);
+            console.log(p.lastName);
+            ```
+          </textarea>
+        </section>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Subclassing or inheritance
+
+          Now, imagine we want a class Animal, and we want a class Dog.
+          Right now, the way we would do it is creating seperate classes for each,
+          and if they share some common things, add to both class prototypes.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Subclassing or inheritance
+
+          But again, as in real life, dog is an animal, and there are many things that are shared between them,
+          for example methods like running, eating, etc...
+
+          For this reason, we can make an Animal class, then make a dog class which will be a
+          <span style="color:red">subclass</span> of Animal,
+          then inherit the shared methods automatically.
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          #### Subclassing or inheritance
+
+          ```js
+          class Animal {
+            constructor(name, color, age, type){
+              this.name = name;
+              this.color = color;
+              this.age = age;
+              this.type = type;
+            }
+
+            run(){
+              console.log(`I am a ${this.type}, and I am running`);
+            }
+
+            eat(){
+              console.log(`I am a ${this.type}, and I am eating`);
+            }
+          }
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Subclassing or inheritance
+
+          We have the Animal class, any animal belonging to this type can run, and can eat.
+
+          ```js
+          const dog = new Animal('rex', 'black', 12, 'dog');
+          dog.run();
+          dog.eat();
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Subclassing or inheritance
+
+          But I also want my dog to be able to bark, because dogs usually bark. :D
+
+          And one way to do that would be
+
+          ```js
+          dog.bark = () => {
+            let times = Math.floor(Math.random()*20);
+            while (times >= 0){
+              console.log('haf');
+              times--;
+            }
+          };
+          ```
+        </textarea>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ### Subclassing or inheritance
+
+          As we discussed earlier, it is not convenient to add a function directly to the object.
+          So I have to make a Dog class, which will take methods from Animal class, and add a bark method.
+        </textarea>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Subclassing or inheritance
+
+            ```js
+            class Dog extends Animal {
+              bark(){
+                let times = Math.floor(Math.random()*20);
+                while (times >= 0){
+                  console.log('haf');
+                  times--;
+                }
+              }
+            }
+
+            const dog = new Dog;
+            dog.bark();
+            dog.run();
+            console.log(dog); //Dog {name: undefined, color: undefined, age: undefined, type: undefined}
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Subclassing
+
+            Let's add a constructor to Dog, because we do not want all it's properties to be undefined.
+
+            ```js
+            constructor(name, color, age){
+              this.name = name;
+              this.color = color;
+              this.age = age;
+            }
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Subclassing
+
+            If now, we try creating a new instance of dog
+
+            ```js
+            const dog = new Dog('rex', 'black', 12);
+            ```
+
+            We get an <span style="color:red">error</span>. Why? Because we want to construct the Dog class, based on Animal class.
+            But the Animal class is not constructed yet. Means, it does not have it's properties.
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            #### Super
+
+            We have to construct the Animal class in the first place. And how do we construct any class?
+            By calling its contructor. The keyword to call the constructor of the class a class inherited from is <span style="color:orange">super()</span>
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            #### Super
+
+            We call the constructor with super(), and we pass the arguments.
+
+            ```js
+            constructor(name, color, age){
+              super(name, color, age, 'dog');
+            }
+            ```
+
+            Note, the constructor of Dog is not getting a type argument, because the type is dog, so there
+            is no need to make it an argument. The name, color, age can be different between 2 dogs, but not the type.
+          </textarea>
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+            #### Dog class
+
+            ```js
+            class Dog extends Animal {
+              constructor(name, color, age){
+                super(name, color, age, 'dog');
+              }
+              bark(){
+                let times = Math.floor(Math.random()*20);
+                while (times >= 0){
+                  console.log('haf');
+                  times--;
+                }
+              }
+            }
+
+            const dog = new Dog('rex', 'black', 12);
+            console.log(dog);
+            dog.run();
+            dog.eat();
+            dog.bark();
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Subclassing
+
+            If a class does not have a constructor, and is being initiated with some arguments,
+            the arguments are going to automatically be passed to the parents constructor.
+            Which means, if I do not make a constructor for the dog class, and make a new object like
+            ```js
+            const dog = new Dog('rex', 'black', 12, 'dog');
+            ```
+
+            This would still work, and my dog object would have the properties with their values.
+          </textarea>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Subclassing
+
+            Now, a question can be if the constructor of the parent class is being called automatically,
+            why do we need the keyword super.
+
+            Let's imagine, that we wanted to add some properties to the Dog class. For example, some dogs have cut tails.
+            We only add properties to a class in a constructor, so we already need a constructor for dog.
+
+            But, if we make a constructor, without calling the parents constructor an exception is being thrown. So the contructor would look like this
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```js
+            constructor(name, color, age, tail){
+              super(name, color, age, 'dog');
+              this.tail = tail;
+            }
+            ```
+          </textarea>
+        </section>
+      </section>
+
+
+      <section data-markdown>
+        <textarea data-template>
+              ## Q and A
+
+              #### THANK YOU!
+            </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="presentation_dependencies/lib/js/head.min.js"></script>
+  <script src="presentation_dependencies/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'presentation_dependencies/plugin/markdown/marked.js' },
+        { src: 'presentation_dependencies/plugin/markdown/markdown.js' },
+        { src: 'presentation_dependencies/plugin/notes/notes.js', async: true },
+        { src: 'presentation_dependencies/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
